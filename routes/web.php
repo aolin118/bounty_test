@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('twitter');
 });
 
 Route::get('/twitter', 'BountyController@twitter')->name('twitter-get');
