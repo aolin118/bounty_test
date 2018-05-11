@@ -68,7 +68,7 @@
                     </div>
                     <div class="row mt-4">
                         <div class="col-12 text-center" style="font-size: 14px">
-                            Bounty tokens will be distributed if you meet all the requirements when the bounty program ends.
+                            Tokens earned will be distributed 2-3 weeks after the bounty program ends. You will receive 1 token for following us and 1 token for the retweet. You must complete all 4 steps to be considered for the reward.
                         </div>
                     </div>
                 </form>
