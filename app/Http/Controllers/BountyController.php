@@ -40,6 +40,10 @@ class BountyController extends Controller
 	    	$user->eth_address = $request->input("eth_address");
 	    	$user->twitter_id = $result->id_str;
 
+            $json = file_get_contents("https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=" . $request->input("twitter_username"),true);
+            $obj = json_decode($json);
+            $user->twitter_followers_count = $obj[0]->followers_count;
+
 	    	$saved = $user->save();
 
 	    	if ($saved) {
