@@ -6,9 +6,11 @@ use App\TwitterBountyUser;
 use Thujohn\Twitter\Facades\Twitter;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\WithColumnFormatting;
 use Maatwebsite\Excel\Concerns\Exportable;
+use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 
-class TwitterExport implements FromQuery, WithHeadings
+class TwitterExport implements FromQuery, WithHeadings, WithColumnFormatting
 {
     use Exportable;
 
@@ -16,11 +18,18 @@ class TwitterExport implements FromQuery, WithHeadings
     {
         return [
             '#',
-            'Twitter ID',
             'Twitter Username',
+            'Twitter ID',
             'Ethereum Address',
             'Is Following',
             'Has Retweeted'
+        ];
+    }
+
+    public function columnFormats(): array
+    {
+        return [
+            'C' => NumberFormat::FORMAT_NUMBER,
         ];
     }
 
@@ -32,6 +41,6 @@ class TwitterExport implements FromQuery, WithHeadings
     public function query()
     {
         return TwitterBountyUser::query();
-        
+
     }
 }
