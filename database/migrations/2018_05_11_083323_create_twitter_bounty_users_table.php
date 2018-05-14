@@ -17,6 +17,7 @@ class CreateTwitterBountyUsersTable extends Migration
             $table->increments('id');
             $table->string('twitter_username');
             $table->string('twitter_id')->unique();
+            $table->integer('twitter_followers_count')->default(0);
             $table->string('eth_address')->unique();
             $table->integer('is_following')->default(0);
             $table->integer('has_retweeted')->default(0);
