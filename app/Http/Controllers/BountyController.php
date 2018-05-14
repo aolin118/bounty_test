@@ -52,7 +52,7 @@ class BountyController extends Controller
 
     public function twitterExport() {
 
-        $users = TwitterBountyUser::all();
+        $users = TwitterBountyUser::where('id', '>', 0);
         $users->update(['is_following' => 0, 'has_retweeted' => 0]);
 
         $all = array();
