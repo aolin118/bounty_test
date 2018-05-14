@@ -31,7 +31,7 @@ class TwitterExport implements FromQuery, WithHeadings
 
     public function query()
     {
-        return TwitterBountyUser::all();
+        return TwitterBountyUser::query();
         
     }
 }
