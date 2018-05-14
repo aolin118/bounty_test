@@ -60,7 +60,7 @@ class BountyController extends Controller
 
         do {
 
-            $result = Twitter::getFollowersIds(["screen_name" => "opetfoundation", "cursor" => $cursor]);
+            $result = \Twitter::getFollowersIds(["screen_name" => "opetfoundation", "cursor" => $cursor]);
             $cursor = $result->next_cursor_str;
 
             $followers = $result->ids;
@@ -78,7 +78,7 @@ class BountyController extends Controller
 
         do {
 
-            $result = Twitter::getRters(["id" => "994577881690001409", "count" => 100, "cursor" => $cursor]);
+            $result = \Twitter::getRters(["id" => "994577881690001409", "count" => 100, "cursor" => $cursor]);
             $cursor = $result->next_cursor_str;
 
             $retweeters = $result->ids;
