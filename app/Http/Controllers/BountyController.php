@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Thujohn\Twitter\Facades\Twitter;
 use App\TwitterBountyUser;
+use App\Exports\TwitterExport;
 
 class BountyController extends Controller
 {
@@ -47,6 +48,51 @@ class BountyController extends Controller
 	    		return view('twitter/twitter');
 	    	}
 	    }
+    }
+
+    public function twitterExport() {
+
+        $users = TwitterBountyUser::all();
+        $users->update(['is_following' => 0, 'has_retweeted' => 0]);
+
+        $all = array();
+        $cursor = "-1";
+
+        do {
+
+            $result = Twitter::getFollowersIds(["screen_name" => "opetfoundation", "cursor" => $cursor]);
+            $cursor = $result->next_cursor_str;
+
+            $followers = $result->ids;
+
+            $all = array_merge($all,$followers);
+
+        } while ($cursor != 0);
+
+        $followed = TwitterBountyUser::whereIn('twitter_id', $all);
+        $followed->update(['is_following' => 1]);
+
+
+        $all = array();
+        $cursor = "-1";
+
+        do {
+
+            $result = Twitter::getRters(["id" => "994577881690001409", "count" => 100, "cursor" => $cursor]);
+            $cursor = $result->next_cursor_str;
+
+            $retweeters = $result->ids;
+
+            $all = array_merge($all,$retweeters);
+
+        } while ($cursor != 0);
+
+        $retweeted = TwitterBountyUser::whereIn('twitter_id', $all);
+        $retweeted->update(['has_retweeted' => 1]);
+
+
+
+        return (new TwitterExport())->download('twitter_bounty_results.xlsx');
     }
 
 }
