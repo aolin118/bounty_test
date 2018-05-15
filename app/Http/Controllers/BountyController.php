@@ -24,10 +24,17 @@ class BountyController extends Controller
     public function twitterSubmit(Request $request)
     {
     	try {
-    		$result = Twitter::getUsers(["screen_name" => $request->input("twitter_username")]);
+
+            $username = $request->input("twitter_username");
+
+            if (substr($username,0,1) == "@") {
+                $username = substr($username,1,strlen($username));
+            }
+
+    		$result = Twitter::getUsers(["screen_name" => $username]);
     	} catch (\Exception $e) {
     		//return redirect()->back()->with('error', ["Could not find any user with the name " . $request->input("twitter_username")]);
-    		return \Redirect::back()->withErrors("Could not find any user with the name " . $request->input("twitter_username"));
+    		return \Redirect::back()->withErrors("Could not find any user with the name " . $username);
     	}
     	
 
@@ -36,11 +43,11 @@ class BountyController extends Controller
     		return view('twitter/twitter-done');
     	} else {
 	    	$user = new TwitterBountyUser;
-	    	$user->twitter_username = $request->input("twitter_username");
+	    	$user->twitter_username = $username;
 	    	$user->eth_address = $request->input("eth_address");
 	    	$user->twitter_id = $result->id_str;
 
-            $json = file_get_contents("https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=" . $request->input("twitter_username"),true);
+            $json = file_get_contents("https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=" . $username,true);
             $obj = json_decode($json);
             $user->twitter_followers_count = $obj[0]->followers_count;
 
