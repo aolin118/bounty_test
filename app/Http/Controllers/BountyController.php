@@ -82,7 +82,7 @@ class BountyController extends Controller
 
         do {
 
-            $result = \Twitter::getRters(["id" => "994577881690001409", "count" => 100, "cursor" => $cursor]);
+            $result = \Twitter::getRters(["id" => "996288621203329024", "count" => 100, "cursor" => $cursor]);
             $cursor = $result->next_cursor_str;
 
             $retweeters = $result->ids;

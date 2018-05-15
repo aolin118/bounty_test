@@ -44,7 +44,7 @@
                             Step <div class="ml-2 numberCircle">3</div>
                         </div>
                         <div class="col-7 col-lg-5 instructions">
-                            <div>Retweet our <a href="#" target="_blank">Tweet</a></div>
+                            <div>Retweet our <a href="https://twitter.com/opetfoundation/status/996288621203329024" target="_blank">Tweet</a></div>
                         </div>
                     </div>
                     <div class="divider"></div>
