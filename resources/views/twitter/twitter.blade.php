@@ -35,7 +35,7 @@
                             Step <div class="ml-2 numberCircle">2</div>
                         </div>
                         <div class="col-7 col-lg-5 instructions">
-                            <div>Follow our <a href="https://twitter.com/opetfoundation" target="_blank">Twitter page</a></div>
+                            <div>Follow us on <a href="https://twitter.com/opetfoundation" target="_blank">Twitter</a></div>
                         </div>
                     </div>
                     <div class="divider"></div>
@@ -53,6 +53,15 @@
                             Step <div class="ml-2 numberCircle">4</div>
                         </div>
                         <div class="col-7 col-lg-5 instructions">
+                            <div>Like our <a href="https://www.youtube.com/watch?v=RzOF_qQYu9M" target="_blank">video</a> and subscribe to our <a href="https://www.youtube.com/channel/UCpUNGBzAFCZJGLIfdofzEpQ" target="_blank">channel</a></div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="row mb-1">
+                        <div class="col-4 offset-lg-2 steps">
+                            Step <div class="ml-2 numberCircle">5</div>
+                        </div>
+                        <div class="col-7 col-lg-5 instructions">
                             <div>
                                 Give us your <input type="text" class="form-control" id="twitter_username" name="twitter_username" placeholder="Twitter Username" required> and <input type="text" class="form-control" id="eth_address" name="eth_address" placeholder="Ethereum Address" required>
                             </div>
@@ -68,7 +77,7 @@
                     </div>
                     <div class="row mt-4">
                         <div class="col-12 text-center" style="font-size: 14px">
-                            Bounty tokens will be distributed if you meet all the requirements when the bounty program ends.
+                            This bounty program will run for 7 days, and end on 22 May, 2018. <strong>Only the first 5,000 Twitter usernames with the highest number of followers will receive the bounty.</strong> You will receive 10 tokens only if you complete all 5 steps and meet the requirement above. The tokens will be distributed 2-3 weeks after the bounty program ends.
                         </div>
                     </div>
                 </form>
