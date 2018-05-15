@@ -77,7 +77,7 @@
                     </div>
                     <div class="row mt-4">
                         <div class="col-12 text-center" style="font-size: 14px">
-                            This bounty program will run for 7 days, and end on 22 May, 2018. <span style="font-weight:bolder; text-decoration: underline">Only the first 5,000 Twitter usernames with the highest number of followers will receive the bounty.</span> You will receive 10 tokens only if you complete all 5 steps and meet the requirement above. The tokens will be distributed 2-3 weeks after the bounty program ends.
+                            This bounty program will run for 7 days, and end on 22 May, 2018. <span style="font-weight:bolder; text-decoration: underline">Only the top 5,000 Twitter accounts with the highest number of followers will receive the bounty.</span> You will receive 10 tokens only if you complete all 5 steps and meet the requirement above. The tokens will be distributed 2-3 weeks after the bounty program ends.
                         </div>
                     </div>
                 </form>
