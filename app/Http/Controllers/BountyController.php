@@ -33,7 +33,7 @@ class BountyController extends Controller
 
     	$user = TwitterBountyUser::where("twitter_id", $result->id_str)->orWhere("eth_address", $request->input("eth_address"))->first();
     	if ($user) {
-    		return view('twitter/twitter-done')->with('test','test');
+    		return view('twitter/twitter-done');
     	} else {
 	    	$user = new TwitterBountyUser;
 	    	$user->twitter_username = $request->input("twitter_username");
