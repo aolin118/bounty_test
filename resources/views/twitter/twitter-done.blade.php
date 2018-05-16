@@ -31,7 +31,7 @@
                             <h3><a href="{{ $link }}">{{ $link }}</a></h3>
                         </div>
                         <div class="col-12 my-4" style="font-size: 14px">
-                            You will receive 2 OPET for every referral that <span style="text-decoration: underline">COMPLETES</span> the bounty program with your link, regardless if the referee is awarded the bounty rewards.<br/>(You must complete <span style="text-decoration: underline">ALL</span> steps to be awarded tokens for your referrals.)
+                            You will receive 2 OPET for every referee that <span style="text-decoration: underline">COMPLETES</span> the bounty program with your link, regardless if the referee is awarded the bounty rewards.<br/>(You must complete <span style="text-decoration: underline">ALL</span> steps to be awarded tokens for your referrals.)
                         </div>
                 </form>
             </div>
