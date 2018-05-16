@@ -20,6 +20,8 @@ class TwitterExport implements FromQuery, WithHeadings, WithColumnFormatting
             '#',
             'Twitter Username',
             'Twitter ID',
+            'Followers Count',
+            'Referrer Twitter ID',
             'Ethereum Address',
             'Is Following',
             'Has Retweeted'
@@ -30,6 +32,7 @@ class TwitterExport implements FromQuery, WithHeadings, WithColumnFormatting
     {
         return [
             'C' => NumberFormat::FORMAT_NUMBER,
+            'E' => NumberFormat::FORMAT_NUMBER,
         ];
     }
 

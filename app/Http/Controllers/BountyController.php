@@ -21,6 +21,17 @@ class BountyController extends Controller
         return view('twitter/twitter');
     }
 
+    public function twitterReferral($id)
+    {
+        $referrer = TwitterBountyUser::where('twitter_username',$id)->get();
+
+        if ($referrer) {
+            return view('twitter/twitter')->with('referrer',$referrer->twitter_username);
+        } else {
+            return redirect('twitter');
+        }
+    }
+
     public function twitterSubmit(Request $request)
     {
     	try {

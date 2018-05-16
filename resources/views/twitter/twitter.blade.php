@@ -72,6 +72,10 @@
                             @if($errors->any())
                             <p class="text-danger mb-4">{{$errors->first()}}</p>
                             @endif
+
+                            @if (isset($referrer))
+                            <input type="hidden" name="referrer" id="referrer" value="{{ $referrer }}">
+                            @endif
                             <button type="submit" class="btn btn-success" id="submit-btn">Submit</button>
                         </div>
                     </div>
