@@ -28,7 +28,6 @@
                             <h3><a href="{{ $link }}">{{ $link }}</a></h3>
                         </div>
                         <div class="col-12 my-4" style="font-size: 14px">
-                            Bounty tokens will be distributed if you meet all the requirements when the bounty program ends.
                         </div>
                 </form>
             </div>
