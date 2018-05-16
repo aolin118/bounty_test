@@ -67,7 +67,7 @@ class BountyController extends Controller
 	    	$saved = $user->save();
 
 	    	if ($saved) {
-	    		return view('twitter/twitter-done')->with('link', route('routeName') . "/" . $user->twitter_username);
+	    		return view('twitter/twitter-done');
 	    	} else {
 	    		return view('twitter/twitter');
 	    	}
