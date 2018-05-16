@@ -22,11 +22,11 @@ class TwitterExport implements FromQuery, WithHeadings, WithColumnFormatting
             'Twitter Username',
             'Twitter ID',
             'Followers Count',
-            'Referrer Twitter ID',
+            'Referrer',
             'Ethereum Address',
-            'Refer Count',
             'Is Following',
-            'Has Retweeted'
+            'Has Retweeted',
+            'Refer Count'
         ];
     }
 
