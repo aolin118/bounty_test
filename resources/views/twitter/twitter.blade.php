@@ -13,7 +13,7 @@
     <body>
         <div id="main" class="hero-gradient-dark gradient-primary">
             <div class="container">
-                <form method="POST">
+                <form method="POST" action="{{ route('twitter-post') }}">
                     @csrf
                     <div class="row">
                         <div class="col-12 text-center">
