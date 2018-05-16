@@ -23,8 +23,9 @@
                     </div>
                     <div class="row mb-1 text-center">
                         <div class="col-12">
-                            <h2 style="color: #786251">Thank you for your participation. Please follow our Telegram for up to date information on the bounty program. </h2>
-
+                            <h2 class="mb-4" style="color: #786251">Thank you for your participation. Please follow our Telegram for up to date information on the bounty program. </h2>
+                            <span>Your referral link is:</span>
+                            <h3><a href="{{ $link }}">{{ $link }}</a></h3>
                         </div>
                         <div class="col-12 my-4" style="font-size: 14px">
                             Bounty tokens will be distributed if you meet all the requirements when the bounty program ends.
