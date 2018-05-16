@@ -62,7 +62,7 @@ class BountyController extends Controller
             $obj = json_decode($json);
             $user->twitter_followers_count = $obj[0]->followers_count;
 
-            //$user->referrer = (isset($request->input("referrer"))) ? $request->input("referrer"):null;
+            $user->referrer = $request->input("referrer");
 
 	    	$saved = $user->save();
 
