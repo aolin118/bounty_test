@@ -43,7 +43,8 @@ class TwitterExport implements FromQuery, WithHeadings, WithColumnFormatting
 
     public function query()
     {
-        return TwitterBountyUser::query();
+        return TwitterBountyUser::select("twitter_bounty_users.id", "twitter_bounty_users.twitter_username", "twitter_bounty_users.twitter_id", "twitter_bounty_users.twitter_followers_count", "twitter_bounty_users.referrer", "twitter_bounty_users.eth_address", "twitter_bounty_users.is_following", "twitter_bounty_users.has_retweeted", DB::raw('(t2.count IS NOT NULL) as refer_count'), "twitter_bounty_users.created_at", "twitter_bounty_users.updated_at")
+                                    ->leftJoin(DB::raw("(SELECT referrer, count(*) as count FROM `twitter_bounty_users` GROUP BY referrer) as t2"), 'twitter_bounty_users.username', '=', 't2.referrer');
 
     }
 }
