@@ -2,6 +2,7 @@
 
 namespace App\Exports;
 
+use DB;
 use App\TwitterBountyUser;
 use Thujohn\Twitter\Facades\Twitter;
 use Maatwebsite\Excel\Concerns\FromQuery;
