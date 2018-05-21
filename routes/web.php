@@ -22,3 +22,5 @@ Route::post('/twitter', 'BountyController@twitterSubmit')->name('twitter-post');
 Route::get('/twitter/{id}', 'BountyController@twitterReferral')->name('twitter-referral');
 
 Route::get('/twitter-export', 'BountyController@twitterExport')->name('twitter-export');
+Route::get('/twitter-get-retweet', 'BountyController@twitterGetRetweet')->name('twitter-retweet');
+Route::get('/twitter-end', 'BountyController@twitterEnd')->name('twitter-end');
