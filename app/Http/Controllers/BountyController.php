@@ -79,43 +79,43 @@ class BountyController extends Controller
 
     public function twitterExport() {
 
-        // $users = TwitterBountyUser::where('id', '>', 0);
-        // $users->update(['is_following' => 0, 'has_retweeted' => 0]);
+        $users = TwitterBountyUser::where('id', '>', 0);
+        $users->update(['is_following' => 0, 'has_retweeted' => 0]);
 
-        // $all = array();
-        // $cursor = "-1";
+        $all = array();
+        $cursor = "-1";
 
-        // do {
+        do {
 
-        //     $result = \Twitter::getFollowersIds(["screen_name" => "opetfoundation", "count" => 5000, "cursor" => $cursor]);
-        //     $cursor = $result->next_cursor_str;
+            $result = \Twitter::getFollowersIds(["screen_name" => "opetfoundation", "count" => 5000, "cursor" => $cursor]);
+            $cursor = $result->next_cursor_str;
 
-        //     $followers = $result->ids;
+            $followers = $result->ids;
 
-        //     $all = array_merge($all,$followers);
+            $all = array_merge($all,$followers);
 
-        // } while ($cursor != 0);
+        } while ($cursor != 0);
 
-        // $followed = TwitterBountyUser::whereIn('twitter_id', $all);
-        // $followed->update(['is_following' => 1]);
+        $followed = TwitterBountyUser::whereIn('twitter_id', $all);
+        $followed->update(['is_following' => 1]);
 
 
-        // $all = array();
-        // $cursor = "-1";
+        $all = array();
+        $cursor = "-1";
 
-        // do {
+        do {
 
-        //     $result = \Twitter::getRters(["id" => "996288621203329024", "count" => 100, "cursor" => $cursor]);
-        //     $cursor = $result->next_cursor_str;
+            $result = \Twitter::getRters(["id" => "996288621203329024", "count" => 100, "cursor" => $cursor]);
+            $cursor = $result->next_cursor_str;
 
-        //     $retweeters = $result->ids;
+            $retweeters = $result->ids;
 
-        //     $all = array_merge($all,$retweeters);
+            $all = array_merge($all,$retweeters);
 
-        // } while ($cursor != 0);
+        } while ($cursor != 0);
 
-        // $retweeted = TwitterBountyUser::whereIn('twitter_id', $all);
-        // $retweeted->update(['has_retweeted' => 1]);
+        $retweeted = TwitterBountyUser::whereIn('twitter_id', $all);
+        $retweeted->update(['has_retweeted' => 1]);
 
         $bountyAll = TwitterBountyUser::select("twitter_bounty_users.id", "twitter_bounty_users.twitter_username", "twitter_bounty_users.twitter_id", "twitter_bounty_users.twitter_followers_count", "twitter_bounty_users.referrer", "twitter_bounty_users.eth_address", "twitter_bounty_users.is_following", "twitter_bounty_users.has_retweeted", DB::raw('(t2.count IS NOT NULL) as refer_count'), "twitter_bounty_users.created_at", "twitter_bounty_users.updated_at")
                                     ->leftJoin(DB::raw("(SELECT referrer, count(*) as count FROM `twitter_bounty_users` t1 WHERE is_following = 1 AND has_retweeted = 1 GROUP BY referrer) as t2"), 'twitter_bounty_users.twitter_username', '=', 't2.referrer')->get()->toArray();
