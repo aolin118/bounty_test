@@ -142,7 +142,7 @@ class BountyController extends Controller
 
         //return Redirect::to("twitter_bounty_results.xlsx");
 
-        return response()->download(public_path() . "/twitter_bounty_results.xlsx")->deleteFileAfterSend(true);
+        return response()->download(public_path() . "/export/twitter_bounty_results.xlsx")->deleteFileAfterSend(true);
 
         //return response()->download($file, 'twitter_bounty_results.xlsx', $headers);
 
