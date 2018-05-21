@@ -95,6 +95,7 @@ class XLSXWriter
 				return;
 			}
 		}
+
 		
 		$zip = new \ZipArchive();
 		if (empty($this->sheets))                       { self::log("Error in ".__CLASS__."::".__FUNCTION__.", no worksheets defined."); return; }
