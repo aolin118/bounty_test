@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Thujohn\Twitter\Facades\Twitter;
 use App\TwitterBountyUser;
 use App\Exports\TwitterExport;
+use DB;
+use Redirect;
+use App\Classes\XLSXWriter;
 
 class BountyController extends Controller
 {
@@ -84,7 +87,7 @@ class BountyController extends Controller
 
         do {
 
-            $result = \Twitter::getFollowersIds(["screen_name" => "opetfoundation", "cursor" => $cursor]);
+            $result = \Twitter::getFollowersIds(["screen_name" => "opetfoundation", "count" => 5000, "cursor" => $cursor]);
             $cursor = $result->next_cursor_str;
 
             $followers = $result->ids;
@@ -114,9 +117,32 @@ class BountyController extends Controller
         $retweeted = TwitterBountyUser::whereIn('twitter_id', $all);
         $retweeted->update(['has_retweeted' => 1]);
 
+        $bountyAll = TwitterBountyUser::select("twitter_bounty_users.id", "twitter_bounty_users.twitter_username", "twitter_bounty_users.twitter_id", "twitter_bounty_users.twitter_followers_count", "twitter_bounty_users.referrer", "twitter_bounty_users.eth_address", "twitter_bounty_users.is_following", "twitter_bounty_users.has_retweeted", DB::raw('(t2.count IS NOT NULL) as refer_count'), "twitter_bounty_users.created_at", "twitter_bounty_users.updated_at")
+                                    ->leftJoin(DB::raw("(SELECT referrer, count(*) as count FROM `twitter_bounty_users` t1 WHERE is_following = 1 AND has_retweeted = 1 GROUP BY referrer) as t2"), 'twitter_bounty_users.twitter_username', '=', 't2.referrer')->get()->toArray();
 
 
-        return (new TwitterExport())->download('twitter_bounty_results.xlsx');
+        $header = array(
+          '#'=>'integer',
+          'Twitter Username'=>'string',
+          'Twitter ID'=>'string',
+          'Followers Count'=>'integer',
+          'Referrer'=>'string',
+          'Ethereum Address'=>'string',
+          'Is Following'=>'integer',
+          'Has Retweeted'=>'integer',
+          'Refer Count'=>'integer',
+        );
+
+        $writer = new XLSXWriter();
+        $writer->writeSheetHeader('Sheet1', $header);
+
+        foreach($bountyAll as $row) $writer->writeSheetRow('Sheet1', $row);
+
+        $writer->writeToFile('twitter_bounty_results.xlsx');
+
+        return Redirect::to("twitter_bounty_results.xlsx");
+
+        //return (new TwitterExport())->download('twitter_bounty_results.xlsx');
     }
 
 }
