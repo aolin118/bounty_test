@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Thujohn\Twitter\Facades\Twitter;
 use App\TwitterBountyUser;
+use App\Retweeter;
 use App\Exports\TwitterExport;
 use DB;
 use Redirect;
@@ -22,6 +23,11 @@ class BountyController extends Controller
     public function twitter()
     {
         return view('twitter/twitter');
+    }
+
+    public function twitterEnd()
+    {
+        return view('twitter/twitter-end');
     }
 
     public function twitterReferral($id)
@@ -80,7 +86,7 @@ class BountyController extends Controller
     public function twitterExport() {
 
         $users = TwitterBountyUser::where('id', '>', 0);
-        $users->update(['is_following' => 0, 'has_retweeted' => 0]);
+        $users->update(['is_following' => 0]);
 
         $all = array();
         $cursor = "-1";
@@ -99,20 +105,12 @@ class BountyController extends Controller
         $followed = TwitterBountyUser::whereIn('twitter_id', $all);
         $followed->update(['is_following' => 1]);
 
-
         $all = array();
-        $cursor = "-1";
 
-        do {
-
-            $result = \Twitter::getRters(["id" => "996288621203329024", "count" => 100, "cursor" => $cursor]);
-            $cursor = $result->next_cursor_str;
-
-            $retweeters = $result->ids;
-
-            $all = array_merge($all,$retweeters);
-
-        } while ($cursor != 0);
+        $retweeters = Retweeter::all();
+        foreach ($retweeters as $retweeter) {
+            array_push($all,$retweeter->twitter_id);
+        }
 
         $retweeted = TwitterBountyUser::whereIn('twitter_id', $all);
         $retweeted->update(['has_retweeted' => 1]);
@@ -140,14 +138,45 @@ class BountyController extends Controller
 
         $writer->writeToFile('twitter_bounty_results.xlsx');
 
-        //return Redirect::to("twitter_bounty_results.xlsx");
-
         return response()->download(public_path() . "/export/twitter_bounty_results.xlsx")->deleteFileAfterSend(true);
+    }
 
-        //return response()->download($file, 'twitter_bounty_results.xlsx', $headers);
+    public function twitterGetRetweet() {
+        $start_id = "996288621203329024";
+        $max_id = "-1";
 
+        for($i = 0; $i < 150; $i++) {
+            if ($max_id == "-1") {
 
-        //return (new TwitterExport())->download('twitter_bounty_results.xlsx');
+                $result = \Twitter::getSearch(["q"=> "Õpet uses machine learning and artificial intelligence to make you smarter, faster and better during your journey as a High School student. Watch the video below to learn more!","since_id" => $start_id, "count" => 100]);
+            } else {
+                $result = \Twitter::getSearch(["q"=> "Õpet uses machine learning and artificial intelligence to make you smarter, faster and better during your journey as a High School student. Watch the video below to learn more!","since_id" => $start_id, "max_id" => $max_id, "count" => 100]);
+            }
+
+            $statuses = $result->statuses;
+            
+
+            foreach($statuses as $status) {
+                if (isset($status->retweeted_status)) {
+                    if ($status->retweeted_status->id_str == "996288621203329024") {
+                        $exists = Retweeter::where("twitter_id", $status->user->id_str)->count();
+
+                        if ($exists == 0) {
+                            $retweeter = new Retweeter;
+                            $retweeter->twitter_id = $status->user->id_str;
+                            $retweeter->post_id = $status->id_str;
+                            $retweeter->save();
+                        }
+                    }
+                }
+
+                if ($status === end($statuses)) {
+                    $max_id = $status->id_str;
+                }
+            }
+        }
+
+        echo "done";
     }
 
 }
