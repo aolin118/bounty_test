@@ -16,8 +16,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/twitter', 'BountyController@twitter')->name('twitter-get');
-Route::post('/twitter', 'BountyController@twitterSubmit')->name('twitter-post');
+Route::get('/twitter', 'BountyController@twitterEnd')->name('twitter-get');
+Route::post('/twitter', 'BountyController@twitterEnd')->name('twitter-post');
 
 Route::get('/twitter/{id}', 'BountyController@twitterReferral')->name('twitter-referral');
 
