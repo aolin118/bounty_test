@@ -24,6 +24,7 @@ class BotController extends Controller
     public function receiveCallback() {
         Log::info('Webhook callback received!');
         //$update = \Telegram::commandsHandler(true);
+        
         $update = \Telegram::getWebhookUpdates();
         Log::info($update);
         
