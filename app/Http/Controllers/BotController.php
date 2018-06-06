@@ -51,13 +51,13 @@ class BotController extends Controller
 
     function startCommand($update, $command) {
         $group = "@xane_bots";
+        $id = $update['message']['from']['id'];
 
         $result = \Telegram::getChatMember(['chat_id' => $group, 'user_id' => $id]);
         $chatMember = ($chatMember->getDecodedBody())['result'];
 
         if ($chatMember['status'] == "member") {
-
-            $id = $update['message']['from']['id'];
+            
             $user = TelegramUser::where("telegram_id", $id)->first();
 
             if ($user) {
