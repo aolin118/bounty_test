@@ -30,7 +30,11 @@ class AirdropController extends Controller
 
         if ($user) {
             if (is_null($user->telegram_id)) {
-                return view('instructions')->with('user',$user);
+                if (is_null($request->input("complete"))) {
+                    return view('instructions')->with('user',$user);
+                } else {
+                    return view('instructions')->with('user',$user)->withErrors("You did not complete all the steps!");
+                }
             } else {
 
             }

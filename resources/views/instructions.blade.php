@@ -14,7 +14,7 @@
     <body>
         <div id="main" class="hero-gradient-dark gradient-primary">
             <div class="container">
-                <form method="POST" action="{{ route('twitter-post') }}">
+                <form method="POST" action="{{ route('airdrop-post') }}">
                     @csrf
                     <div class="row">
                         <div class="col-12 text-center">
@@ -46,9 +46,8 @@
                             @if($errors->any())
                             <p class="text-danger mb-4">{{$errors->first()}}</p>
                             @endif
-                            @if (isset($referrer))
-                            <input type="hidden" name="referrer" id="referrer" value="{{ $referrer }}">
-                            @endif
+                            <input type="hidden" name="eth_address" id="eth_address" value="{{ $user->eth_address }}">
+                            <input type="hidden" name="complete" id="complete" value="true">
                             <button type="submit" class="btn btn-success" id="submit-btn">Next</button>
                         </div>
                     </div>
@@ -58,25 +57,6 @@
                         </div>
                     </div>
                 </form>
-            </div>
-        </div>
-
-        <div id="reddit-modal" class="modal fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Modal body text goes here.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
             </div>
         </div>
 
