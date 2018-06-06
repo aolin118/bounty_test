@@ -67,7 +67,12 @@ class BotController extends Controller
 
                 $chatMember = \Telegram::getChatMember(['chat_id' => $group, 'user_id' => $id]);
 
-                Log::info(is_null($chatMember));
+                if (is_null($chatMember)) {
+                    Log::info("true");
+                } else {
+                    Log::info("false");
+                }
+                
 
                 $user = TelegramUser::where("unique_link",trim($command[2]))->first();
 
