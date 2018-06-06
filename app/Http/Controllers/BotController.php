@@ -54,7 +54,7 @@ class BotController extends Controller
         $id = $update['message']['from']['id'];
 
         $result = \Telegram::getChatMember(['chat_id' => $group, 'user_id' => $id]);
-        $chatMember = ($chatMember->getDecodedBody())['result'];
+        $chatMember = ($result->getDecodedBody())['result'];
 
         if ($chatMember['status'] == "member") {
             
