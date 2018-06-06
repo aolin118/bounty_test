@@ -20,7 +20,7 @@ Route::get('/', 'AirdropController@index')->name('airdrop-get');
 Route::post('/', 'AirdropController@addressSubmit')->name('airdrop-post');
 
 // Telegram Bot Routes
-Route::get('/552887591:AAFsyKGRvFZbVDPoSQtuw6uhjZHYefdnLNY/webhook', 'BotController@receiveCallback')->name('bot-webhook');
+Route::post('/552887591:AAFsyKGRvFZbVDPoSQtuw6uhjZHYefdnLNY/webhook', 'BotController@receiveCallback')->name('bot-webhook');
 Route::get('/552887591:AAFsyKGRvFZbVDPoSQtuw6uhjZHYefdnLNY/set-webhook', 'BotController@setWebhook')->name('bot-set-webhook');
 
 Route::get('/twitter', 'BountyController@twitter')->name('twitter-get');
