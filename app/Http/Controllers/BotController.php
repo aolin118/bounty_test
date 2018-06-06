@@ -25,7 +25,7 @@ class BotController extends Controller
         Log::info('Webhook callback received!');
         //$update = \Telegram::commandsHandler(true);
         $update = \Telegram::getWebhookUpdates();
-        Log::info($update);
+        Log::info($update->getChat());
         if ($update->getChat()->getType() == "private") {
             $message = $update->getMessage()->getText();
 
