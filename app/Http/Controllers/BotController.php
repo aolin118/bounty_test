@@ -49,12 +49,31 @@ class BotController extends Controller
     }
 
     function startCommand($update, $code) {
-        \Telegram::sendMessage([
-            'chat_id' => $update->getMessage()->getChat()->getId(),
-            'parse_mode' => 'HTML',
-            'disable_web_page_preview' => true,
-            'text' => $code
-        ]);
+        $user = TelegramUser::where("unique_link",$code)->first();
+
+        if ($user) {
+            $user->telegram_id = $update['message']['from']['id'];
+            $saved = $user->save();
+
+            if ($saved) {
+                \Telegram::sendMessage([
+                    'chat_id' => $update->getMessage()->getChat()->getId(),
+                    'parse_mode' => 'HTML',
+                    'disable_web_page_preview' => true,
+                    'text' => "<b>You have successfully registered for the airdrop!</b>\n\nVisit https://xaneau.com to check your tokens earned!\n\nYour referral link:\nhttps://xaneau.com/r/" . $user->telegram_id
+                ]);
+            }
+
+        } else {
+            \Telegram::sendMessage([
+                'chat_id' => $update->getMessage()->getChat()->getId(),
+                'parse_mode' => 'HTML',
+                'disable_web_page_preview' => true,
+                'text' => "Visit https://xaneau.com to participate in <b>Source Code Chain Airdrop</b>!"
+            ]);
+        }
+
+        
     }
 
 }
