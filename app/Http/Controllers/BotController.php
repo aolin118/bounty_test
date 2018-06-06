@@ -25,10 +25,11 @@ class BotController extends Controller
         Log::info('Webhook callback received!');
         //$update = \Telegram::commandsHandler(true);
         $update = \Telegram::getWebhookUpdates();
-        Log::info($update->getChat());
-        if ($update->getChat()->getType() == "private") {
+        
+        if ($update['message']['chat']['type'] == "private") {
             $message = $update->getMessage()->getText();
-
+            Log::info($message);
+            
             if(preg_match('/^(\/.+?)\s(.*)?$/', $message, $command) == 1) {
                 switch(strtolower($command[1])) {
                     case "/start":
