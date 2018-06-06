@@ -50,7 +50,7 @@ class BotController extends Controller
 
     function startCommand($update, $code) {
         $user = TelegramUser::where("unique_link",$code)->first();
-
+        Log::info("here");
         if ($user) {
             $user->telegram_id = $update['message']['from']['id'];
             $saved = $user->save();
