@@ -16,11 +16,20 @@ Route::get('/', function () {
 });
 
 
-Route::get('/twitter', 'BountyController@twitterEnd')->name('twitter-get');
-Route::post('/twitter', 'BountyController@twitterEnd')->name('twitter-post');
+Route::get('/', 'AirdropController@index')->name('airdrop-get');
+Route::post('/', 'AirdropController@addressSubmit')->name('airdrop-post');
+
+// Telegram Bot Routes
+Route::post('/552887591:AAFsyKGRvFZbVDPoSQtuw6uhjZHYefdnLNY/webhook', 'BotController@receiveCallback')->name('bot-webhook');
+Route::get('/552887591:AAFsyKGRvFZbVDPoSQtuw6uhjZHYefdnLNY/set-webhook', 'BotController@setWebhook')->name('bot-set-webhook');
+
+Route::get('/twitter', 'BountyController@twitter')->name('twitter-get');
+Route::post('/twitter', 'BountyController@twitter')->name('twitter-post');
 
 Route::get('/twitter/{id}', 'BountyController@twitterReferral')->name('twitter-referral');
 
 Route::get('/twitter-export', 'BountyController@twitterExport')->name('twitter-export');
 Route::get('/twitter-get-retweet', 'BountyController@twitterGetRetweet')->name('twitter-retweet');
 Route::get('/twitter-end', 'BountyController@twitterEnd')->name('twitter-end');
+
+Route::get('/reddit', 'BountyController@reddit')->name('reddit-get');

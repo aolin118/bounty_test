@@ -5,21 +5,49 @@ namespace App\Http\Controllers;
 use Session;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Thujohn\Twitter\Facades\Twitter;
-use App\TwitterBountyUser;
-use App\Retweeter;
+use App\TelegramUser;
 use App\Exports\TwitterExport;
 use DB;
 use Redirect;
 use App\Classes\XLSXWriter;
+use Illuminate\Support\Facades\Hash;
 
-class BountyController extends Controller
+class AirdropController extends Controller
 {
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
+    public function index() 
+    {
+        return view('airdrop');
+    }
+
+    public function addressSubmit(Request $request)
+    {
+        $user = TelegramUser::where("eth_address",$request->input("eth_address"))->first();
+
+        if ($user) {
+            if (is_null($user->telegram_id)) {
+                return view('instructions')->with('user',$user);
+            } else {
+
+            }
+
+        } else {
+            $new = new TelegramUser;
+            $new->eth_address = $request->input("eth_address");
+            $new->referral_id = $request->input("referrer");
+            $new->unique_link = md5(uniqid($request->input("eth_address"), true));
+            $saved = $new->save();
+
+            if ($saved) {
+                return view('instructions')->with('user',$new);
+            }
+        }
+    }
+
     public function twitter()
     {
         return view('twitter/twitter');
@@ -177,6 +205,44 @@ class BountyController extends Controller
         }
 
         echo "done";
+    }
+
+    public function reddit() {
+        $posts = array();
+
+        $reddit   = new Reddit;
+        $links  = $reddit->getLinksBySubreddit('ivyproject','2018-05-25',null);
+        usort($links, function($a, $b) {
+            //return $a['score'] <=> $b['score'];
+            return $b['score'] <=> $a['score'];
+        });
+
+        foreach($links as $link) {
+            $formattedComments = array();
+            $comments = $link->getComments();
+            foreach ($comments as $comment) {
+                array_push($formattedComments,["author" => $comment->getAuthorName(), "score" => ($comment->getUpvotes() - $comment->getDownvotes()), "comments" => $this->getReplies($comment)]);
+            }
+
+            $post = ["title" => $link->getTitle(), 'author' => $link->getAuthorName(), 'score' => $link->getScore(), 'comments' => $formattedComments];
+
+            array_push($posts, $post);
+        }
+
+        dd($posts);
+    }
+
+    public function getReplies($comment) {
+
+        $return = array();
+
+        $replies = $comment->getReplies();
+
+        foreach($replies as $reply) {
+            array_push($return,["author" => $reply->getAuthorName(), "score" => ($reply->getUpvotes() - $reply->getDownvotes()), "comments" => $this->getReplies($reply)]);
+        }
+
+        return $return;
     }
 
 }

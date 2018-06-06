@@ -24,14 +24,14 @@ a:hover {
 }
 
 .gradient-primary {
-    background: #8FC4CC;
-    background: -webkit-linear-gradient(left, #8FC4CC, #f0ecd7);
-    background: -moz-linear-gradient(left, #8FC4CC, #f0ecd7);
-    background: -webkit-linear-gradient(left, #8FC4CC, #f0ecd7);
+    background: #2B4882;
+    background: -webkit-linear-gradient(-45deg, #2B4882, #520B37);
+    background: -moz-linear-gradient(-45deg, #2B4882, #520B37);
+    background: -webkit-linear-gradient(-45deg, #2B4882, #520B37);
 }
 
 .text-gray {
-	color: #666 !important;
+	color: #444 !important;
 }
 
 .steps {
@@ -54,14 +54,14 @@ a:hover {
 }
 
 .numberCircle {
-	background: #786251;
+	background: #444;
 	display: inline-block;
     width: 30px;
     line-height: 30px;
     border-radius: 50%;
     text-align: center;
     font-size: 20px;
-    border: 2px solid #786251;
+    border: 2px solid #444;
 }
 
 .divider { 
@@ -70,10 +70,9 @@ a:hover {
   background: grey;
 }
 
-#twitter_username, #eth_address {
-	display: inline-block;
-	width: auto;
-	border-radius: 20px
+#twitter_username, #reddit_username, #eth_address {
+	border-radius: 20px;
+	margin-bottom: 10px;
 }
 
 #twitter-form {
@@ -83,6 +82,14 @@ a:hover {
 #submit-btn {
 	width: 200px;
 	border-radius: 20px;
+}
+
+.text-accent {
+	color: #26B4EC !important;
+}
+
+.airdrop-logo {
+	height: 150px;
 }
 
 @media (min-width: 991px) {
@@ -104,19 +111,19 @@ a:hover {
 		justify-content: flex-start;
 	}
 
-	.twitter-bounty-logo {
+	.airdrop-logo {
 		height: 200px;
 	}
 
 	.numberCircle {
-		background: #786251;
+		background: #444;
 		display: inline-block;
 	    width: 50px;
 	    line-height: 50px;
 	    border-radius: 50%;
 	    text-align: center;
 	    font-size: 24px;
-	    border: 2px solid #786251;
+	    border: 2px solid #444;
 	}
 
 	.divider { 

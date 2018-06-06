@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTwitterBountyUsersTable extends Migration
+class CreateTelegramUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateTwitterBountyUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('twitter_bounty_users', function (Blueprint $table) {
+        Schema::create('telegram_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('twitter_username');
-            $table->string('twitter_id')->unique();
-            $table->integer('twitter_followers_count')->default(0);
             $table->string('eth_address')->unique();
-            $table->integer('is_following')->default(0);
-            $table->integer('has_retweeted')->default(0);
+            $table->integer('telegram_id')->nullable();
+            $table->integer('referral_id')->nullable();
+            $table->string('unique_link')->unique();
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateTwitterBountyUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('twitter_bounty_users');
+        Schema::dropIfExists('telegram_users');
     }
 }
