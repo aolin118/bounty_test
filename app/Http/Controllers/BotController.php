@@ -33,7 +33,7 @@ class BotController extends Controller
             if(preg_match('/^(\/.+?)(\s.*)?$/', $message, $command) == 1) {
                 switch(strtolower($command[1])) {
                     case "/start":
-                        $this->startCommand($update, $command[2]);
+                        $this->startCommand($update, $command);
                         break;
                 }
             }
@@ -48,22 +48,31 @@ class BotController extends Controller
         dd($response);
     }
 
-    function startCommand($update, $code) {
-        $user = TelegramUser::where("unique_link",$code)->first();
-        Log::info("here");
-        if ($user) {
-            $user->telegram_id = $update['message']['from']['id'];
-            $saved = $user->save();
+    function startCommand($update, $command) {
+        if (isset($command[2])) {
+            $user = TelegramUser::where("unique_link",$command[2])->first();
+            Log::info("here");
+            if ($user) {
+                $user->telegram_id = $update['message']['from']['id'];
+                $saved = $user->save();
 
-            if ($saved) {
+                if ($saved) {
+                    \Telegram::sendMessage([
+                        'chat_id' => $update->getMessage()->getChat()->getId(),
+                        'parse_mode' => 'HTML',
+                        'disable_web_page_preview' => true,
+                        'text' => "<b>You have successfully registered for the airdrop!</b>\n\nVisit https://xaneau.com to check your tokens earned!\n\nYour referral link:\nhttps://xaneau.com/r/" . $user->telegram_id
+                    ]);
+                }
+
+            } else {
                 \Telegram::sendMessage([
                     'chat_id' => $update->getMessage()->getChat()->getId(),
                     'parse_mode' => 'HTML',
                     'disable_web_page_preview' => true,
-                    'text' => "<b>You have successfully registered for the airdrop!</b>\n\nVisit https://xaneau.com to check your tokens earned!\n\nYour referral link:\nhttps://xaneau.com/r/" . $user->telegram_id
+                    'text' => "<b>Source Code Chain Airdrop is ongoing!</b>\nVisit https://xaneau.com to participate!"
                 ]);
             }
-
         } else {
             \Telegram::sendMessage([
                 'chat_id' => $update->getMessage()->getChat()->getId(),
