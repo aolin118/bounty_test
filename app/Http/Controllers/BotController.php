@@ -33,7 +33,7 @@ class BotController extends Controller
             if(preg_match('/^(\/.+?)\s(.*)?$/', $message, $command) == 1) {
                 switch(strtolower($command[1])) {
                     case "/start":
-                        $this->startCommand($update);
+                        $this->startCommand($update, $command[2]);
                         break;
                 }
             }
@@ -48,12 +48,12 @@ class BotController extends Controller
         dd($response);
     }
 
-    function startCommand($update) {
+    function startCommand($update, $code) {
         \Telegram::sendMessage([
             'chat_id' => $update->getMessage()->getChat()->getId(),
             'parse_mode' => 'HTML',
             'disable_web_page_preview' => true,
-            'text' => "<b>Commands:</b>\n/start - Register for Airdrop"
+            'text' => $code
         ]);
     }
 
