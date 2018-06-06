@@ -42,7 +42,7 @@ class BotController extends Controller
     }
 
     public function setWebhook() {
-        $response = \Telegram::setWebhook(['url' => 'https://108.61.90.113/552887591:AAFsyKGRvFZbVDPoSQtuw6uhjZHYefdnLNY/webhook']);
+        $response = \Telegram::setWebhook(['url' => 'https://xaneau.com/552887591:AAFsyKGRvFZbVDPoSQtuw6uhjZHYefdnLNY/webhook']);
 
         dd($response);
     }
