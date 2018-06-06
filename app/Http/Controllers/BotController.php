@@ -70,7 +70,7 @@ class BotController extends Controller
                 if (is_null($chatMember)) {
                     Log::info("true");
                 } else {
-                    Log::info(print_r($chatMember, true));
+                    Log::info($chatMember->getStatus());
                 }
                 
 
