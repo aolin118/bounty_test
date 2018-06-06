@@ -30,7 +30,7 @@ class BotController extends Controller
         if ($update['message']['chat']['type'] == "private") {
             $message = $update->getMessage()->getText();
 
-            if(preg_match('/^(\/.+?)\s(.*)?$/', $message, $command) == 1) {
+            if(preg_match('/^(\/.+?)(\s.*)?$/', $message, $command) == 1) {
                 switch(strtolower($command[1])) {
                     case "/start":
                         $this->startCommand($update, $command);
