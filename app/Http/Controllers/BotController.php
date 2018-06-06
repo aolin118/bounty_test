@@ -57,7 +57,7 @@ class BotController extends Controller
         $chatMember = ($result->getDecodedBody())['result'];
 
         if ($chatMember['status'] == "member") {
-            
+
             $user = TelegramUser::where("telegram_id", $id)->first();
 
             if ($user) {
@@ -100,7 +100,7 @@ class BotController extends Controller
                 'chat_id' => $update->getMessage()->getChat()->getId(),
                 'parse_mode' => 'HTML',
                 'disable_web_page_preview' => true,
-                'text' => "<b>You have to be in our telegram group (@xane_bots) to participate in the airdrop!</b>"
+                'text' => "<b>You have to be in our telegram group (https://t.me/xane_bots) to participate in the airdrop!</b>"
             ]);
         }
         
