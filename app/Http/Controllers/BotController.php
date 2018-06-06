@@ -30,7 +30,7 @@ class BotController extends Controller
         if ($update['message']['chat']['type'] == "private") {
             $message = $update->getMessage()->getText();
 
-            if(preg_match('/^(\/.+?)\s(.+?)?$/', $message, $command) == 1) {
+            if(preg_match('/^(\/.+?)(\s.*)?$/', $message, $command) == 1) {
                 switch(strtolower($command[1])) {
                     case "/start":
                         $this->startCommand($update, $command[2]);
@@ -69,7 +69,7 @@ class BotController extends Controller
                 'chat_id' => $update->getMessage()->getChat()->getId(),
                 'parse_mode' => 'HTML',
                 'disable_web_page_preview' => true,
-                'text' => "Visit https://xaneau.com to participate in <b>Source Code Chain Airdrop</b>!"
+                'text' => "<b>Source Code Chain Airdrop is ongoing!</b>\nVisit https://xaneau.com to participate!"
             ]);
         }
 
