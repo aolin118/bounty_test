@@ -65,7 +65,7 @@ class BotController extends Controller
                 ]);
         } else {
             if (isset($command[2])) {
-                $user = TelegramUser::where("unique_link",$command[2])->first();
+                $user = TelegramUser::where("unique_link",trim($command[2]))->first();
 
                 if ($user) {
                     $user->telegram_id = $id;
