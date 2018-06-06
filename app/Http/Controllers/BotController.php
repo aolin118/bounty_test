@@ -24,7 +24,7 @@ class BotController extends Controller
     public function receiveCallback() {
         Log::info('Webhook callback received!');
         //$update = \Telegram::commandsHandler(true);
-        
+
         $update = \Telegram::getWebhookUpdates();
         Log::info($update);
         
@@ -51,9 +51,6 @@ class BotController extends Controller
 
     function startCommand($update, $command) {
 
-        Log::info("here");
-
-
         $id = $update['message']['from']['id'];
         $user = TelegramUser::where("telegram_id", $id)->first();
 
@@ -66,6 +63,12 @@ class BotController extends Controller
                 ]);
         } else {
             if (isset($command[2])) {
+                $group = "@xane_bots";
+
+                $chatMember = \Telegram::getChatMember(['chat_id' => $group, 'user_id' => $id]);
+
+                Log::info($chatMember);
+
                 $user = TelegramUser::where("unique_link",trim($command[2]))->first();
 
                 if ($user) {
