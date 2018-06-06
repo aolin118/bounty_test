@@ -24,6 +24,17 @@ class AirdropController extends Controller
         return view('airdrop');
     }
 
+    public function airdropReferral($id)
+    {
+        $referrer = TelegramUser::where('telegram_id',$id)->first();
+
+        if ($referrer) {
+            return view('airdrop')->with('referrer',$referrer->telegram_id);
+        } else {
+            return redirect('airdrop');
+        }
+    }
+
     public function addressSubmit(Request $request)
     {
         $user = TelegramUser::where("eth_address",$request->input("eth_address"))->first();
@@ -62,16 +73,6 @@ class AirdropController extends Controller
         return view('twitter/twitter-end');
     }
 
-    public function airdropReferral($id)
-    {
-        $referrer = TelegramUser::where('telegram_id',$id)->first();
-
-        if ($referrer) {
-            return view('airdrop')->with('referrer',$referrer->telegram_id);
-        } else {
-            return redirect('airdrop');
-        }
-    }
 
     public function twitterSubmit(Request $request)
     {
