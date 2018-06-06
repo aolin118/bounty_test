@@ -50,55 +50,59 @@ class BotController extends Controller
     }
 
     function startCommand($update, $command) {
+        $group = "@xane_bots";
 
-        $id = $update['message']['from']['id'];
-        $user = TelegramUser::where("telegram_id", $id)->first();
+        $result = \Telegram::getChatMember(['chat_id' => $group, 'user_id' => $id]);
+        $chatMember = ($chatMember->getDecodedBody())['result'];
 
-        if ($user) {
-            \Telegram::sendMessage([
-                    'chat_id' => $update->getMessage()->getChat()->getId(),
-                    'parse_mode' => 'HTML',
-                    'disable_web_page_preview' => true,
-                    'text' => "<b>You have successfully registered for the airdrop!</b>\n\nVisit https://xaneau.com to check your tokens earned!\n\nYour referral link:\nhttps://xaneau.com/r/" . $user->telegram_id
-                ]);
-        } else {
-            if (isset($command[2])) {
-                $group = "@xane_bots";
+        if ($chatMember['status'] == "member") {
 
-                $chatMember = \Telegram::getChatMember(['chat_id' => $group, 'user_id' => $id]);
+            $id = $update['message']['from']['id'];
+            $user = TelegramUser::where("telegram_id", $id)->first();
 
-                if (is_null($chatMember)) {
-                    Log::info("true");
-                } else {
-                    Log::info(($chatMember->getDecodedBody())['result']);
-                }
-                
-
-                $user = TelegramUser::where("unique_link",trim($command[2]))->first();
-
-                if ($user) {
-                    $user->telegram_id = $id;
-                    $saved = $user->save();
-
-                    if ($saved) {
-                        \Telegram::sendMessage([
-                            'chat_id' => $update->getMessage()->getChat()->getId(),
-                            'parse_mode' => 'HTML',
-                            'disable_web_page_preview' => true,
-                            'text' => "<b>You have successfully registered for the airdrop!</b>\n\nVisit https://xaneau.com to check your tokens earned!\n\nYour referral link:\nhttps://xaneau.com/r/" . $user->telegram_id
-                        ]);
-                    }
-                }
-            } else {
+            if ($user) {
                 \Telegram::sendMessage([
-                    'chat_id' => $update->getMessage()->getChat()->getId(),
-                    'parse_mode' => 'HTML',
-                    'disable_web_page_preview' => true,
-                    'text' => "<b>Source Code Chain Airdrop is ongoing!</b>\nVisit https://xaneau.com to participate!"
-                ]);
-            }
-        }
+                        'chat_id' => $update->getMessage()->getChat()->getId(),
+                        'parse_mode' => 'HTML',
+                        'disable_web_page_preview' => true,
+                        'text' => "<b>You have successfully registered for the airdrop!</b>\n\nVisit https://xaneau.com to check your tokens earned!\n\nYour referral link:\nhttps://xaneau.com/r/" . $user->telegram_id
+                    ]);
+            } else {
+                if (isset($command[2])) {
 
+                    $user = TelegramUser::where("unique_link",trim($command[2]))->first();
+
+                    if ($user) {
+                        $user->telegram_id = $id;
+                        $saved = $user->save();
+
+                        if ($saved) {
+                            \Telegram::sendMessage([
+                                'chat_id' => $update->getMessage()->getChat()->getId(),
+                                'parse_mode' => 'HTML',
+                                'disable_web_page_preview' => true,
+                                'text' => "<b>You have successfully registered for the airdrop!</b>\n\nVisit https://xaneau.com to check your tokens earned!\n\nYour referral link:\nhttps://xaneau.com/r/" . $user->telegram_id
+                            ]);
+                        }
+                    }
+                } else {
+                    \Telegram::sendMessage([
+                        'chat_id' => $update->getMessage()->getChat()->getId(),
+                        'parse_mode' => 'HTML',
+                        'disable_web_page_preview' => true,
+                        'text' => "<b>Source Code Chain Airdrop is ongoing!</b>\nVisit https://xaneau.com to participate!"
+                    ]);
+                }
+            }
+
+        } else if ($chatMember['status'] == "left") {
+            \Telegram::sendMessage([
+                'chat_id' => $update->getMessage()->getChat()->getId(),
+                'parse_mode' => 'HTML',
+                'disable_web_page_preview' => true,
+                'text' => "<b>You have to be in our telegram group (@xane_bots) to participate in the airdrop!</b>"
+            ]);
+        }
         
     }
 
