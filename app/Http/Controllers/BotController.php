@@ -100,7 +100,7 @@ class BotController extends Controller
                 'chat_id' => $update->getMessage()->getChat()->getId(),
                 'parse_mode' => 'HTML',
                 'disable_web_page_preview' => true,
-                'text' => "<b>You have to be in our telegram group (https://t.me/xane_bots) to participate in the airdrop!</b>"
+                'text' => "<b>You have to be in our telegram group (</b>@xane_bots<b>) to participate in the airdrop!</b>"
             ]);
         }
         
