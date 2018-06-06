@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 Route::get('/', 'AirdropController@index')->name('airdrop-get');
 Route::post('/', 'AirdropController@addressSubmit')->name('airdrop-post');
+Route::get('/r/{id}', 'AirdropController@airdropReferral')->name('airdrop-referral');
 
 // Telegram Bot Routes
 Route::post('/552887591:AAFsyKGRvFZbVDPoSQtuw6uhjZHYefdnLNY/webhook', 'BotController@receiveCallback')->name('bot-webhook');

@@ -36,7 +36,7 @@ class AirdropController extends Controller
                     return view('instructions')->with('user',$user)->withErrors("You did not complete all the steps!");
                 }
             } else {
-
+                return view('complete')->with('user',$user);
             }
 
         } else {
@@ -62,14 +62,14 @@ class AirdropController extends Controller
         return view('twitter/twitter-end');
     }
 
-    public function twitterReferral($id)
+    public function airdropReferral($id)
     {
-        $referrer = TwitterBountyUser::where('twitter_username',$id)->first();
+        $referrer = TelegramUser::where('telegram_id',$id)->first();
 
         if ($referrer) {
-            return view('twitter/twitter')->with('referrer',$referrer->twitter_username);
+            return view('airdrop')->with('referrer',$referrer->telegram_id);
         } else {
-            return redirect('twitter');
+            return redirect('airdrop');
         }
     }
 
