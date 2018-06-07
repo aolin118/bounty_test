@@ -84,6 +84,13 @@ class BotController extends Controller
                                 'text' => "<b>You have successfully registered for the airdrop!</b>\n\nVisit https://xaneau.com to check your tokens earned!\n\nYour referral link:\nhttps://xaneau.com/r/" . $user->telegram_id
                             ]);
                         }
+                    } else {
+                        \Telegram::sendMessage([
+                            'chat_id' => $update->getMessage()->getChat()->getId(),
+                            'parse_mode' => 'HTML',
+                            'disable_web_page_preview' => true,
+                            'text' => "<b>Source Code Chain Airdrop is ongoing!</b>\nVisit https://xaneau.com to participate!"
+                        ]);
                     }
                 } else {
                     \Telegram::sendMessage([
