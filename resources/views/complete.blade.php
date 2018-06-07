@@ -26,12 +26,12 @@
                     <div class="col-12">
                         <h2 class="mb-4 text-white">Thank you for your participation. Please follow our Telegram for up to date information on the airdrop program. </h2>
                         <span class="text-muted">Tokens earned:</span>
-                        <h3 class="text-accent mb-2">1 SCC</h3>
+                        <h3 class="text-accent mb-2">{{ $tokenCount }} SCC</h3>
                         <span class="text-muted">Your referral link is:</span>
                         <h3><a href="{{ $link = route('airdrop-get') . "/r/" . $user->telegram_id }}">{{ $link }}</a></h3>
                     </div>
                     <div class="col-12 my-4" style="font-size: 14px">
-                        You will receive 5 OPET for every referee that <span style="text-decoration: underline">COMPLETES</span> the bounty program with your link, regardless if the referee is awarded the bounty rewards.<br/>(You must complete <span style="text-decoration: underline">ALL</span> steps to be awarded tokens for your referrals.) <span style="text-decoration: underline">Referrals are limited to the first 20,000 only.</span>
+                        You will receive 1 SCC for every referral.
                     </div>
             </div>
         </div>

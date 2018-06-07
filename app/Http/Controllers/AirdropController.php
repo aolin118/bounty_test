@@ -47,7 +47,11 @@ class AirdropController extends Controller
                     return view('instructions')->with('user',$user)->withErrors("You did not complete all the steps!");
                 }
             } else {
-                return view('complete')->with('user',$user);
+                $basePayout = 1;
+                $perReferralPayout = 1;
+                $count = TelegramUser::where("referral_id", $user->telegram_id)->whereNotNull("telegram_id")->count();
+                $tokenCount = ($count * $perReferralPayout) + $basePayout;
+                return view('complete')->with('user',$user)->with('tokenCount',$tokenCount);
             }
 
         } else {
