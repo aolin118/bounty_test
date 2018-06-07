@@ -30,7 +30,7 @@
                         <span class="text-muted">Your referral link is:</span>
                         <h3><a href="{{ $link = route('airdrop-get') . "/r/" . $user->telegram_id }}">{{ $link }}</a></h3>
                     </div>
-                    <div class="col-12 my-4" style="font-size: 14px">
+                    <div class="col-12 my-4 text-white" style="font-size: 14px">
                         You will receive 1 SCC for every referral.
                     </div>
             </div>
