@@ -137,7 +137,7 @@ class AirdropController extends Controller
         $writer = new XLSXWriter();
         $writer->writeSheetHeader('Sheet1', $header);
 
-        foreach($bountyAll as $row) $writer->writeSheetRow('Sheet1', $row);
+        foreach($airdropAll as $row) $writer->writeSheetRow('Sheet1', $row);
 
         $writer->writeToFile('airdrop_results.xlsx');
 
