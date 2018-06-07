@@ -24,7 +24,9 @@
                 </div>
                 <div class="row mb-1 text-center">
                     <div class="col-12">
-                        <h2 class="mb-4 text-white">Thank you for your participation. Please follow our Telegram for up to date information on the bounty program. </h2>
+                        <h2 class="mb-4 text-white">Thank you for your participation. Please follow our Telegram for up to date information on the airdrop program. </h2>
+                        <span class="text-muted">Tokens earned:</span>
+                        <h3 class="text-accent">1 SCC</h3>
                         <span class="text-muted">Your referral link is:</span>
                         <h3><a href="{{ $link = route('airdrop-get') . "/r/" . $user->telegram_id }}">{{ $link }}</a></h3>
                     </div>
