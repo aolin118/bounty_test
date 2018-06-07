@@ -17,7 +17,7 @@ class CreateTelegramUsersTable extends Migration
             $table->increments('id');
             $table->string('eth_address')->unique();
             $table->integer('telegram_id')->nullable();
-            $table->integer('referral_id')->nullable();
+            $table->integer('referrer')->nullable();
             $table->string('unique_link')->unique();
             $table->timestamps();
         });

@@ -49,7 +49,7 @@ class AirdropController extends Controller
             } else {
                 $basePayout = 1;
                 $perReferralPayout = 1;
-                $count = TelegramUser::where("referral_id", $user->telegram_id)->whereNotNull("telegram_id")->count();
+                $count = TelegramUser::where("referrer", $user->telegram_id)->whereNotNull("telegram_id")->count();
                 $tokenCount = ($count * $perReferralPayout) + $basePayout;
                 return view('complete')->with('user',$user)->with('tokenCount',$tokenCount);
             }
@@ -57,7 +57,7 @@ class AirdropController extends Controller
         } else {
             $new = new TelegramUser;
             $new->eth_address = $request->input("eth_address");
-            $new->referral_id = $request->input("referrer");
+            $new->referrer = $request->input("referrer");
             $new->unique_link = md5(uniqid($request->input("eth_address"), true));
             $saved = $new->save();
 
@@ -120,52 +120,18 @@ class AirdropController extends Controller
 	    }
     }
 
-    public function twitterExport() {
+    public function airdropExport() {
 
-        $users = TwitterBountyUser::where('id', '>', 0);
-        $users->update(['is_following' => 0]);
-
-        $all = array();
-        $cursor = "-1";
-
-        do {
-
-            $result = \Twitter::getFollowersIds(["screen_name" => "opetfoundation", "count" => 5000, "cursor" => $cursor]);
-            $cursor = $result->next_cursor_str;
-
-            $followers = $result->ids;
-
-            $all = array_merge($all,$followers);
-
-        } while ($cursor != 0);
-
-        $followed = TwitterBountyUser::whereIn('twitter_id', $all);
-        $followed->update(['is_following' => 1]);
-
-        $all = array();
-
-        $retweeters = Retweeter::all();
-        foreach ($retweeters as $retweeter) {
-            array_push($all,$retweeter->twitter_id);
-        }
-
-        $retweeted = TwitterBountyUser::whereIn('twitter_id', $all);
-        $retweeted->update(['has_retweeted' => 1]);
-
-        $bountyAll = TwitterBountyUser::select("twitter_bounty_users.id", "twitter_bounty_users.twitter_username", "twitter_bounty_users.twitter_id", "twitter_bounty_users.twitter_followers_count", "twitter_bounty_users.referrer", "twitter_bounty_users.eth_address", "twitter_bounty_users.is_following", "twitter_bounty_users.has_retweeted", DB::raw('t2.count as refer_count'), "twitter_bounty_users.created_at", "twitter_bounty_users.updated_at")
-                                    ->leftJoin(DB::raw("(SELECT referrer, count(*) as count FROM `twitter_bounty_users` t1 WHERE is_following = 1 AND has_retweeted = 1 GROUP BY referrer) as t2"), 'twitter_bounty_users.twitter_username', '=', 't2.referrer')->get()->toArray();
+        $airdropAll = TelegramUser::select("telegram_users.id", "telegram_users.eth_address", "telegram_users.telegram_id", "telegram_users.referrer", DB::raw('t2.count as refer_count'), "telegram_users.created_at", "telegram_users.updated_at")
+                                    ->leftJoin(DB::raw("(SELECT referrer, count(*) as count FROM `telegram_users` t1 WHERE telegram_id IS NOT NULL GROUP BY referrer) as t2"), 'telegram_users.referrer', '=', 't2.referrer')->whereNotNull("telegram_users.telegram_id")->get()->toArray();
 
 
         $header = array(
           '#'=>'integer',
-          'Twitter Username'=>'string',
-          'Twitter ID'=>'string',
-          'Followers Count'=>'integer',
-          'Referrer'=>'string',
           'Ethereum Address'=>'string',
-          'Is Following'=>'integer',
-          'Has Retweeted'=>'integer',
-          'Refer Count'=>'integer',
+          'Telegram ID'=>'string',
+          'Referrer ID'=>'string',
+          'Refer Count'=>'integer'
         );
 
         $writer = new XLSXWriter();
@@ -173,9 +139,9 @@ class AirdropController extends Controller
 
         foreach($bountyAll as $row) $writer->writeSheetRow('Sheet1', $row);
 
-        $writer->writeToFile('twitter_bounty_results.xlsx');
+        $writer->writeToFile('airdrop_results.xlsx');
 
-        return response()->download(public_path() . "/export/twitter_bounty_results.xlsx")->deleteFileAfterSend(true);
+        return response()->download(public_path() . "/export/airdrop_results.xlsx")->deleteFileAfterSend(true);
     }
 
     public function twitterGetRetweet() {
