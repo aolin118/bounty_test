@@ -254,7 +254,7 @@
 
             function telegramVerify() {
                 $.ajax({
-                    url: {{ route('bounty-telegram-verify') }},
+                    url: "{{ route('bounty-telegram-verify') }}",
                     type: 'GET',
                     success: function(result) {
                         console.log(result);
