@@ -490,7 +490,9 @@ class BountyController extends Controller
                 $client->setAccessTokenType(\OAuth2\Client::ACCESS_TOKEN_BEARER);
                 $client->setCurlOption(CURLOPT_USERAGENT,"BCoinClient/0.1 by Talenta");
 
-                $response = $client->fetch("https://oauth.reddit.com/subreddits/mine/subscriber.json",["count" => 500]);
+                $response = $client->fetch("https://oauth.reddit.com/api/info.json", ["id" => "t5_BCoinsg"], "GET", [], 1);
+
+                dd($response);
 
                 foreach ($response['result']['data']['children'] as $sub) {
                     if ($sub['data']['display_name'] == "BCoinsg") {
@@ -501,7 +503,10 @@ class BountyController extends Controller
 
                 $response = $client->fetch("https://oauth.reddit.com/api/info.json", ["id" => "t3_97g8sx"], "GET", [], 1);
 
-                dd($response);
+                if ($response['result']['data']['children']['data']['likes'] == true) {
+                    $upvote = true;
+                    break;
+                }
 
             } else {
                 return redirect('/');
