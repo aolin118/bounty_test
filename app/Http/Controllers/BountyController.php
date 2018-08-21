@@ -33,7 +33,7 @@ class BountyController extends Controller
     public function index() 
     {
         if(Session::has('email')) {
-            return redirect(route('bounty-submit-get', Session::get('email')));
+            return redirect(route('bounty-submit-get'));
         }
         return view('landing');
     }
