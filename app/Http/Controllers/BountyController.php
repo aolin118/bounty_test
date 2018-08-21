@@ -315,19 +315,74 @@ class BountyController extends Controller
     }
 
     public function twitterVerify() {
+        if(!Session::has('eth_address')) {
+            echo "false";
+        } else {
+            $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+            $follow = false;
+            $like = false;
+            $retweet = false;
 
+            $access_token = json_decode($user->twitter->access_token,true);
+
+            $twitterPageID = "969390070372290560";
+            $twitterTweetID = "1024318040702300160";
+
+            $connection = new TwitterOAuth(env("TWITTER_CLIENT_ID", ""), env("TWITTER_CLIENT_SECRET", ""), $access_token['oauth_token'], $access_token['oauth_token_secret']);
+
+            $cursor = "-1";
+            while ($cursor != "0") {
+                $results = $connection->get("friends/ids", ["user_id" => $access_token['user_id'], "count" => 5000, "cursor" => $cursor]);
+                $cursor = $results["next_cursor_str"];
+
+                if (in_array($twitterPageID, $results["ids"])) {
+                    $follow = true;
+                    break;
+                }
+            }
+
+            
+
+            $tweets = array();
+
+            $cursor = "-1";
+            while ($cursor != "0") {
+                $results = $connection->get("statuses/user_timeline", ["user_id" => $access_token['user_id'], "count" => 200, "cursor" => $cursor, "since_id" => $twitterTweetID, "exclude_replies" => true, "include_rts" => true]);
+                $cursor = $results["next_cursor_str"];
+
+                dd($results);
+                foreach($results as $tweet) {
+                    if ($tweet['retweeted_status']['id_str'] == $twitterTweetID) {
+                        $retweet = true;
+                        break;
+                    }
+                }
+            }
+
+
+            
+        }
     }
 
     public function youtubeVerify() {
-
+        if(!Session::has('eth_address')) {
+            echo "false";
+        } else {
+        }
     }
 
     public function redditVerify() {
-
+        if(!Session::has('eth_address')) {
+            echo "false";
+        } else {
+        }
     }
 
     public function mediumVerify() {
-
+        if(!Session::has('eth_address')) {
+            echo "false";
+        } else {
+        }
     }
 
     public function airdropExport() {
