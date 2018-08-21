@@ -142,8 +142,9 @@
                             </ul>
                         </div>
                         @if ($user->twitter()->exists())
-                        <div class="col-12 text-center my-4">
-                            <button type="button" class="btn btn-success" onclick="twitterVerify()">Verify Completion</button>
+                        <div class="col-12 text-center mt-2 mb-2">
+                            <button type="button" class="btn btn-success" id="twitter-verify-btn" onclick="twitterVerify()">Verify Completion</button>
+                            <p id="twitter-error" class="text-danger my-2"></p>
                         </div>
                         @endif
                     </div>
@@ -252,7 +253,6 @@
         <script type="text/javascript" src="{{ asset('js/jquery.oauthpopup.js') }}"></script>
 
         <script>
-
             function telegramVerify() {
                 $("#telegram-error").html("<img src='{{ asset('images/loading.gif') }}'' class='img-fluid loading'>");
                 $("#telegram-error").show();
@@ -266,6 +266,24 @@
                         } else {
                             $("#telegram-verify-btn").prop('disabled', false);
                             $("#telegram-error").html(result);
+                        }
+                    }
+                });
+            }
+
+            function twitterVerify() {
+                $("#twitter-error").html("<img src='{{ asset('images/loading.gif') }}'' class='img-fluid loading'>");
+                $("#twitter-error").show();
+                $("#twitter-verify-btn").prop('disabled', true);
+                $.ajax({
+                    url: "{{ route('bounty-twitter-verify') }}",
+                    type: 'GET',
+                    success: function(result) {
+                        if (result == "true") {
+                            location.reload();
+                        } else {
+                            $("#twitter-verify-btn").prop('disabled', false);
+                            $("#twitter-error").html(result);
                         }
                     }
                 });

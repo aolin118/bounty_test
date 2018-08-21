@@ -318,7 +318,11 @@ class BountyController extends Controller
                 $user->save();
                 echo "true";
             } else {
-                echo "false";
+                if ($chatMemberEN['status'] != "member" || $chatMemberCN['status'] != "member") {
+                    echo "You have not joined our Telegram Group."
+                } else {
+                    echo "You have not joined our Telegram Channel."
+                }
             }
 
             
