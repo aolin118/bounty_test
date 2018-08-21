@@ -254,7 +254,7 @@
         <script>
 
             function telegramVerify() {
-                $("#telegram-error").html("<img src=\\"{{ asset('images/loading.gif') }}\\" class=\\"img-fluid loading\\">");
+                $("#telegram-error").html("<img src='{{ asset('images/loading.gif') }}'' class='img-fluid loading'>");
                 $("#telegram-error").show();
                 $("#telegram-verify-btn").prop('disabled', true);
                 $.ajax({
