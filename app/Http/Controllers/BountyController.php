@@ -350,7 +350,7 @@ class BountyController extends Controller
                     if ($tweet['retweeted_status']['id_str'] == $twitterTweetID) {
                         $retweet = true;
 
-                        if ($tweet['favorited'] == $true) {
+                        if ($tweet['favorited'] == true) {
                             $like = true;
                         }
                         break;
