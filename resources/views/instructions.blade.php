@@ -28,7 +28,7 @@
                                 <p><b>Email</b><br/>{{ $user->email }}</p>
                                 <p><b>Tokens Earned</b><br/><h4 class="text-success">{{ $awarded }} BCT</h4></p>
                                 <p><b>Your Referral Link</b><br/><a href="{{ route('bounty-referral', $user->unique_link) }}" target="_blank">{{ route('bounty-referral', $user->unique_link) }}</a><br/><button type="button" class="btn btn-primary mt-2" id="copy-btn" data-clipboard-text="{{ route('bounty-referral', $user->unique_link) }}">Copy</button></p>
-                                <p class="text-danger">You will get 2 BCT for every referral that completes at least 1 task.</p>
+                                <small class="text-danger">You will get 2 BCT for every referral that completes at least 1 task.</small>
                             </div>
                         </div>
                     </div>
