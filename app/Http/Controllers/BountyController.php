@@ -32,8 +32,8 @@ class BountyController extends Controller
      */
     public function index() 
     {
-        if(Session::has('eth_address')) {
-            return redirect(route('bounty-submit-get', Session::get('eth_address')));
+        if(Session::has('email')) {
+            return redirect(route('bounty-submit-get', Session::get('email')));
         }
         return view('landing');
     }
@@ -49,56 +49,63 @@ class BountyController extends Controller
         }
     }
 
-    public function addressSubmit($eth_address)
+    public function main()
     {   
-        if (!preg_match('/^(0x)?[0-9a-zA-Z]{40}$/', $eth_address)) {
+        if(!Session::has('email')) {
             return redirect('/');
         }
 
-        $user = BountyUser::where("eth_address",$eth_address)->first();
+        $user = BountyUser::where("email",Session::get('email'))->first();
 
         if ($user) {
-            Session::put('eth_address', $eth_address);
 
             $authURL = $this->getAuthURLs($user);
 
             return view('instructions')->with('user',$user)->with('authURL', $authURL);
         } else {
-            $new = new BountyUser;
-            $new->eth_address = $eth_address;
-            $new->unique_link = md5(uniqid($eth_address, true));
-            $saved = $new->save();
-
-            if ($saved) {
-                Session::put('eth_address', $eth_address);
-                $authURL = $this->getAuthURLs($new);
-                return view('instructions')->with('user',$new)->with('authURL', $authURL);
-            }
+            return redirect('/');
         }
     }
 
-    public function addressSubmitWithReferral($eth_address, Request $request)
+    public function addressSubmit(Request $request)
     {
-        if (!preg_match('/^(0x)?[0-9a-zA-Z]{40}$/', $eth_address)) {
+        if (!isset($request->input("email"))) {
             return redirect('/');
         }
 
-        $user = BountyUser::where("eth_address",$eth_address)->first();
+        $email = $request->input("email");
+
+        $user = BountyUser::where("email",$email)->first();
 
         if ($user) {
-            return redirect(route('bounty-submit-get', $eth_address));
+            return redirect(route('bounty-submit-get'));
         } else {
-            $referrer = BountyUser::where("unique_link",$request->input('referrer'))->first();
+            if (isset($request->input("referrer"))) {
+                $referrer = BountyUser::where("unique_link",$request->input('referrer'))->first();
+                $new = new BountyUser;
+                $new->email = $email;
+                $new->referrer = $referrer->id;
+                $new->unique_link = md5(uniqid($email, true));
+                $saved = $new->save();
 
-            $new = new BountyUser;
-            $new->eth_address = $eth_address;
-            $new->referrer = $referrer->id;
-            $new->unique_link = md5(uniqid($eth_address, true));
-            $saved = $new->save();
+                if ($saved) {
+                    Session::put('email', $email);
+                    return redirect(route('bounty-submit-get'));
+                }
+            } else {
+                $new = new BountyUser;
+                $new->email = $email;
+                $new->unique_link = md5(uniqid($email, true));
+                $saved = $new->save();
 
-            if ($saved) {
-                return redirect(route('bounty-submit-get', $eth_address));
+                if ($saved) {
+                    Session::put('email', $email);
+                    return redirect(route('bounty-submit-get'));
+                }
             }
+            
+
+            
         }
     }
 
@@ -170,7 +177,7 @@ class BountyController extends Controller
     }
 
     public function twitterCallback(Request $request) {
-        if(!Session::has('eth_address')) {
+        if(!Session::has('email')) {
             return redirect('/');
         }
 
@@ -179,12 +186,12 @@ class BountyController extends Controller
         $request_token['oauth_token_secret'] = Session::get('oauth_token_secret');
 
         if ($request->has('oauth_token') && $request_token['oauth_token'] !== $request->input('oauth_token')) {
-            return redirect(route('bounty-submit-get', Session::get('eth_address')));
+            return redirect(route('bounty-submit-get', Session::get('email')));
         } else {
             $connection = new TwitterOAuth(env("TWITTER_CLIENT_ID", ""), env("TWITTER_CLIENT_SECRET", ""), $request_token['oauth_token'], $request_token['oauth_token_secret']);
             $access_token = $connection->oauth("oauth/access_token", ["oauth_verifier" => $request->input('oauth_verifier')]);
 
-            $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+            $user = BountyUser::where("email", Session::get('email'))->first();
 
             if ($user) {
                 $twitterToken = new TwitterToken;
@@ -193,13 +200,13 @@ class BountyController extends Controller
                 $twitterToken->save();
             }
 
-            return redirect(route('bounty-submit-get', Session::get('eth_address')));
+            return redirect(route('bounty-submit-get', Session::get('email')));
 
         }
     }
 
     public function youtubeCallback(Request $request) {
-        if(!Session::has('eth_address')) {
+        if(!Session::has('email')) {
             return redirect('/');
         }
 
@@ -220,7 +227,7 @@ class BountyController extends Controller
         $accessToken = $client->authenticate($request->input("code"));
         $client->setAccessToken($accessToken);
 
-        $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+        $user = BountyUser::where("email", Session::get('email'))->first();
         if ($user) {
             $youtubeToken = new YoutubeToken;
             $youtubeToken->bounty_user_id = $user->id;
@@ -234,11 +241,11 @@ class BountyController extends Controller
             }
         }
 
-        return redirect(route('bounty-submit-get', Session::get('eth_address')));
+        return redirect(route('bounty-submit-get', Session::get('email')));
     }
 
     public function redditCallback(Request $request) {
-        if(!Session::has('eth_address')) {
+        if(!Session::has('email')) {
             return redirect('/');
         }
 
@@ -254,7 +261,7 @@ class BountyController extends Controller
         $redditClient->setAccessToken($accessTokenResult["access_token"]);
         $redditClient->setAccessTokenType(\OAuth2\Client::ACCESS_TOKEN_BEARER);
 
-        $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+        $user = BountyUser::where("email", Session::get('email'))->first();
         if ($user) {
 
             $redditToken = new RedditToken;
@@ -264,11 +271,11 @@ class BountyController extends Controller
 
         }
 
-        return redirect(route('bounty-submit-get', Session::get('eth_address')));
+        return redirect(route('bounty-submit-get', Session::get('email')));
     }
 
     public function mediumCallback(Request $request) {
-        if(!Session::has('eth_address')) {
+        if(!Session::has('email')) {
             return redirect('/');
         }
 
@@ -283,7 +290,7 @@ class BountyController extends Controller
         $mediumClient->setAccessToken($accessTokenResult["access_token"]);
         $mediumClient->setAccessTokenType(\OAuth2\Client::ACCESS_TOKEN_BEARER);
 
-        $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+        $user = BountyUser::where("email", Session::get('email'))->first();
         if ($user) {
             $mediumToken = new MediumToken;
             $mediumToken->bounty_user_id = $user->id;
@@ -291,14 +298,14 @@ class BountyController extends Controller
             $mediumToken->save();
         }
 
-        return redirect(route('bounty-submit-get', Session::get('eth_address')));
+        return redirect(route('bounty-submit-get', Session::get('email')));
     }
 
     public function telegramVerify() {
-        if(!Session::has('eth_address')) {
+        if(!Session::has('email')) {
             return redirect('/');
         } else {
-            $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+            $user = BountyUser::where("email", Session::get('email'))->first();
 
             if ($user->telegram()->exists()) {
                 $groups = ["@bcoinsg_EN", "@bcoinsg_CN"];
@@ -332,10 +339,10 @@ class BountyController extends Controller
     }
 
     public function twitterVerify() {
-        if(!Session::has('eth_address')) {
+        if(!Session::has('email')) {
             return redirect('/');
         } else {
-            $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+            $user = BountyUser::where("email", Session::get('email'))->first();
 
             if ($user->twitter()->exists()) {
 
@@ -397,10 +404,10 @@ class BountyController extends Controller
     }
 
     public function youtubeVerify() {
-        if(!Session::has('eth_address')) {
+        if(!Session::has('email')) {
             return redirect('/');
         } else {
-            $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+            $user = BountyUser::where("email", Session::get('email'))->first();
 
             if ($user->youtube()->exists()) {
                 $subscribed = false;
@@ -474,10 +481,10 @@ class BountyController extends Controller
     }
 
     public function redditVerify() {
-        if(!Session::has('eth_address')) {
+        if(!Session::has('email')) {
             return redirect('/');
         } else {
-            $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+            $user = BountyUser::where("email", Session::get('email'))->first();
 
             if ($user->reddit()->exists()) {
                 $subscribed = false;
@@ -522,10 +529,10 @@ class BountyController extends Controller
     }
 
     public function mediumVerify() {
-        if(!Session::has('eth_address')) {
+        if(!Session::has('email')) {
             return redirect('/');
         } else {
-            $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+            $user = BountyUser::where("email", Session::get('email'))->first();
 
             if ($user->medium()->exists()) {
                 $followed = false;
@@ -566,7 +573,7 @@ class BountyController extends Controller
 
     public function airdropExport() {
 
-        $airdropAll = TelegramUser::select("telegram_users.id", "telegram_users.eth_address", "telegram_users.telegram_id", "telegram_users.referrer", DB::raw('IFNULL(t2.count,0) as refer_count'), "telegram_users.created_at", "telegram_users.updated_at")
+        $airdropAll = TelegramUser::select("telegram_users.id", "telegram_users.email", "telegram_users.telegram_id", "telegram_users.referrer", DB::raw('IFNULL(t2.count,0) as refer_count'), "telegram_users.created_at", "telegram_users.updated_at")
                                     ->leftJoin(DB::raw("(SELECT referrer, count(*) as count FROM `telegram_users` t1 WHERE telegram_id IS NOT NULL GROUP BY referrer) as t2"), 'telegram_users.referrer', '=', 't2.referrer')->whereNotNull("telegram_users.telegram_id")->get()->toArray();
 
 

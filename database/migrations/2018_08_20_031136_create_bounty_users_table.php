@@ -15,7 +15,7 @@ class CreateBountyUsersTable extends Migration
     {
         Schema::create('bounty_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('eth_address')->unique();
+            $table->string('email')->unique();
             $table->integer('referrer')->nullable();
             $table->string('unique_link')->unique();
             $table->integer('telegram_completed')->default(0);

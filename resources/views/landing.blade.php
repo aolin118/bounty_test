@@ -14,7 +14,7 @@
     <body>
         <div id="main" class="hero-gradient-dark gradient-primary">
             <div class="container">
-                <form method="POST" id="bounty-form">
+                <form method="POST" id="bounty-form" action="{{ route('bounty-submit-post') }}">
                     @csrf
                     <div class="row">
                         <div class="col-12 text-center">
@@ -25,11 +25,11 @@
                     <div class="divider"></div>
                     <div class="row mt-4">
                         <div class="col-12 text-center mb-2">
-                            <h4 class="text-white">Enter your Ethereum address to begin</h4>
+                            <h4 class="text-white">Enter your Email address to begin</h4>
                         </div>
                         <div class="col-10 col-lg-6 text-center mx-auto">
-                            <input type="text" class="form-control text-center" pattern="(0x)?[0-9a-zA-Z]{40}" title="Invalid Ethereum Address" id="eth_address" name="eth_address" placeholder="Ethereum Address" required>
-                            <small class="form-text text-muted px-3 mt-2">You can create a wallet from <a href="https://metamask.io/">MetaMask</a> or <a href="https://www.myetherwallet.com/">MyEtherWallet</a>. <span style="color: #CE2D4F">Do not use your exchange wallet address!</span></small>
+                            <input type="email" class="form-control text-center" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Invalid Email" id="email" name="email" placeholder="Email Address" required>
+                            <small class="form-text text-muted px-3 mt-2">Register with the same email address used to register for your BCoin's exchange trading account.<span style="color: #CE2D4F">Bounty tokens will be credited to your BCoin account with the same email address!</span></small>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -49,16 +49,5 @@
 
         <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-        <script>
-            $('#bounty-form').submit(function(event){
-                $('#bounty-form').attr('action', "{{ URL::to('/') }}/a/" + $('#eth_address').val());
-
-                if($("#referrer").length == 0) {
-                    event.preventDefault();
-                    window.location.href = "{{ URL::to('/') }}/a/" + $('#eth_address').val();
-                    return false;
-                }
-            });
-        </script>
     </body>
 </html>

@@ -21,6 +21,16 @@
                     </div>
                 </div>
                 <div class="row mb-0 mt-4">
+                    <div class="col-12 col-lg-9 mx-auto step-container">
+                        <div class="card border-0 mb-3 h-100">
+                            <div class="card-header bg-secondary text-white">User Information</div>
+                            <div class="card-body text-center">
+                                <p><b>Email:</b> {{ $user->email }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-0 mt-4">
                     <div class="col-12 col-lg-3 ml-auto step-container">
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">Telegram - 4 BCT</div>
@@ -73,13 +83,6 @@
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#medium-modal">More Info</a>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-
-                <div class="row mt-4">
-                    <div class="col-12 text-center text-muted" style="font-size: 14px">
-                        You will be awarded 1 SCC for completing the steps above.
                     </div>
                 </div>
             </div>
@@ -137,7 +140,7 @@
                         </div>
                         <div class="col-12 mt-4">
                             <ul>
-                                <li>Follow our <a href="https://twitter.com/Bcoin_sg" target="_blank">Twitter</a></li>
+                                <li>Follow our <a href="https://twitter.com/BCoinsg" target="_blank">Twitter</a></li>
                                 <li>Like and retweet our <a href="#" target="_blank">Tweet</a></li>
                             </ul>
                         </div>
@@ -203,7 +206,7 @@
                         </div>
                         <div class="col-12 mt-4">
                             <ul>
-                                <li>Subscribe to our <a href="https://www.reddit.com/user/bcoinsg" target="_blank">Subrredit</a></li>
+                                <li>Subscribe to our <a href="https://www.reddit.com/r/BCoinsg/" target="_blank">Subreddit</a></li>
                                 <li>Upvote our <a href="#" target="_blank">Pinned Post</a></li>
                             </ul>
                         </div>
@@ -237,12 +240,13 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://medium.com/@bcoinsg" target="_blank">Medium</a></li>
-                                <li>Clap once for our <a href="#" target="_blank">article</a></li>
+                                <li>Clap only <b>once</b> for our <a href="#" target="_blank">article</a></li>
                             </ul>
                         </div>
                         @if ($user->medium()->exists())
-                        <div class="col-12 text-center my-4">
-                            <button type="button" class="btn btn-success" onclick="mediumVerify()">Verify Completion</button>
+                        <div class="col-12 text-center mt-2 mb-2">
+                            <button type="button" class="btn btn-success" id="medium-verify-btn" onclick="mediumVerify()">Verify Completion</button>
+                            <p id="medium-error" class="text-danger my-2"></p>
                         </div>
                         @endif
                     </div>
@@ -322,6 +326,24 @@
                         } else {
                             $("#reddit-verify-btn").prop('disabled', false);
                             $("#reddit-error").html(result);
+                        }
+                    }
+                });
+            }
+
+            function mediumVerify() {
+                $("#medium-error").html("<img src='{{ asset('images/loading.gif') }}'' class='img-fluid loading'>");
+                $("#medium-error").show();
+                $("#medium-verify-btn").prop('disabled', true);
+                $.ajax({
+                    url: "{{ route('bounty-medium-verify') }}",
+                    type: 'GET',
+                    success: function(result) {
+                        if (result == "true") {
+                            location.reload();
+                        } else {
+                            $("#medium-verify-btn").prop('disabled', false);
+                            $("#medium-error").html(result);
                         }
                     }
                 });

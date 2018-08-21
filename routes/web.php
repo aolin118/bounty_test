@@ -18,8 +18,8 @@ Route::get('/', function () {
 
 Route::get('/', 'BountyController@index')->name('bounty-home');
 
-Route::get('/a/{eth_address}', 'BountyController@addressSubmit')->name('bounty-submit-get');
-Route::post('/a/{eth_address}', 'BountyController@addressSubmitWithReferral')->name('bounty-submit-post');
+Route::get('/main', 'BountyController@main')->name('bounty-submit-get');
+Route::post('/main', 'BountyController@addressSubmit')->name('bounty-submit-post');
 
 Route::get('/twitter-callback', 'BountyController@twitterCallback')->name('bounty-twitter-callback');
 Route::get('/youtube-callback', 'BountyController@youtubeCallback')->name('bounty-youtube-callback');
