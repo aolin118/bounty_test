@@ -25,7 +25,7 @@
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">User Information<a href="{{ route('bounty-logout') }}" class="float-right logout">Log Out</a></div>
                             <div class="card-body text-center">
-                                <p><b>Email:</b> {{ $user->email }}</p>
+                                <p><b>Email:</b><br/>{{ $user->email }}</p>
                             </div>
                         </div>
                     </div>
