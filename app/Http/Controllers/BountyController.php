@@ -405,6 +405,9 @@ class BountyController extends Controller
             $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
 
             if ($user->youtube()->exists()) {
+                $subscribed = false;
+                $like = false;
+
                 $access_token = json_decode($user->youtube->access_token,true);
 
                 $client = new Google_Client();
@@ -435,6 +438,15 @@ class BountyController extends Controller
                 $response = $service->subscriptions->listSubscriptions(
                     "snippet,contentDetails",
                     array_filter(["mine" => true, "forChannelId" => "UCfD4r29eHpn_XTtqrKh3Xig"])
+                );
+
+                if (count($response['items']) == 1) {
+                    $subscribed = true;
+                }
+
+                $response = $service->videos->getRating(
+                    "TtAUV7MUW5k",
+                    []
                 );
 
                 dd($response);
