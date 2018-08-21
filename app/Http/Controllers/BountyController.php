@@ -499,8 +499,8 @@ class BountyController extends Controller
                     }
                 }
 
-                $response = $client->fetch("https://oauth.reddit.com//by_id/t1_97g8sx.json");
-                
+                $response = $client->fetch("https://oauth.reddit.com/api/info.json",["id" => "t1_97g8sx"]);
+
                 dd($response);
 
             } else {
