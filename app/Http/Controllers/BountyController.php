@@ -185,7 +185,8 @@ class BountyController extends Controller
             if ($user) {
                 $twitterToken = new TwitterToken;
                 $twitterToken->bounty_user_id = $user->id;
-                $twitterToken->access_token = $access_token;
+                $twitterToken->access_token = $access_token['oauth_token'];
+                $twitterToken->access_token_secret = $access_token['oauth_token_secret'];
                 $twitterToken->save();
             }
 

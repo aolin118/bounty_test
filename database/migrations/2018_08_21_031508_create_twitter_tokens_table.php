@@ -17,6 +17,7 @@ class CreateTwitterTokensTable extends Migration
             $table->increments('id');
             $table->integer('bounty_user_id')->unique();
             $table->string('access_token');
+            $table->string('access_token_secret');
             $table->timestamps();
         });
     }
