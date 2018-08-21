@@ -418,9 +418,14 @@ class BountyController extends Controller
 
                 $client->setAccessToken($access_token);
 
+                dd($access_token);
+
                 if ($client->isAccessTokenExpired()) {
                     $client->refreshToken($client->getRefreshToken());
-                    file_put_contents($credentialsPath, $client->getAccessToken());
+
+                    $youtubeToken = YoutubeToken::find($user->youtube->id);
+                    $youtubeToken->access_token = json_encode($client->getAccessToken());
+                    $youtubeToken->save();
                 }
 
                 $service = new Google_Service_YouTube($client);
