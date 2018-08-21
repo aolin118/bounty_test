@@ -302,7 +302,7 @@ class BountyController extends Controller
             $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
 
             $groups = ["@bcoinsg_EN", "@bcoinsg_CN"];
-            $channel = "@bcoinsg";
+            $channel = "@xane_bots";
 
             $result = \Telegram::getChatMember(['chat_id' => $channel, 'user_id' => $user->telegram->telegram_id]);
             $chatMember = ($result->getDecodedBody())['result'];
