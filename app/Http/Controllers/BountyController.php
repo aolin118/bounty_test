@@ -305,11 +305,23 @@ class BountyController extends Controller
             $channel = "@bcoinsg";
 
             $result = \Telegram::getChatMember(['chat_id' => $channel, 'user_id' => $user->telegram->telegram_id]);
-            $chatMember = ($result->getDecodedBody())['result'];
+            $chatMemberChannel = ($result->getDecodedBody())['result'];
 
-            dd($chatMember);
+            $result = \Telegram::getChatMember(['chat_id' => $groups[0], 'user_id' => $user->telegram->telegram_id]);
+            $chatMemberEN = ($result->getDecodedBody())['result'];
 
-            echo "true";
+            $result = \Telegram::getChatMember(['chat_id' => $groups[1], 'user_id' => $user->telegram->telegram_id]);
+            $chatMemberCN = ($result->getDecodedBody())['result'];
+
+            if ($chatMemberChannel['status'] == "member" && ($chatMemberEN['status'] == "member" || $chatMemberCN['status'] == "member")) {
+                $user->telegram_completed = 1;
+                $user->save();
+                echo "true";
+            } else {
+                echo "false";
+            }
+
+            
         }
         
     }
