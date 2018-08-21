@@ -505,7 +505,6 @@ class BountyController extends Controller
 
                 if ($response['result']['data']['children']['data']['likes'] == true) {
                     $upvote = true;
-                    break;
                 }
 
             } else {
