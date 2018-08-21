@@ -109,6 +109,11 @@ class BountyController extends Controller
         }
     }
 
+    public function logOut() {
+        Session::forget('email');
+        return redirect('/');
+    }
+
     function getAuthURLs($user) {
         $authURL = array();
 

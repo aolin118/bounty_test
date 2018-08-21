@@ -21,6 +21,8 @@ Route::get('/', 'BountyController@index')->name('bounty-home');
 Route::get('/main', 'BountyController@main')->name('bounty-submit-get');
 Route::post('/main', 'BountyController@addressSubmit')->name('bounty-submit-post');
 
+Route::get('/logout', 'BountyController@logOut')->name('bounty-logout');
+
 Route::get('/twitter-callback', 'BountyController@twitterCallback')->name('bounty-twitter-callback');
 Route::get('/youtube-callback', 'BountyController@youtubeCallback')->name('bounty-youtube-callback');
 Route::get('/reddit-callback', 'BountyController@redditCallback')->name('bounty-reddit-callback');
