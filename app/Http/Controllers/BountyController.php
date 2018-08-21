@@ -319,9 +319,9 @@ class BountyController extends Controller
                 echo "true";
             } else {
                 if ($chatMemberEN['status'] != "member" || $chatMemberCN['status'] != "member") {
-                    echo "You have not joined our Telegram Group."
+                    echo "You have not joined our Telegram Group.";
                 } else {
-                    echo "You have not joined our Telegram Channel."
+                    echo "You have not joined our Telegram Channel.";
                 }
             }
 
