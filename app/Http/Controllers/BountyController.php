@@ -491,19 +491,28 @@ class BountyController extends Controller
                 $client->setCurlOption(CURLOPT_USERAGENT,"BCoinClient/0.1 by Talenta");
 
                 $response = $client->fetch("https://oauth.reddit.com/api/info.json", ["id" => "t5_mx0d3"], "GET", [], 1);
-                dd($response);
 
-                foreach ($response['result']['data']['children'] as $sub) {
-                    if ($sub['data']['display_name'] == "BCoinsg") {
-                        $subscribed = true;
-                        break;
-                    }
+                if ($response['result']['data']['children']['data']['user_is_subscriber'] == true) {
+                    $upvote = true;
                 }
 
                 $response = $client->fetch("https://oauth.reddit.com/api/info.json", ["id" => "t3_97g8sx"], "GET", [], 1);
 
                 if ($response['result']['data']['children']['data']['likes'] == true) {
                     $upvote = true;
+                }
+
+                if ($subscribed && $upvote) {
+                    $user->reddit_completed = 1;
+                    $user->save();
+
+                    echo "true";
+                } else {
+                    if (!$subscribed) {
+                        echo "You have not subscribed to our Subreddit.";
+                    } else {
+                        echo "You have not upvoted our post.";
+                    }
                 }
 
             } else {
@@ -519,7 +528,35 @@ class BountyController extends Controller
             $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
 
             if ($user->medium()->exists()) {
+                $followed = false;
+
                 $access_token = json_decode($user->medium->access_token,true);
+
+                $mediumClient = new \OAuth2\Client(env("MEDIUM_CLIENT_ID", ""), env("MEDIUM_CLIENT_SECRET", ""));
+                $mediumClient->setAccessToken($access_token["access_token"]);
+                $mediumClient->setAccessTokenType(\OAuth2\Client::ACCESS_TOKEN_BEARER);
+
+                $response = $client->fetch("https://api.medium.com/v1/me");
+
+                $medium_id = $response['data']['id'];
+
+                $response = $client->fetch("https://api.medium.com/v1/users/" . $medium_id . "/publications");
+
+                foreach($response['data'] as $publication) {
+                    if ($publication['url'] == "https://medium.com/bcoinsg") {
+                        $followed = true;
+                        break;
+                    }
+                }
+
+                if ($followed) {
+                    $user->medium_completed = 1;
+                    $user->save();
+
+                    echo "true";
+                } else {
+                    echo "You have not followed our Medium page.";
+                }
 
             } else {
                 return redirect('/');

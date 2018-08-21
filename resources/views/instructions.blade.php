@@ -208,8 +208,9 @@
                             </ul>
                         </div>
                         @if ($user->reddit()->exists())
-                        <div class="col-12 text-center my-4">
-                            <button type="button" class="btn btn-success" onclick="redditVerify()">Verify Completion</button>
+                        <div class="col-12 text-center mt-2 mb-2">
+                            <button type="button" class="btn btn-success" id="reddit-verify-btn" onclick="redditVerify()">Verify Completion</button>
+                            <p id="reddit-error" class="text-danger my-2"></p>
                         </div>
                         @endif
                     </div>
@@ -303,6 +304,24 @@
                         } else {
                             $("#youtube-verify-btn").prop('disabled', false);
                             $("#youtube-error").html(result);
+                        }
+                    }
+                });
+            }
+
+            function redditVerify() {
+                $("#reddit-error").html("<img src='{{ asset('images/loading.gif') }}'' class='img-fluid loading'>");
+                $("#reddit-error").show();
+                $("#reddit-verify-btn").prop('disabled', true);
+                $.ajax({
+                    url: "{{ route('bounty-reddit-verify') }}",
+                    type: 'GET',
+                    success: function(result) {
+                        if (result == "true") {
+                            location.reload();
+                        } else {
+                            $("#reddit-verify-btn").prop('disabled', false);
+                            $("#reddit-error").html(result);
                         }
                     }
                 });
