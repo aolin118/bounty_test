@@ -296,7 +296,7 @@ class BountyController extends Controller
     }
 
     public function telegramVerify() {
-        
+        return true;
     }
 
     public function twitterVerify() {
