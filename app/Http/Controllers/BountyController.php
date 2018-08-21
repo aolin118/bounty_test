@@ -418,7 +418,7 @@ class BountyController extends Controller
 
                 $client->setAccessToken($access_token);
 
-                dd($access_token);
+                //dd($access_token);
 
                 if ($client->isAccessTokenExpired()) {
                     $client->refreshToken($client->getRefreshToken());
