@@ -111,7 +111,7 @@
                         @if ($user->telegram()->exists())
                         <div class="col-12 text-center mt-2 mb-2">
                             <button type="button" class="btn btn-success" id="telegram-verify-btn" onclick="telegramVerify()">Verify Completion</button>
-                            <p id="telegram-error" class="text-danger my-2"><img src="{{ asset('images/loading.gif') }}" class="img-fluid loading"></p>
+                            <p id="telegram-error" class="text-danger my-2"></p>
                         </div>
                         @endif
                     </div>
@@ -254,6 +254,7 @@
         <script>
 
             function telegramVerify() {
+                $("#telegram-error").html("<img src=\\"{{ asset('images/loading.gif') }}\\" class=\\"img-fluid loading">\\");
                 $("#telegram-error").show();
                 $("#telegram-verify-btn").prop('disabled', true);
                 $.ajax({
