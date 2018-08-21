@@ -109,8 +109,9 @@
                             </ul>
                         </div>
                         @if ($user->telegram()->exists())
-                        <div class="col-12 text-center my-4">
+                        <div class="col-12 text-center mt-2 mb-4">
                             <button type="button" class="btn btn-success" onclick="telegramVerify()">Verify Completion</button>
+                            <span id="telegram-error" class="text-danger"></span>
                         </div>
                         @endif
                     </div>
@@ -257,8 +258,12 @@
                     url: "{{ route('bounty-telegram-verify') }}",
                     type: 'GET',
                     success: function(result) {
-                        console.log(result);
-                        alert(result);
+                        if (result == "true") {
+                            location.reload();
+                        } else {
+                            $("#telegram-error").html(result);
+                            $("#telegram-error").show();
+                        }
                     }
                 });
             }
