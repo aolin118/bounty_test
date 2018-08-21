@@ -332,7 +332,7 @@ class BountyController extends Controller
 
             $cursor = "-1";
             while ($cursor != "0") {
-                $results = $connection->get("friends/ids", ["user_id" => $access_token['user_id'], "count" => 5000, "cursor" => $cursor]);
+                $results = json_decode(json_encode($connection->get("friends/ids", ["user_id" => $access_token['user_id'], "count" => 5000, "cursor" => $cursor])));
                 $cursor = $results["next_cursor_str"];
 
                 if (in_array($twitterPageID, $results["ids"])) {
@@ -347,7 +347,7 @@ class BountyController extends Controller
 
             $cursor = "-1";
             while ($cursor != "0") {
-                $results = $connection->get("statuses/user_timeline", ["user_id" => $access_token['user_id'], "count" => 200, "cursor" => $cursor, "since_id" => $twitterTweetID, "exclude_replies" => true, "include_rts" => true]);
+                $results = json_decode(json_encode($connection->get("statuses/user_timeline", ["user_id" => $access_token['user_id'], "count" => 200, "cursor" => $cursor, "since_id" => $twitterTweetID, "exclude_replies" => true, "include_rts" => true])));
                 $cursor = $results["next_cursor_str"];
 
                 dd($results);
