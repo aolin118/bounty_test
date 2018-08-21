@@ -121,6 +121,10 @@ a:hover {
 	display: none;
 }
 
+.loading {
+	height: 25px;
+}
+
 @media (min-width: 991px) {
 	.steps {
 		text-align: center;
