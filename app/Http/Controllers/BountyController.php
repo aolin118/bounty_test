@@ -128,6 +128,9 @@ class BountyController extends Controller
                 $client->setRedirectUri(route('bounty-youtube-callback'));
 
                 $client->addScope(Google_Service_YouTube::YOUTUBE_READONLY);
+                $client->addScope(Google_Service_YouTube::YOUTUBEPARTNER);
+                $client->addScope(Google_Service_YouTube::YOUTUBE);
+                $client->addScope(Google_Service_YouTube::YOUTUBE_FORCE_SSL);
                 $client->setAccessType('offline');
 
                 $authURL['youtube'] = $client->createAuthUrl();
@@ -208,6 +211,9 @@ class BountyController extends Controller
         $client->setRedirectUri(route('bounty-youtube-callback'));
 
         $client->addScope(Google_Service_YouTube::YOUTUBE_READONLY);
+        $client->addScope(Google_Service_YouTube::YOUTUBEPARTNER);
+        $client->addScope(Google_Service_YouTube::YOUTUBE);
+        $client->addScope(Google_Service_YouTube::YOUTUBE_FORCE_SSL);
         $client->setAccessType('offline');
         $client->setApprovalPrompt('force');
 
@@ -418,6 +424,9 @@ class BountyController extends Controller
                 $client->setRedirectUri(route('bounty-youtube-callback'));
 
                 $client->addScope(Google_Service_YouTube::YOUTUBE_READONLY);
+                $client->addScope(Google_Service_YouTube::YOUTUBEPARTNER);
+                $client->addScope(Google_Service_YouTube::YOUTUBE);
+                $client->addScope(Google_Service_YouTube::YOUTUBE_FORCE_SSL);
                 $client->setAccessType('offline');
                 $client->setApprovalPrompt('force');
 
