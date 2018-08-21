@@ -185,8 +185,7 @@ class BountyController extends Controller
             if ($user) {
                 $twitterToken = new TwitterToken;
                 $twitterToken->bounty_user_id = $user->id;
-                $twitterToken->access_token = $access_token['oauth_token'];
-                $twitterToken->access_token_secret = $access_token['oauth_token_secret'];
+                $twitterToken->access_token = json_encode($access_token);
                 $twitterToken->save();
             }
 
@@ -213,18 +212,16 @@ class BountyController extends Controller
         $accessToken = $client->authenticate($request->input("code"));
         $client->setAccessToken($accessToken);
 
-        dd($accessToken);
-
         $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
         if ($user) {
             $youtubeToken = new YoutubeToken;
             $youtubeToken->bounty_user_id = $user->id;
-            $youtubeToken->access_token = $accessToken;
+            $youtubeToken->access_token = json_encode($accessToken);
             $youtubeToken->save();
 
             if ($client->isAccessTokenExpired()) {
                 $client->refreshToken($client->getRefreshToken());
-                $youtubeToken->access_token = $client->getAccessToken();
+                $youtubeToken->access_token = json_encode($client->getAccessToken());
                 $youtubeToken->save();
             }
         }
@@ -257,9 +254,7 @@ class BountyController extends Controller
 
             $redditToken = new RedditToken;
             $redditToken->bounty_user_id = $user->id;
-            $redditToken->access_token = $accessTokenResult["access_token"];
-            $redditToken->refresh_token = $accessTokenResult["refresh_token"];
-            $redditToken->expiry = Carbon::createFromTimestamp($accessTokenResult["expires_in"])->toDateTimeString();
+            $redditToken->access_token = json_encode($accessTokenResult);
             $redditToken->save();
 
         }
@@ -291,9 +286,7 @@ class BountyController extends Controller
         if ($user) {
             $mediumToken = new MediumToken;
             $mediumToken->bounty_user_id = $user->id;
-            $mediumToken->access_token = $accessTokenResult["access_token"];
-            $mediumToken->refresh_token = $accessTokenResult["refresh_token"];
-            $mediumToken->expiry = Carbon::createFromTimestamp($accessTokenResult["expires_at"])->toDateTimeString();
+            $mediumToken->access_token = json_encode($accessTokenResult);
             $mediumToken->save();
         }
 
