@@ -44,7 +44,7 @@ class BotController extends Controller
     }
 
     public function setWebhook() {
-        $response = \Telegram::setWebhook(['url' => 'https://bounty.bcoin.sg/657492216:AAHcY1vdwp7H33JtwzrYlVKu2qCznzCSJ2o/webhook']);
+        $response = \Telegram::setWebhook(['url' => 'https://bounty.bcoinio.sg/657492216:AAHcY1vdwp7H33JtwzrYlVKu2qCznzCSJ2o/webhook']);
 
         dd($response);
     }
