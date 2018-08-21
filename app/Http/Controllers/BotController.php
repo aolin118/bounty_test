@@ -53,20 +53,29 @@ class BotController extends Controller
     function startCommand($update, $command) {
         $id = $update['message']['from']['id'];
 
-        $user = BountyUser::where("unique_link",trim($command[2]))->first();
+        if (isset($command[2])) {
+            $user = BountyUser::where("unique_link",trim($command[2]))->first();
 
-        if ($user) {
-            $telegramUser = new TelegramUser;
-            $telegramUser->bounty_user_id = $user->id;
-            $telegramUser->telegram_id = $id;
-            $saved = $telegramUser->save();
+            if ($user) {
+                $telegramUser = new TelegramUser;
+                $telegramUser->bounty_user_id = $user->id;
+                $telegramUser->telegram_id = $id;
+                $saved = $telegramUser->save();
 
-            if ($saved) {
+                if ($saved) {
+                    \Telegram::sendMessage([
+                        'chat_id' => $update->getMessage()->getChat()->getId(),
+                        'parse_mode' => 'HTML',
+                        'disable_web_page_preview' => true,
+                        'text' => "<b>You have successfully registered for the bounty!</b>\n\nVisit https://bounty.bcoinsg.io to check your tokens earned!\n\nYour referral link:\nhttps://bounty.bcoinsg.io/r/" . $user->unique_link
+                    ]);
+                }
+            } else {
                 \Telegram::sendMessage([
                     'chat_id' => $update->getMessage()->getChat()->getId(),
                     'parse_mode' => 'HTML',
                     'disable_web_page_preview' => true,
-                    'text' => "<b>You have successfully registered for the bounty!</b>\n\nVisit https://bounty.bcoin.sg to check your tokens earned!\n\nYour referral link:\nhttps://bounty.bcoin.sg/r/" . $user->unique_link
+                    'text' => "<b>BCoin Bounty Program is ongoing!</b>\nVisit https://bounty.bcoinsg.io to participate!"
                 ]);
             }
         } else {
@@ -74,7 +83,7 @@ class BotController extends Controller
                 'chat_id' => $update->getMessage()->getChat()->getId(),
                 'parse_mode' => 'HTML',
                 'disable_web_page_preview' => true,
-                'text' => "<b>BCoin Bounty Program is ongoing!</b>\nVisit https://bounty.bcoin.sg to participate!"
+                'text' => "<b>BCoin Bounty Program is ongoing!</b>\nVisit https://bounty.bcoinsg.io to participate!"
             ]);
         }
     }
