@@ -257,7 +257,7 @@
 
         <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/jquery.oauthpopup.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/clipboard.min.js') }}"></script>
 
         <script>
             function telegramVerify() {
