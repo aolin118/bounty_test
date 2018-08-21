@@ -16,11 +16,18 @@ Route::get('/', function () {
 });
 
 
-Route::get('/', 'AirdropController@index')->name('airdrop-get');
-Route::post('/', 'AirdropController@addressSubmit')->name('airdrop-post');
-Route::get('/r/{id}', 'AirdropController@airdropReferral')->name('airdrop-referral');
+Route::get('/', 'BountyController@index')->name('bounty-home');
+
+Route::get('/a/{eth_address}', 'BountyController@addressSubmit')->name('bounty-submit-get');
+Route::post('/a/{eth_address}', 'BountyController@addressSubmitWithReferral')->name('bounty-submit-post');
+Route::get('/twitter-callback', 'BountyController@twitterCallback')->name('bounty-twitter-callback');
+Route::get('/youtube-callback', 'BountyController@youtubeCallback')->name('bounty-youtube-callback');
+Route::get('/reddit-callback', 'BountyController@redditCallback')->name('bounty-reddit-callback');
+Route::get('/medium-callback', 'BountyController@mediumCallback')->name('bounty-medium-callback');
+
+Route::get('/r/{referral}', 'BountyController@bountyReferral')->name('bounty-referral');
 Route::get('/airdrop-export', 'AirdropController@airdropExport')->name('airdrop-export');
 
 // Telegram Bot Routes
-Route::post('/552887591:AAFsyKGRvFZbVDPoSQtuw6uhjZHYefdnLNY/webhook', 'BotController@receiveCallback')->name('bot-webhook');
-Route::get('/552887591:AAFsyKGRvFZbVDPoSQtuw6uhjZHYefdnLNY/set-webhook', 'BotController@setWebhook')->name('bot-set-webhook');
+Route::post('/657492216:AAHcY1vdwp7H33JtwzrYlVKu2qCznzCSJ2o/webhook', 'BotController@receiveCallback')->name('bot-webhook');
+Route::get('/657492216:AAHcY1vdwp7H33JtwzrYlVKu2qCznzCSJ2o/set-webhook', 'BotController@setWebhook')->name('bot-set-webhook');

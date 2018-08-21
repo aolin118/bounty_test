@@ -44,73 +44,36 @@ class BotController extends Controller
     }
 
     public function setWebhook() {
-        $response = \Telegram::setWebhook(['url' => 'https://xaneau.com/552887591:AAFsyKGRvFZbVDPoSQtuw6uhjZHYefdnLNY/webhook']);
+        $response = \Telegram::setWebhook(['url' => 'https://bounty.bcoin.sg/657492216:AAHcY1vdwp7H33JtwzrYlVKu2qCznzCSJ2o/webhook']);
 
         dd($response);
     }
 
     function startCommand($update, $command) {
-        $group = "@xane_bots";
         $id = $update['message']['from']['id'];
 
-        $result = \Telegram::getChatMember(['chat_id' => $group, 'user_id' => $id]);
-        $chatMember = ($result->getDecodedBody())['result'];
+        $user = BountyUser::where("unique_link",trim($command[2]))->first();
 
-        if ($chatMember['status'] == "member") {
+        if ($user) {
+            $user->telegram_id = $id;
+            $saved = $user->save();
 
-            $user = TelegramUser::where("telegram_id", $id)->first();
-
-            if ($user) {
+            if ($saved) {
                 \Telegram::sendMessage([
-                        'chat_id' => $update->getMessage()->getChat()->getId(),
-                        'parse_mode' => 'HTML',
-                        'disable_web_page_preview' => true,
-                        'text' => "<b>You have successfully registered for the airdrop!</b>\n\nVisit https://xaneau.com to check your tokens earned!\n\nYour referral link:\nhttps://xaneau.com/r/" . $user->telegram_id
-                    ]);
-            } else {
-                if (isset($command[2])) {
-
-                    $user = TelegramUser::where("unique_link",trim($command[2]))->first();
-
-                    if ($user) {
-                        $user->telegram_id = $id;
-                        $saved = $user->save();
-
-                        if ($saved) {
-                            \Telegram::sendMessage([
-                                'chat_id' => $update->getMessage()->getChat()->getId(),
-                                'parse_mode' => 'HTML',
-                                'disable_web_page_preview' => true,
-                                'text' => "<b>You have successfully registered for the airdrop!</b>\n\nVisit https://xaneau.com to check your tokens earned!\n\nYour referral link:\nhttps://xaneau.com/r/" . $user->telegram_id
-                            ]);
-                        }
-                    } else {
-                        \Telegram::sendMessage([
-                            'chat_id' => $update->getMessage()->getChat()->getId(),
-                            'parse_mode' => 'HTML',
-                            'disable_web_page_preview' => true,
-                            'text' => "<b>Source Code Chain Airdrop is ongoing!</b>\nVisit https://xaneau.com to participate!"
-                        ]);
-                    }
-                } else {
-                    \Telegram::sendMessage([
-                        'chat_id' => $update->getMessage()->getChat()->getId(),
-                        'parse_mode' => 'HTML',
-                        'disable_web_page_preview' => true,
-                        'text' => "<b>Source Code Chain Airdrop is ongoing!</b>\nVisit https://xaneau.com to participate!"
-                    ]);
-                }
+                    'chat_id' => $update->getMessage()->getChat()->getId(),
+                    'parse_mode' => 'HTML',
+                    'disable_web_page_preview' => true,
+                    'text' => "<b>You have successfully registered for the bounty!</b>\n\nVisit https://bounty.bcoin.sg to check your tokens earned!\n\nYour referral link:\nhttps://bounty.bcoin.sg/r/" . $user->unique_link
+                ]);
             }
-
-        } else if ($chatMember['status'] == "left") {
+        } else {
             \Telegram::sendMessage([
                 'chat_id' => $update->getMessage()->getChat()->getId(),
                 'parse_mode' => 'HTML',
                 'disable_web_page_preview' => true,
-                'text' => "<b>You have to be in our telegram group (</b>@xane_bots<b>) to participate in the airdrop!</b>"
+                'text' => "<b>BCoin Bounty Program is ongoing!</b>\nVisit https://bounty.bcoin.sg to participate!"
             ]);
         }
-        
     }
 
 }

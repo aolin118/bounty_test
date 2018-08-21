@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTelegramUsersTable extends Migration
+class CreateTwitterTokensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTelegramUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('telegram_users', function (Blueprint $table) {
+        Schema::create('twitter_tokens', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('bounty_user_id')->unique();
-            $table->integer('telegram_id');
+            $table->string('access_token');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateTelegramUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('telegram_users');
+        Schema::dropIfExists('twitter_tokens');
     }
 }

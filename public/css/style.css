@@ -1,14 +1,11 @@
-@font-face {
-    font-family: GothamRounded;
-    src: url(../fonts/GothamRounded.woff);
-}
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
 
 #main {
 	min-height: 100vh;
 }
 
 body, h1 {
-	font-family: GothamRounded;
+	font-family: 'Open Sans', sans-serif;
 }
 
 a:hover {
@@ -24,10 +21,10 @@ a:hover {
 }
 
 .gradient-primary {
-    background: #2B4882;
-    background: -webkit-linear-gradient(-45deg, #2B4882, #520B37);
-    background: -moz-linear-gradient(-45deg, #2B4882, #520B37);
-    background: -webkit-linear-gradient(-45deg, #2B4882, #520B37);
+    background: #151720;
+    background: -webkit-linear-gradient(-45deg, #151720, #485793);
+    background: -moz-linear-gradient(-45deg, #151720, #485793);
+    background: -webkit-linear-gradient(-45deg, #151720, #485793);
 }
 
 .text-gray {
@@ -85,11 +82,39 @@ a:hover {
 }
 
 .text-accent {
-	color: #26B4EC !important;
+	color: #6FB1FF !important;
 }
 
 .airdrop-logo {
 	height: 150px;
+}
+
+.step-container {
+	margin: 15px 0;
+}
+
+.btn-reddit {
+	color: #fff;
+    background-color: #ff4500;
+    border-color: #ff4500;
+}
+
+.btn-reddit:hover {
+	color: #fff;
+    background-color: #E83F00;
+    border-color: #E83F00;
+}
+
+.btn-medium {
+	color: #fff;
+    background-color: #00E468;
+    border-color: #00E468;
+}
+
+.btn-medium:hover {
+	color: #fff;
+    background-color: #00D05F;
+    border-color: #00D05F;
 }
 
 @media (min-width: 991px) {

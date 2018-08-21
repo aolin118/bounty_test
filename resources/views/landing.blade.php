@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SCC Airdrop</title>
+        <title>BCoin Bounty Program</title>
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/fontawesome.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -14,12 +14,12 @@
     <body>
         <div id="main" class="hero-gradient-dark gradient-primary">
             <div class="container">
-                <form method="POST" action="{{ route('airdrop-post') }}">
+                <form method="POST" id="bounty-form">
                     @csrf
                     <div class="row">
                         <div class="col-12 text-center">
                             <img src="{{ asset('images/logo.png') }}" class="img-fluid airdrop-logo mb-4">
-                            <h1 class="text-accent">Source Code Chain Airdrop</h1>
+                            <h1 class="text-accent">BCoin Bounty Program</h1>
                         </div>
                     </div>
                     <div class="divider"></div>
@@ -49,5 +49,16 @@
 
         <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+        <script>
+            $('#bounty-form').submit(function(event){
+                $('#bounty-form').attr('action', "{{ URL::to('/') }}/a/" + $('#eth_address').val());
+
+                if($("#referrer").length == 0) {
+                    event.preventDefault();
+                    window.location.href = "{{ URL::to('/') }}/a/" + $('#eth_address').val();
+                    return false;
+                }
+            });
+        </script>
     </body>
 </html>
