@@ -255,7 +255,7 @@
 
             function telegramVerify() {
                 $("#telegram-error").show();
-                $("$telegram-verify-btn").prop('disabled', true);
+                $("#telegram-verify-btn").prop('disabled', true);
                 $.ajax({
                     url: "{{ route('bounty-telegram-verify') }}",
                     type: 'GET',
@@ -263,7 +263,7 @@
                         if (result == "true") {
                             location.reload();
                         } else {
-                            $("$telegram-verify-btn").prop('disabled', false);
+                            $("#telegram-verify-btn").prop('disabled', false);
                             $("#telegram-error").html(result);
                         }
                     }
