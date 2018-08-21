@@ -297,99 +297,144 @@ class BountyController extends Controller
 
     public function telegramVerify() {
         if(!Session::has('eth_address')) {
-            echo "false";
+            return redirect('/');
         } else {
             $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
 
-            $groups = ["@bcoinsg_EN", "@bcoinsg_CN"];
-            $channel = "@bcoinsg";
+            if ($user->telegram()->exists()) {
+                $groups = ["@bcoinsg_EN", "@bcoinsg_CN"];
+                $channel = "@bcoinsg";
 
-            $result = \Telegram::getChatMember(['chat_id' => $channel, 'user_id' => $user->telegram->telegram_id]);
-            $chatMemberChannel = ($result->getDecodedBody())['result'];
+                $result = \Telegram::getChatMember(['chat_id' => $channel, 'user_id' => $user->telegram->telegram_id]);
+                $chatMemberChannel = ($result->getDecodedBody())['result'];
 
-            $result = \Telegram::getChatMember(['chat_id' => $groups[0], 'user_id' => $user->telegram->telegram_id]);
-            $chatMemberEN = ($result->getDecodedBody())['result'];
+                $result = \Telegram::getChatMember(['chat_id' => $groups[0], 'user_id' => $user->telegram->telegram_id]);
+                $chatMemberEN = ($result->getDecodedBody())['result'];
 
-            $result = \Telegram::getChatMember(['chat_id' => $groups[1], 'user_id' => $user->telegram->telegram_id]);
-            $chatMemberCN = ($result->getDecodedBody())['result'];
+                $result = \Telegram::getChatMember(['chat_id' => $groups[1], 'user_id' => $user->telegram->telegram_id]);
+                $chatMemberCN = ($result->getDecodedBody())['result'];
 
-            if ($chatMemberChannel['status'] == "member" && ($chatMemberEN['status'] == "member" || $chatMemberCN['status'] == "member")) {
-                $user->telegram_completed = 1;
-                $user->save();
-                echo "true";
-            } else {
-                if ($chatMemberEN['status'] != "member" || $chatMemberCN['status'] != "member") {
-                    echo "You have not joined our Telegram Group.";
+                if ($chatMemberChannel['status'] == "member" && ($chatMemberEN['status'] == "member" || $chatMemberCN['status'] == "member")) {
+                    $user->telegram_completed = 1;
+                    $user->save();
+                    echo "true";
                 } else {
-                    echo "You have not joined our Telegram Channel.";
+                    if ($chatMemberEN['status'] != "member" || $chatMemberCN['status'] != "member") {
+                        echo "You have not joined our Telegram Group.";
+                    } else {
+                        echo "You have not joined our Telegram Channel.";
+                    }
                 }
+            } else {
+                return redirect('/');
             }
-
-            
         }
         
     }
 
     public function twitterVerify() {
         if(!Session::has('eth_address')) {
-            echo "false";
+            return redirect('/');
         } else {
             $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
-            $follow = false;
-            $like = false;
-            $retweet = false;
 
-            $access_token = json_decode($user->twitter->access_token,true);
+            if ($user->twitter()->exists()) {
 
-            $twitterPageID = "969390070372290560";
-            $twitterTweetID = "1024318040702300160";
+                $follow = false;
+                $like = false;
+                $retweet = false;
 
-            $connection = new TwitterOAuth(env("TWITTER_CLIENT_ID", ""), env("TWITTER_CLIENT_SECRET", ""), $access_token['oauth_token'], $access_token['oauth_token_secret']);
+                $access_token = json_decode($user->twitter->access_token,true);
 
-            $cursor = "-1";
-            while ($cursor != "0") {
-                $results = json_decode(json_encode($connection->get("friends/ids", ["user_id" => $access_token['user_id'], "count" => 5000, "cursor" => $cursor])),true);
-                $cursor = $results["next_cursor_str"];
+                $twitterPageID = "969390070372290560";
+                $twitterTweetID = "1024318040702300160";
 
-                if (in_array($twitterPageID, $results["ids"])) {
-                    $follow = true;
-                    break;
-                }
-            }
+                $connection = new TwitterOAuth(env("TWITTER_CLIENT_ID", ""), env("TWITTER_CLIENT_SECRET", ""), $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
+                $cursor = "-1";
+                while ($cursor != "0") {
+                    $results = json_decode(json_encode($connection->get("friends/ids", ["user_id" => $access_token['user_id'], "count" => 5000, "cursor" => $cursor])),true);
+                    $cursor = $results["next_cursor_str"];
 
-
-            $results = json_decode(json_encode($connection->get("statuses/user_timeline", ["user_id" => $access_token['user_id'], "count" => 200, "cursor" => $cursor, "since_id" => $twitterTweetID, "exclude_replies" => true, "include_rts" => true])),true);
-
-            foreach($results as $tweet) {
-                if (isset($tweet['retweeted_status'])) {
-                    if ($tweet['retweeted_status']['id_str'] == $twitterTweetID) {
-                        $retweet = true;
-
-                        if ($tweet['favorited'] == true) {
-                            $like = true;
-                        }
+                    if (in_array($twitterPageID, $results["ids"])) {
+                        $follow = true;
                         break;
                     }
                 }
-            }
 
-            if ($follow && $like && $retweet) {
-                $user->twitter_completed = 1;
-                $user->save();
 
-                echo "true";
+
+                $results = json_decode(json_encode($connection->get("statuses/user_timeline", ["user_id" => $access_token['user_id'], "count" => 200, "cursor" => $cursor, "since_id" => $twitterTweetID, "exclude_replies" => true, "include_rts" => true])),true);
+
+                foreach($results as $tweet) {
+                    if (isset($tweet['retweeted_status'])) {
+                        if ($tweet['retweeted_status']['id_str'] == $twitterTweetID) {
+                            $retweet = true;
+
+                            if ($tweet['favorited'] == true) {
+                                $like = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+
+                if ($follow && $like && $retweet) {
+                    $user->twitter_completed = 1;
+                    $user->save();
+
+                    echo "true";
+                } else {
+                    if (!$follow) {
+                        echo "You have not followed our page."
+                    } else {
+                        echo "You have not liked and retweeted our tweet."
+                    }
+                }
             } else {
-                echo "false";
+                return redirect('/');
             }
-            
         }
     }
 
     public function youtubeVerify() {
         if(!Session::has('eth_address')) {
-            echo "false";
+            return redirect('/');
         } else {
+            $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+
+            if ($user->youtube()->exists()) {
+                $access_token = json_decode($user->youtube->access_token,true);
+
+                $client = new Google_Client();
+                // Set to name/location of your client_secrets.json file.
+                $client->setClientId(env("GOOGLE_CLIENT_ID", ""));
+                $client->setClientSecret(env("GOOGLE_CLIENT_SECRET", ""));
+                // Set to valid redirect URI for your project.
+                $client->setRedirectUri(route('bounty-youtube-callback'));
+
+                $client->addScope(Google_Service_YouTube::YOUTUBE_READONLY);
+                $client->setAccessType('offline');
+
+                $client->setAccessToken($accessToken);
+
+                if ($client->isAccessTokenExpired()) {
+                    $client->refreshToken($client->getRefreshToken());
+                    file_put_contents($credentialsPath, $client->getAccessToken());
+                }
+
+                $service = new Google_Service_YouTube($client);
+
+                $response = $service->subscriptions->listSubscriptions(
+                    "snippet,contentDetails",
+                    array_filter(["mine" => true, "forChannelId" => "UCfD4r29eHpn_XTtqrKh3Xig"])
+                );
+
+                dd($response);
+
+            } else {
+                return redirect('/');
+            }
         }
     }
 
