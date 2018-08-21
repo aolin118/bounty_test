@@ -16,7 +16,7 @@ class CreateYoutubeTokensTable extends Migration
         Schema::create('youtube_tokens', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('bounty_user_id')->unique();
-            $table->string('access_token');
+            $table->text('access_token');
             $table->timestamps();
         });
     }
