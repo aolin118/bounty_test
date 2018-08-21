@@ -246,6 +246,7 @@ class BountyController extends Controller
         $response = $redditClient->getAccessToken($redditTokenEndpoint, "authorization_code", $params);
 
         $accessTokenResult = $response["result"];
+        dd($accessTokenResult);
         $redditClient->setAccessToken($accessTokenResult["access_token"]);
         $redditClient->setAccessTokenType(\OAuth2\Client::ACCESS_TOKEN_BEARER);
 
