@@ -480,6 +480,9 @@ class BountyController extends Controller
             $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
 
             if ($user->reddit()->exists()) {
+                $subscribed = false;
+                $upvote = false;
+
                 $access_token = json_decode($user->reddit->access_token,true);
 
                 $client = new \OAuth2\Client(env("REDDIT_CLIENT_ID", ""), env("REDDIT_CLIENT_SECRET", ""), \OAuth2\Client::AUTH_TYPE_AUTHORIZATION_BASIC);
@@ -487,8 +490,18 @@ class BountyController extends Controller
                 $client->setAccessTokenType(\OAuth2\Client::ACCESS_TOKEN_BEARER);
                 $client->setCurlOption(CURLOPT_USERAGENT,"BCoinClient/0.1 by Talenta");
 
-                $response = $client->fetch("https://oauth.reddit.com/subreddits/mine/subscriber.json");
+                $response = $client->fetch("https://oauth.reddit.com/subreddits/mine/subscriber.json",["count" => 500, "sr_detail" => true]);
+
                 dd($response);
+
+                foreach ($response['result']['data']['children'] as $sub) {
+                    if ($sub['data']['display_name'] == "BCoinsg") {
+                        $subscribed = true;
+                        break;
+                    }
+                }
+
+
 
             } else {
                 return redirect('/');
