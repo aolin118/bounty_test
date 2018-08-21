@@ -125,6 +125,11 @@ a:hover {
 	height: 25px;
 }
 
+.logout {
+	color: white;
+	text-transform: underline
+}
+
 @media (min-width: 991px) {
 	.steps {
 		text-align: center;
