@@ -492,8 +492,6 @@ class BountyController extends Controller
 
                 $response = $client->fetch("https://oauth.reddit.com/subreddits/mine/subscriber.json",["count" => 500]);
 
-                dd($response);
-
                 foreach ($response['result']['data']['children'] as $sub) {
                     if ($sub['data']['display_name'] == "BCoinsg") {
                         $subscribed = true;
@@ -501,7 +499,9 @@ class BountyController extends Controller
                     }
                 }
 
-                $response = $client->fetch("https://oauth.reddit.com//by_id/97g8sx.json",["count" => 500]);
+                $response = $client->fetch("https://oauth.reddit.com//by_id/t1_97g8sx.json");
+                
+                dd($response);
 
             } else {
                 return redirect('/');
