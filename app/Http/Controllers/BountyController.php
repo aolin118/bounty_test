@@ -446,7 +446,7 @@ class BountyController extends Controller
 
                 $response = $service->videos->getRating(
                     "TtAUV7MUW5k",
-                    []
+                    array_filter(['onBehalfOfContentOwner' => ''])
                 );
 
                 dd($response);
