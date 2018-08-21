@@ -386,9 +386,9 @@ class BountyController extends Controller
                     echo "true";
                 } else {
                     if (!$follow) {
-                        echo "You have not followed our page."
+                        echo "You have not followed our page.";
                     } else {
-                        echo "You have not liked and retweeted our tweet."
+                        echo "You have not liked and retweeted our tweet.";
                     }
                 }
             } else {
