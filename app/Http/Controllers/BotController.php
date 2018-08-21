@@ -7,6 +7,7 @@ use App\TelegramUser;
 use Log;
 use Telegram\Bot\Api;
 use Carbon\Carbon;
+use App\BountyUser;
 
 class BotController extends Controller
 {
