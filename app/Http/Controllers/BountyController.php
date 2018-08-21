@@ -393,7 +393,7 @@ class BountyController extends Controller
                     echo "true";
                 } else {
                     if (!$follow) {
-                        echo "You have not followed our page.";
+                        echo "You have not followed our Twitter Page.";
                     } else {
                         echo "You have not liked and retweeted our tweet.";
                     }
@@ -458,7 +458,22 @@ class BountyController extends Controller
                     array_filter(['onBehalfOfContentOwner' => ''])
                 );
 
-                dd($response);
+                if ($response['items'][0]['rating'] == "like") {
+                    $like = true;
+                }
+
+                if ($subscribed && $like) {
+                    $user->youtube_completed = 1;
+                    $user->save();
+
+                    echo "true";
+                } else {
+                    if (!$subscribed) {
+                        echo "You have not subscribed to our YouTube Channel.";
+                    } else {
+                        echo "You have not liked our video.";
+                    }
+                }
 
             } else {
                 return redirect('/');
