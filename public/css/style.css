@@ -127,7 +127,7 @@ a:hover {
 
 .logout {
 	color: white;
-	text-transform: underline
+	text-decoration: underline
 }
 
 @media (min-width: 991px) {
