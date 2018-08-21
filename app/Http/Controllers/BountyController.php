@@ -69,7 +69,7 @@ class BountyController extends Controller
 
     public function addressSubmit(Request $request)
     {
-        if (!isset($request->input("email"))) {
+        if (!$request->has("email")) {
             return redirect('/');
         }
 
@@ -80,7 +80,7 @@ class BountyController extends Controller
         if ($user) {
             return redirect(route('bounty-submit-get'));
         } else {
-            if (isset($request->input("referrer"))) {
+            if ($request->has("referrer")) {
                 $referrer = BountyUser::where("unique_link",$request->input('referrer'))->first();
                 $new = new BountyUser;
                 $new->email = $email;
