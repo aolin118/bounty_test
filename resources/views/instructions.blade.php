@@ -42,7 +42,7 @@
                                 @if ($user->telegram_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#telegram-modal">More Info</a>
                                 @else
-                                <span class="text-success">BCT Awarded</span>
+                                <span class="text-success mt-4">BCT Awarded</span>
                                 @endif
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                                 @if ($user->twitter_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#twitter-modal">More Info</a>
                                 @else
-                                <span class="text-success">BCT Awarded</span>
+                                <span class="text-success mt-4">BCT Awarded</span>
                                 @endif
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                                 @if ($user->youtube_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#youtube-modal">More Info</a>
                                 @else
-                                <span class="text-success">BCT Awarded</span>
+                                <span class="text-success mt-4">BCT Awarded</span>
                                 @endif
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                                 @if ($user->reddit_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#reddit-modal">More Info</a>
                                 @else
-                                <span class="text-success">BCT Awarded</span>
+                                <span class="text-success mt-4">BCT Awarded</span>
                                 @endif
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                                 @if ($user->medium_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#medium-modal">More Info</a>
                                 @else
-                                <span class="text-success">BCT Awarded</span>
+                                <span class="text-success mt-4">BCT Awarded</span>
                                 @endif
                             </div>
                         </div>
