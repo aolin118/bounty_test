@@ -57,19 +57,32 @@ class BotController extends Controller
             $user = BountyUser::where("unique_link",trim($command[2]))->first();
 
             if ($user) {
-                $telegramUser = new TelegramUser;
-                $telegramUser->bounty_user_id = $user->id;
-                $telegramUser->telegram_id = $id;
-                $saved = $telegramUser->save();
+                $telegramUserCheck = TelegramUser::where("telegram_id",$id)->first();
 
-                if ($saved) {
+                if ($telegramUserCheck) {
                     \Telegram::sendMessage([
                         'chat_id' => $update->getMessage()->getChat()->getId(),
                         'parse_mode' => 'HTML',
                         'disable_web_page_preview' => true,
-                        'text' => "<b>You have successfully registered for the bounty!</b>\n\nVisit https://bounty.bcoinsg.io to check your tokens earned!\n\nYour referral link:\nhttps://bounty.bcoinsg.io/r/" . $user->unique_link
+                        'text' => "<b>You have already registered for the bounty!</b>\n\nVisit https://bounty.bcoinsg.io to check your tokens earned!"
                     ]);
+                } else {
+                    $telegramUser = new TelegramUser;
+                    $telegramUser->bounty_user_id = $user->id;
+                    $telegramUser->telegram_id = $id;
+                    $saved = $telegramUser->save();
+
+                    if ($saved) {
+                        \Telegram::sendMessage([
+                            'chat_id' => $update->getMessage()->getChat()->getId(),
+                            'parse_mode' => 'HTML',
+                            'disable_web_page_preview' => true,
+                            'text' => "<b>You have successfully registered for the bounty!</b>\n\nVisit https://bounty.bcoinsg.io to check your tokens earned!\n\nYour referral link:\nhttps://bounty.bcoinsg.io/r/" . $user->unique_link
+                        ]);
+                    }
                 }
+
+                
             } else {
                 \Telegram::sendMessage([
                     'chat_id' => $update->getMessage()->getChat()->getId(),

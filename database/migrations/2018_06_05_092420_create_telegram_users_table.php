@@ -16,7 +16,7 @@ class CreateTelegramUsersTable extends Migration
         Schema::create('telegram_users', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('bounty_user_id')->unique();
-            $table->integer('telegram_id');
+            $table->integer('telegram_id')->unique();
             $table->timestamps();
         });
     }
