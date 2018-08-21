@@ -144,7 +144,7 @@ class BountyController extends Controller
                 //$redditTokenEndpoint = 'https://ssl.reddit.com/api/v1/access_token';
 
                 //$redditClient = new \OAuth2\Client($redditClientID, $redditClientSecret);
-                $redditClient = new \OAuth2\Client($redditClientID, $redditClientSecret, OAuth2\Client::AUTH_TYPE_AUTHORIZATION_BASIC);
+                $redditClient = new \OAuth2\Client($redditClientID, $redditClientSecret, \OAuth2\Client::AUTH_TYPE_AUTHORIZATION_BASIC);
                 $authURL['reddit'] = $redditClient->getAuthenticationUrl($redditAuthorizationEndpoint, $redditRedirectURI, array("scope" => "identity,mysubreddits", "state" => uniqid('', true), "duration" => "permanent"));
             }
         }
