@@ -59,8 +59,16 @@ class BountyController extends Controller
 
         if ($user) {
 
+            $awarded = 0;
+
+            if ($user->telegram_completed == 1) $awarded += 4;
+            if ($user->twitter_completed == 1) $awarded += 2;
+            if ($user->youtube_completed == 1) $awarded += 2;
+            if ($user->reddit_completed == 1) $awarded += 2;
+            if ($user->medium_completed == 1) $awarded += 2;
+
             $authURL = $this->getAuthURLs($user);
-            return view('instructions')->with('user',$user)->with('authURL', $authURL);
+            return view('instructions')->with('user',$user)->with('authURL', $authURL)->with('awarded',$awarded);
 
         } else {
             return redirect('/');
