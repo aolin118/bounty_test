@@ -140,7 +140,7 @@ class BountyController extends Controller
                 $redditClientSecret = env("REDDIT_CLIENT_SECRET", "");
 
                 $redditRedirectURI = route('bounty-reddit-callback');
-                $redditAuthorizationEndpoint = 'https://ssl.reddit.com/api/v1/authorize';
+                $redditAuthorizationEndpoint = 'https://www.reddit.com/api/v1/authorize';
                 //$redditTokenEndpoint = 'https://ssl.reddit.com/api/v1/access_token';
 
                 $redditClient = new \OAuth2\Client($redditClientID, $redditClientSecret);
