@@ -25,7 +25,8 @@
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">User Information<a href="{{ route('bounty-logout') }}" class="float-right logout">Log Out</a></div>
                             <div class="card-body text-center">
-                                <p><b>Email:</b><br/>{{ $user->email }}</p>
+                                <p><b>Email</b><br/>{{ $user->email }}</p>
+                                <p><b>Your Referral Link</b><br/><a href="{{ route('bounty-referral', $user->unique_link) }}" target="_blank">{{ route('bounty-referral', $user->unique_link) }}</a><br/><button type="button" class="btn btn-primary mt-2" id="copy-btn" data-clipboard-text="{{ route('bounty-referral', $user->unique_link) }}">Copy</button></p>
                             </div>
                         </div>
                     </div>
@@ -348,6 +349,18 @@
                     }
                 });
             }
+
+            var btn = document.getElementById('copy-btn');
+            var clipboard = new ClipboardJS(btn);
+
+            clipboard.on('success', function(e) {
+                console.log(e);
+                $("#copy-btn").html("Copied!");
+                $("#copy-btn").prop('disabled', true);
+            });
+            clipboard.on('error', function(e) {
+                console.log(e);
+            });
         </script>
     </body>
 </html>
