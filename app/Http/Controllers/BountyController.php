@@ -490,7 +490,7 @@ class BountyController extends Controller
                 $client->setAccessTokenType(\OAuth2\Client::ACCESS_TOKEN_BEARER);
                 $client->setCurlOption(CURLOPT_USERAGENT,"BCoinClient/0.1 by Talenta");
 
-                $response = $client->fetch("https://oauth.reddit.com/subreddits/mine/subscriber.json",["count" => 500]);
+                $response = $client->fetch("https://oauth.reddit.com/api/info.json", ["id" => "t5_mx0d3"], "GET", [], 1);
                 dd($response);
 
                 foreach ($response['result']['data']['children'] as $sub) {
