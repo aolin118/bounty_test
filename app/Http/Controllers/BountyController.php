@@ -484,7 +484,7 @@ class BountyController extends Controller
 
                 $client = new \OAuth2\Client(env("REDDIT_CLIENT_ID", ""), env("REDDIT_CLIENT_SECRET", ""), \OAuth2\Client::AUTH_TYPE_AUTHORIZATION_BASIC);
                 $client->setAccessToken($access_token["access_token"]);
-                $client->setAccessTokenType(OAuth2\Client::ACCESS_TOKEN_BEARER);
+                $client->setAccessTokenType(\OAuth2\Client::ACCESS_TOKEN_BEARER);
 
                 $response = $client->fetch("https://oauth.reddit.com/subreddits/mine/subscriber.json");
                 dd($response);
