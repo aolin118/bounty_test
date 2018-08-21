@@ -416,7 +416,7 @@ class BountyController extends Controller
                 $client->addScope(Google_Service_YouTube::YOUTUBE_READONLY);
                 $client->setAccessType('offline');
 
-                $client->setAccessToken($accessToken);
+                $client->setAccessToken($access_token);
 
                 if ($client->isAccessTokenExpired()) {
                     $client->refreshToken($client->getRefreshToken());
