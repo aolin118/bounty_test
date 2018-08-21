@@ -60,8 +60,8 @@ class BountyController extends Controller
         if ($user) {
 
             $authURL = $this->getAuthURLs($user);
-
             return view('instructions')->with('user',$user)->with('authURL', $authURL);
+
         } else {
             return redirect('/');
         }
@@ -78,6 +78,7 @@ class BountyController extends Controller
         $user = BountyUser::where("email",$email)->first();
 
         if ($user) {
+            Session::put('email', $email);
             return redirect(route('bounty-submit-get'));
         } else {
             if ($request->has("referrer")) {
