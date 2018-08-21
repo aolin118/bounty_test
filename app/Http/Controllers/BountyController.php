@@ -341,18 +341,30 @@ class BountyController extends Controller
                 }
             }
 
-            
 
-            $tweets = array();
 
             $results = json_decode(json_encode($connection->get("statuses/user_timeline", ["user_id" => $access_token['user_id'], "count" => 200, "cursor" => $cursor, "since_id" => $twitterTweetID, "exclude_replies" => true, "include_rts" => true])),true);
 
-            dd($results);
             foreach($results as $tweet) {
-                if ($tweet['retweeted_status']['id_str'] == $twitterTweetID) {
-                    $retweet = true;
-                    break;
+                if (isset($tweet['retweeted_status'])) {
+                    if ($tweet['retweeted_status']['id_str'] == $twitterTweetID) {
+                        $retweet = true;
+
+                        if ($tweet['favorited'] == $true) {
+                            $like = true;
+                        }
+                        break;
+                    }
                 }
+            }
+
+            if ($follow && $like && $retweet) {
+                $user->twitter_completed = 1;
+                $user->save();
+
+                echo "true";
+            } else {
+                echo "false";
             }
             
         }
