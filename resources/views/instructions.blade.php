@@ -108,6 +108,11 @@
                                 <li><span class="text-danger">Reward is capped for the first 100,000 unique users across both the BCoin English and Chinese Telegram Groups.</span></li>
                             </ul>
                         </div>
+                        @if ($user->telegram()->exists())
+                        <div class="col-12 text-center my-4">
+                            <button type="button" class="btn btn-success" onclick="telegramVerify()">Verify Completion</button>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -135,6 +140,11 @@
                                 <li>Like and retweet our <a href="#" target="_blank">Tweet</a></li>
                             </ul>
                         </div>
+                        @if ($user->twitter()->exists())
+                        <div class="col-12 text-center my-4">
+                            <button type="button" class="btn btn-success" onclick="twitterVerify()">Verify Completion</button>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -162,6 +172,11 @@
                                 <li>Subscribe to our <a href="https://www.youtube.com/channel/UCfD4r29eHpn_XTtqrKh3Xig" target="_blank">Channel</a></li>
                             </ul>
                         </div>
+                        @if ($user->youtube()->exists())
+                        <div class="col-12 text-center my-4">
+                            <button type="button" class="btn btn-success" onclick="youtubeVerify()">Verify Completion</button>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -189,6 +204,11 @@
                                 <li>Upvote our <a href="#" target="_blank">Pinned Post</a></li>
                             </ul>
                         </div>
+                        @if ($user->reddit()->exists())
+                        <div class="col-12 text-center my-4">
+                            <button type="button" class="btn btn-success" onclick="redditVerify()">Verify Completion</button>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -216,6 +236,11 @@
                                 <li>Clap once for our <a href="#" target="_blank">article</a></li>
                             </ul>
                         </div>
+                        @if ($user->medium()->exists())
+                        <div class="col-12 text-center my-4">
+                            <button type="button" class="btn btn-success" onclick="mediumVerify()">Verify Completion</button>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

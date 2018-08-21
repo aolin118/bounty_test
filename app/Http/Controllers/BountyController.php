@@ -295,6 +295,26 @@ class BountyController extends Controller
         return redirect(route('bounty-submit-get', Session::get('eth_address')));
     }
 
+    public function telegramVerify() {
+        
+    }
+
+    public function twitterVerify() {
+
+    }
+
+    public function youtubeVerify() {
+
+    }
+
+    public function redditVerify() {
+
+    }
+
+    public function mediumVerify() {
+
+    }
+
     public function airdropExport() {
 
         $airdropAll = TelegramUser::select("telegram_users.id", "telegram_users.eth_address", "telegram_users.telegram_id", "telegram_users.referrer", DB::raw('IFNULL(t2.count,0) as refer_count'), "telegram_users.created_at", "telegram_users.updated_at")
