@@ -109,9 +109,9 @@
                             </ul>
                         </div>
                         @if ($user->telegram()->exists())
-                        <div class="col-12 text-center mt-2 mb-4">
+                        <div class="col-12 text-center mt-2 mb-2">
                             <button type="button" class="btn btn-success" onclick="telegramVerify()">Verify Completion</button>
-                            <p id="telegram-error" class="text-danger"></p>
+                            <p id="telegram-error" class="text-danger my-2"><img src="{{ asset('images/loading.gif') }}" class="img-fluid"></p>
                         </div>
                         @endif
                     </div>
@@ -254,6 +254,7 @@
         <script>
 
             function telegramVerify() {
+                $("#telegram-error").show();
                 $.ajax({
                     url: "{{ route('bounty-telegram-verify') }}",
                     type: 'GET',
@@ -262,7 +263,6 @@
                             location.reload();
                         } else {
                             $("#telegram-error").html(result);
-                            $("#telegram-error").show();
                         }
                     }
                 });
