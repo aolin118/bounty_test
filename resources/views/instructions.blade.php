@@ -39,8 +39,11 @@
                             <div class="card-body text-center">
                                 <img src="{{ asset('images/telegram.png') }}" class="img-fluid mb-3">
                                 <div>Join our Telegram Community</div>
+                                @if ($user->telegram_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#telegram-modal">More Info</a>
-
+                                @else
+                                <span class="text-success">BCT Awarded</span>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -50,7 +53,11 @@
                             <div class="card-body text-center">
                                 <img src="{{ asset('images/twitter.png') }}" class="img-fluid mb-3">
                                 <div>Follow us and retweet our Tweet</div>
+                                @if ($user->twitter_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#twitter-modal">More Info</a>
+                                @else
+                                <span class="text-success">BCT Awarded</span>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -60,7 +67,11 @@
                             <div class="card-body text-center">
                                 <img src="{{ asset('images/youtube.png') }}" class="img-fluid mb-3">
                                 <div>Like our video and subscribe to our channel</div>
+                                @if ($user->youtube_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#youtube-modal">More Info</a>
+                                @else
+                                <span class="text-success">BCT Awarded</span>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -72,7 +83,11 @@
                             <div class="card-body text-center">
                                 <img src="{{ asset('images/reddit.png') }}" class="img-fluid mb-3">
                                 <div>Be a part of our Reddit Community</div>
+                                @if ($user->reddit_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#reddit-modal">More Info</a>
+                                @else
+                                <span class="text-success">BCT Awarded</span>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -82,7 +97,11 @@
                             <div class="card-body text-center">
                                 <img src="{{ asset('images/medium.png') }}" class="img-fluid mb-3">
                                 <div>Follow our Medium and clap for our article</div>
+                                @if ($user->medium_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#medium-modal">More Info</a>
+                                @else
+                                <span class="text-success">BCT Awarded</span>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -90,6 +109,7 @@
             </div>
         </div>
 
+        @if ($user->telegram_completed == 0)
         <div id="telegram-modal" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
@@ -123,7 +143,9 @@
                 </div>
             </div>
         </div>
+        @endif
 
+        @if ($user->twitter_completed == 0)
         <div id="twitter-modal" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal" role="document">
                 <div class="modal-content">
@@ -156,7 +178,9 @@
                 </div>
             </div>
         </div>
+        @endif
 
+        @if ($user->youtube_completed == 0)
         <div id="youtube-modal" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal" role="document">
                 <div class="modal-content">
@@ -189,7 +213,9 @@
                 </div>
             </div>
         </div>
+        @endif
 
+        @if ($user->reddit_completed == 0)
         <div id="reddit-modal" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal" role="document">
                 <div class="modal-content">
@@ -222,7 +248,9 @@
                 </div>
             </div>
         </div>
+        @endif
 
+        @if ($user->medium_completed == 0)
         <div id="medium-modal" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal" role="document">
                 <div class="modal-content">
@@ -255,6 +283,7 @@
                 </div>
             </div>
         </div>
+        @endif
 
         <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
