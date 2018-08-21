@@ -67,7 +67,16 @@ class BountyController extends Controller
             if ($user->reddit_completed == 1) $awarded += 2;
             if ($user->medium_completed == 1) $awarded += 2;
 
-            
+            $referral = BountyUser::where("referrer",$user->id)
+                                    ->where(function($q) {
+                                          $q->where('telegram_completed', 1)
+                                            ->orWhere('twitter_completed', 1)
+                                            ->orWhere('youtube_completed', 1)
+                                            ->orWhere('reddit_completed', 1)
+                                            ->orWhere('youtube_completed', 1);
+                                      })->count();
+
+            $awarded += ($referral * 2);
 
             $authURL = $this->getAuthURLs($user);
             return view('instructions')->with('user',$user)->with('authURL', $authURL)->with('awarded',$awarded);
@@ -202,7 +211,7 @@ class BountyController extends Controller
         $request_token['oauth_token_secret'] = Session::get('oauth_token_secret');
 
         if ($request->has('oauth_token') && $request_token['oauth_token'] !== $request->input('oauth_token')) {
-            return redirect(route('bounty-submit-get', Session::get('email')));
+            return redirect(route('bounty-submit-get'));
         } else {
             $connection = new TwitterOAuth(env("TWITTER_CLIENT_ID", ""), env("TWITTER_CLIENT_SECRET", ""), $request_token['oauth_token'], $request_token['oauth_token_secret']);
             $access_token = $connection->oauth("oauth/access_token", ["oauth_verifier" => $request->input('oauth_verifier')]);
@@ -216,7 +225,7 @@ class BountyController extends Controller
                 $twitterToken->save();
             }
 
-            return redirect(route('bounty-submit-get', Session::get('email')));
+            return redirect(route('bounty-submit-get'));
 
         }
     }
@@ -257,7 +266,7 @@ class BountyController extends Controller
             }
         }
 
-        return redirect(route('bounty-submit-get', Session::get('email')));
+        return redirect(route('bounty-submit-get'));
     }
 
     public function redditCallback(Request $request) {
@@ -287,7 +296,7 @@ class BountyController extends Controller
 
         }
 
-        return redirect(route('bounty-submit-get', Session::get('email')));
+        return redirect(route('bounty-submit-get'));
     }
 
     public function mediumCallback(Request $request) {
@@ -314,7 +323,7 @@ class BountyController extends Controller
             $mediumToken->save();
         }
 
-        return redirect(route('bounty-submit-get', Session::get('email')));
+        return redirect(route('bounty-submit-get'));
     }
 
     public function telegramVerify() {
