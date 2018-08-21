@@ -345,21 +345,15 @@ class BountyController extends Controller
 
             $tweets = array();
 
-            $cursor = "-1";
-            while ($cursor != "0") {
-                $results = json_decode(json_encode($connection->get("statuses/user_timeline", ["user_id" => $access_token['user_id'], "count" => 200, "cursor" => $cursor, "since_id" => $twitterTweetID, "exclude_replies" => true, "include_rts" => true])),true);
-                $cursor = $results["next_cursor_str"];
+            $results = json_decode(json_encode($connection->get("statuses/user_timeline", ["user_id" => $access_token['user_id'], "count" => 200, "cursor" => $cursor, "since_id" => $twitterTweetID, "exclude_replies" => true, "include_rts" => true])),true);
 
-                dd($results);
-                foreach($results as $tweet) {
-                    if ($tweet['retweeted_status']['id_str'] == $twitterTweetID) {
-                        $retweet = true;
-                        break;
-                    }
+            dd($results);
+            foreach($results as $tweet) {
+                if ($tweet['retweeted_status']['id_str'] == $twitterTweetID) {
+                    $retweet = true;
+                    break;
                 }
             }
-
-
             
         }
     }
