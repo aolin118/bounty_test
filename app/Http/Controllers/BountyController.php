@@ -148,7 +148,7 @@ class BountyController extends Controller
 
                 //$redditClient = new \OAuth2\Client($redditClientID, $redditClientSecret);
                 $redditClient = new \OAuth2\Client($redditClientID, $redditClientSecret, \OAuth2\Client::AUTH_TYPE_AUTHORIZATION_BASIC);
-                $authURL['reddit'] = $redditClient->getAuthenticationUrl($redditAuthorizationEndpoint, $redditRedirectURI, array("scope" => "identity,mysubreddits", "state" => uniqid('', true), "duration" => "permanent"));
+                $authURL['reddit'] = $redditClient->getAuthenticationUrl($redditAuthorizationEndpoint, $redditRedirectURI, array("scope" => "identity,read,mysubreddits", "state" => uniqid('', true), "duration" => "permanent"));
             }
         }
 
@@ -490,7 +490,7 @@ class BountyController extends Controller
                 $client->setAccessTokenType(\OAuth2\Client::ACCESS_TOKEN_BEARER);
                 $client->setCurlOption(CURLOPT_USERAGENT,"BCoinClient/0.1 by Talenta");
 
-                $response = $client->fetch("https://oauth.reddit.com/subreddits/mine/subscriber.json",["count" => 500, "sr_detail" => true]);
+                $response = $client->fetch("https://oauth.reddit.com/subreddits/mine/subscriber.json",["count" => 500]);
 
                 dd($response);
 
@@ -501,7 +501,7 @@ class BountyController extends Controller
                     }
                 }
 
-
+                $response = $client->fetch("https://oauth.reddit.com//by_id/97g8sx.json",["count" => 500]);
 
             } else {
                 return redirect('/');
