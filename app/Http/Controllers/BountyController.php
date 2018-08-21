@@ -296,7 +296,22 @@ class BountyController extends Controller
     }
 
     public function telegramVerify() {
-        echo "true";
+        if(!Session::has('eth_address')) {
+            echo "false";
+        } else {
+            $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+
+            $groups = ["@bcoinsg_EN", "@bcoinsg_CN"];
+            $channel = "@bcoinsg";
+
+            $result = \Telegram::getChatMember(['chat_id' => $channel, 'user_id' => $user->telegram->telegram_id]);
+            $chatMember = ($result->getDecodedBody())['result'];
+
+            dd($chatMember);
+
+            echo "true";
+        }
+        
     }
 
     public function twitterVerify() {
