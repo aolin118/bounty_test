@@ -67,6 +67,8 @@ class BountyController extends Controller
             if ($user->reddit_completed == 1) $awarded += 2;
             if ($user->medium_completed == 1) $awarded += 2;
 
+            
+
             $authURL = $this->getAuthURLs($user);
             return view('instructions')->with('user',$user)->with('authURL', $authURL)->with('awarded',$awarded);
 
