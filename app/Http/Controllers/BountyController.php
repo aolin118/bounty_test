@@ -213,6 +213,8 @@ class BountyController extends Controller
         $accessToken = $client->authenticate($request->input("code"));
         $client->setAccessToken($accessToken);
 
+        dd($accessToken);
+
         $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
         if ($user) {
             $youtubeToken = new YoutubeToken;
