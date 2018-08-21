@@ -209,6 +209,7 @@ class BountyController extends Controller
 
         $client->addScope(Google_Service_YouTube::YOUTUBE_READONLY);
         $client->setAccessType('offline');
+        $client->setApprovalPrompt('force');
 
         $accessToken = $client->authenticate($request->input("code"));
         $client->setAccessToken($accessToken);
@@ -415,6 +416,7 @@ class BountyController extends Controller
 
                 $client->addScope(Google_Service_YouTube::YOUTUBE_READONLY);
                 $client->setAccessType('offline');
+                $client->setApprovalPrompt('force');
 
                 $client->setAccessToken($access_token);
 
