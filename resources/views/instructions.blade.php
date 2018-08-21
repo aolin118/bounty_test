@@ -111,7 +111,7 @@
                         @if ($user->telegram()->exists())
                         <div class="col-12 text-center mt-2 mb-4">
                             <button type="button" class="btn btn-success" onclick="telegramVerify()">Verify Completion</button>
-                            <span id="telegram-error" class="text-danger"></span>
+                            <p id="telegram-error" class="text-danger"></p>
                         </div>
                         @endif
                     </div>
