@@ -175,8 +175,9 @@
                             </ul>
                         </div>
                         @if ($user->youtube()->exists())
-                        <div class="col-12 text-center my-4">
-                            <button type="button" class="btn btn-success" onclick="youtubeVerify()">Verify Completion</button>
+                        <div class="col-12 text-center mt-2 mb-2">
+                            <button type="button" class="btn btn-success" id="youtube-verify-btn" onclick="youtubeVerify()">Verify Completion</button>
+                            <p id="youtube-error" class="text-danger my-2"></p>
                         </div>
                         @endif
                     </div>
@@ -284,6 +285,24 @@
                         } else {
                             $("#twitter-verify-btn").prop('disabled', false);
                             $("#twitter-error").html(result);
+                        }
+                    }
+                });
+            }
+
+            function youtubeVerify() {
+                $("#youtube-error").html("<img src='{{ asset('images/loading.gif') }}'' class='img-fluid loading'>");
+                $("#youtube-error").show();
+                $("#youtube-verify-btn").prop('disabled', true);
+                $.ajax({
+                    url: "{{ route('bounty-youtube-verify') }}",
+                    type: 'GET',
+                    success: function(result) {
+                        if (result == "true") {
+                            location.reload();
+                        } else {
+                            $("#youtube-verify-btn").prop('disabled', false);
+                            $("#youtube-error").html(result);
                         }
                     }
                 });

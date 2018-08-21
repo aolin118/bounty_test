@@ -242,16 +242,12 @@ class BountyController extends Controller
             return redirect('/');
         }
 
-        $redditClientID = env("REDDIT_CLIENT_ID", "");
-        $redditClientSecret = env("REDDIT_CLIENT_SECRET", "");
-
-        $redditRedirectURI = route('bounty-reddit-callback');
         $redditTokenEndpoint = 'https://ssl.reddit.com/api/v1/access_token';
 
         //$redditClient = new \OAuth2\Client($redditClientID, $redditClientSecret);
-        $redditClient = new \OAuth2\Client($redditClientID, $redditClientSecret, \OAuth2\Client::AUTH_TYPE_AUTHORIZATION_BASIC);
+        $redditClient = new \OAuth2\Client(env("REDDIT_CLIENT_ID", ""), env("REDDIT_CLIENT_SECRET", ""), \OAuth2\Client::AUTH_TYPE_AUTHORIZATION_BASIC);
 
-        $params = array("code" => $request->input('code'), "redirect_uri" => $redditRedirectURI);
+        $params = array("code" => $request->input('code'), "redirect_uri" => route('bounty-reddit-callback'));
         $response = $redditClient->getAccessToken($redditTokenEndpoint, "authorization_code", $params);
 
         $accessTokenResult = $response["result"];
@@ -276,15 +272,11 @@ class BountyController extends Controller
             return redirect('/');
         }
 
-        $mediumClientID = env("MEDIUM_CLIENT_ID", "");
-        $mediumClientSecret = env("MEDIUM_CLIENT_SECRET", "");
-
-        $mediumRedirectURI = route('bounty-medium-callback');
         $mediumTokenEndpoint = 'https://api.medium.com/v1/tokens';
 
-        $mediumClient = new \OAuth2\Client($mediumClientID, $mediumClientSecret);
+        $mediumClient = new \OAuth2\Client(env("MEDIUM_CLIENT_ID", ""), env("MEDIUM_CLIENT_SECRET", ""));
 
-        $params = array("code" => $request->input('code'), "redirect_uri" => $mediumRedirectURI);
+        $params = array("code" => $request->input('code'), "redirect_uri" => route('bounty-medium-callback'));
         $response = $mediumClient->getAccessToken($mediumTokenEndpoint, "authorization_code", $params);
 
         $accessTokenResult = $response["result"];
@@ -483,15 +475,38 @@ class BountyController extends Controller
 
     public function redditVerify() {
         if(!Session::has('eth_address')) {
-            echo "false";
+            return redirect('/');
         } else {
+            $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+
+            if ($user->reddit()->exists()) {
+                $access_token = json_decode($user->reddit->access_token,true);
+
+                $client = new \OAuth2\Client(env("REDDIT_CLIENT_ID", ""), env("REDDIT_CLIENT_SECRET", ""), \OAuth2\Client::AUTH_TYPE_AUTHORIZATION_BASIC);
+                $client->setAccessToken($access_token["access_token"]);
+                $client->setAccessTokenType(OAuth2\Client::ACCESS_TOKEN_BEARER);
+
+                $response = $client->fetch("https://oauth.reddit.com/subreddits/mine/subscriber.json");
+                dd($response);
+
+            } else {
+                return redirect('/');
+            }
         }
     }
 
     public function mediumVerify() {
         if(!Session::has('eth_address')) {
-            echo "false";
+            return redirect('/');
         } else {
+            $user = BountyUser::where("eth_address", Session::get('eth_address'))->first();
+
+            if ($user->medium()->exists()) {
+                $access_token = json_decode($user->medium->access_token,true);
+
+            } else {
+                return redirect('/');
+            }
         }
     }
 
