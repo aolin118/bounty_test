@@ -225,11 +225,7 @@
                             <img src="{{ asset('images/youtube.png') }}" class="img-fluid">
                             <h3 class="text-center mt-4">YouTube Reward Structure</h3>
                             @if (!$user->youtube()->exists())
-<<<<<<< HEAD
                             <a href="{{ $authURL['youtube'] }}" class="btn btn-danger" target="_blank"><i class="fab fa-youtube mr-2"></i>Sign In with YouTube</a>
-=======
-                            <a href="{{ $authURL['youtube'] }}" class="btn btn-danger"><i class="fab fa-youtube mr-2" target="_blank"></i>Sign In with YouTube</a>
->>>>>>> 5c20274a05f291ffc50075e535c3213d9dd8af1b
                             @endif
                         </div>
                         <div class="col-12 mt-4">
@@ -263,13 +259,8 @@
                         <div class="col-12 text-center">
                             <img src="{{ asset('images/reddit.png') }}" class="img-fluid">
                             <h3 class="text-center mt-4">Reddit Reward Structure</h3>
-                            @if (!$user->reddit()->exists())
-<<<<<<< HEAD
+                            @if (!$user->reddit()->exists()) 
                             <a href="{{ $authURL['reddit'] }}" class="btn btn-reddit" target="_blank"><i class="fab fa-reddit-alien mr-2"></i>Sign In with Reddit</a>
-=======
-                            <a href="{{ $authURL['reddit'] }}" class="btn btn-reddit"><i class="fab fa-reddit-alien mr-2" target="_blank"></i>Sign In with Reddit</a>
->>>>>>> 5c20274a05f291ffc50075e535c3213d9dd8af1b
-                            @endif
                         </div>
                         <div class="col-12 mt-4">
                             <ul>
@@ -303,11 +294,7 @@
                             <img src="{{ asset('images/medium.png') }}" class="img-fluid">
                             <h3 class="text-center mt-4">Medium Reward Structure</h3>
                             @if (!$user->medium()->exists())
-<<<<<<< HEAD
                             <a href="{{ $authURL['medium'] }}" class="btn btn-medium" target="_blank"><i class="fab fa-medium-m mr-2"></i>Sign In with Medium</a>
-=======
-                            <a href="{{ $authURL['medium'] }}" class="btn btn-medium"><i class="fab fa-medium-m mr-2" target="_blank"></i>Sign In with Medium</a>
->>>>>>> 5c20274a05f291ffc50075e535c3213d9dd8af1b
                             @endif
                         </div>
                         <div class="col-12 mt-4">
