@@ -112,7 +112,7 @@
                             <div class="card-body text-center">
                                 <img src="{{ asset('images/facebook.png') }}" class="img-fluid mb-3">
                                 <div>Like and follow us on Facebook</div>
-                                <a href="https://www.facebook.com/BCoinsg/" class="btn btn-outline-primary mt-4">Link</a>
+                                <a href="https://www.facebook.com/BCoinsg/" class="btn btn-outline-primary mt-4" target="_blank">Link</a>
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                             <div class="card-body text-center">
                                 <img src="{{ asset('images/instagram.png') }}" class="img-fluid mb-3">
                                 <div>Follow us on Instagram</div>
-                                <a href="https://www.instagram.com/bcoinsg" class="btn btn-outline-primary mt-4">Link</a>
+                                <a href="https://www.instagram.com/bcoinsg" class="btn btn-outline-primary mt-4" target="_blank">Link</a>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                             <div class="card-body text-center">
                                 <img src="{{ asset('images/linkedin.png') }}" class="img-fluid mb-3">
                                 <div>Follow our LinkedIn Page</div>
-                                <a href="https://www.linkedin.com/company/bcoinsg/" class="btn btn-outline-primary mt-4">Link</a>
+                                <a href="https://www.linkedin.com/company/bcoinsg/" class="btn btn-outline-primary mt-4" target="_blank">Link</a>
                             </div>
                         </div>
                     </div>
@@ -190,7 +190,7 @@
                             <img src="{{ asset('images/twitter.png') }}" class="img-fluid">
                             <h3 class="text-center mt-4">Twitter Reward Structure</h3>
                             @if (!$user->twitter()->exists())
-                            <a href="{{ $authURL['twitter'] }}" class="btn btn-primary"><i class="fab fa-twitter mr-2"></i>Sign In with Twitter</a>
+                            <a href="{{ $authURL['twitter'] }}" class="btn btn-primary" target="_blank"><i class="fab fa-twitter mr-2"></i>Sign In with Twitter</a>
                             @endif
                         </div>
                         <div class="col-12 mt-4">
@@ -225,7 +225,7 @@
                             <img src="{{ asset('images/youtube.png') }}" class="img-fluid">
                             <h3 class="text-center mt-4">YouTube Reward Structure</h3>
                             @if (!$user->youtube()->exists())
-                            <a href="{{ $authURL['youtube'] }}" class="btn btn-danger"><i class="fab fa-youtube mr-2"></i>Sign In with YouTube</a>
+                            <a href="{{ $authURL['youtube'] }}" class="btn btn-danger"><i class="fab fa-youtube mr-2" target="_blank"></i>Sign In with YouTube</a>
                             @endif
                         </div>
                         <div class="col-12 mt-4">
@@ -260,7 +260,7 @@
                             <img src="{{ asset('images/reddit.png') }}" class="img-fluid">
                             <h3 class="text-center mt-4">Reddit Reward Structure</h3>
                             @if (!$user->reddit()->exists())
-                            <a href="{{ $authURL['reddit'] }}" class="btn btn-reddit"><i class="fab fa-reddit-alien mr-2"></i>Sign In with Reddit</a>
+                            <a href="{{ $authURL['reddit'] }}" class="btn btn-reddit"><i class="fab fa-reddit-alien mr-2" target="_blank"></i>Sign In with Reddit</a>
                             @endif
                         </div>
                         <div class="col-12 mt-4">
@@ -295,7 +295,7 @@
                             <img src="{{ asset('images/medium.png') }}" class="img-fluid">
                             <h3 class="text-center mt-4">Medium Reward Structure</h3>
                             @if (!$user->medium()->exists())
-                            <a href="{{ $authURL['medium'] }}" class="btn btn-medium"><i class="fab fa-medium-m mr-2"></i>Sign In with Medium</a>
+                            <a href="{{ $authURL['medium'] }}" class="btn btn-medium"><i class="fab fa-medium-m mr-2" target="_blank"></i>Sign In with Medium</a>
                             @endif
                         </div>
                         <div class="col-12 mt-4">
