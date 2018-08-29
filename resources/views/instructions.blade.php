@@ -261,6 +261,7 @@
                             <h3 class="text-center mt-4">Reddit Reward Structure</h3>
                             @if (!$user->reddit()->exists()) 
                             <a href="{{ $authURL['reddit'] }}" class="btn btn-reddit" target="_blank"><i class="fab fa-reddit-alien mr-2"></i>Sign In with Reddit</a>
+                            @endif
                         </div>
                         <div class="col-12 mt-4">
                             <ul>
