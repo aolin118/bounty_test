@@ -62,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-3 mr-auto step-container">
+                    <div class="col-12 col-lg-3 step-container">
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">YouTube - 2 BCT</div>
                             <div class="card-body text-center">
@@ -76,9 +76,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mb-1 mt-0">
-                    <div class="col-12 col-lg-3 ml-auto step-container">
+                    <div class="col-12 col-lg-3 mr-auto step-container">
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">Reddit - 2 BCT</div>
                             <div class="card-body text-center">
@@ -92,7 +90,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-3 mr-auto step-container">
+                </div>
+                <div class="row mb-1 mt-0">
+                    <div class="col-12 col-lg-3 ml-auto step-container">
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">Medium - 2 BCT</div>
                             <div class="card-body text-center">
@@ -103,6 +103,36 @@
                                 @else
                                 <p class="text-success mt-4">BCT Awarded</p>
                                 @endif
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3 step-container">
+                        <div class="card border-0 mb-3 h-100">
+                            <div class="card-header bg-secondary text-white">Facebook</div>
+                            <div class="card-body text-center">
+                                <img src="{{ asset('images/facebook.png') }}" class="img-fluid mb-3">
+                                <div>Like and follow us on Facebook</div>
+                                <a href="https://www.facebook.com/BCoinsg/" class="btn btn-outline-primary mt-4">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3 step-container">
+                        <div class="card border-0 mb-3 h-100">
+                            <div class="card-header bg-secondary text-white">Instagram</div>
+                            <div class="card-body text-center">
+                                <img src="{{ asset('images/instagram.png') }}" class="img-fluid mb-3">
+                                <div>Follow us on Instagram</div>
+                                <a href="https://www.instagram.com/bcoinsg" class="btn btn-outline-primary mt-4">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3 ml-auto step-container">
+                        <div class="card border-0 mb-3 h-100">
+                            <div class="card-header bg-secondary text-white">LinkedIn</div>
+                            <div class="card-body text-center">
+                                <img src="{{ asset('images/linkedin.png') }}" class="img-fluid mb-3">
+                                <div>Follow our LinkedIn Page</div>
+                                <a href="https://www.linkedin.com/company/bcoinsg/" class="btn btn-outline-primary mt-4">Link</a>
                             </div>
                         </div>
                     </div>
@@ -200,7 +230,7 @@
                         </div>
                         <div class="col-12 mt-4">
                             <ul>
-                                <li>Like our <a href="#" target="_blank">Video</a></li>
+                                <li>Like our <a href="https://www.youtube.com/watch?v=TtAUV7MUW5k" target="_blank">Video</a></li>
                                 <li>Subscribe to our <a href="https://www.youtube.com/channel/UCfD4r29eHpn_XTtqrKh3Xig" target="_blank">Channel</a></li>
                             </ul>
                         </div>
