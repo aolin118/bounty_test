@@ -30,7 +30,7 @@
                                 <p><b>Your Referral Link</b><br/><a href="{{ route('bounty-referral', $user->unique_link) }}" target="_blank">{{ route('bounty-referral', $user->unique_link) }}</a><br/><button type="button" class="btn btn-primary mt-2" id="copy-btn" data-clipboard-text="{{ route('bounty-referral', $user->unique_link) }}">Copy</button></p>
                                 <small class="text-danger">You will get 2 BCT for every referral that completes at least 1 task.</small>
 
-                                <p class="mt-4"><input type="checkbox" id="interestCheckBox" name="interestCheckBox" onclick="registerInterest();"><small class="ml-2">Yes, I am interested in getting early access to BCoin’s Prepaid Debit Card and have registered for an account at <a href="https://www.bcoin.sg/" target="_blank">BCoin.sg</a> Exchange.</small></p>
+                                <p class="mt-4 interest-container"><input type="checkbox" id="interestCheckBox" name="interestCheckBox" onclick="registerInterest();"><small class="ml-2">Yes, I am interested in getting early access to BCoin’s Prepaid Debit Card and have registered for an account at <a href="https://www.bcoin.sg/" target="_blank">BCoin.sg</a> Exchange.</small></p>
                                 <img src="{{ asset('images/diamond-card.png') }}" class="img-fluid diamond-card">
                             </div>
                         </div>

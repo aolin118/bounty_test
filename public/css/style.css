@@ -134,6 +134,10 @@ a:hover {
 	max-height: 150px;
 }
 
+.interest-container {
+	padding: 0px;
+}
+
 @media (min-width: 991px) {
 	.steps {
 		text-align: center;
@@ -172,5 +176,9 @@ a:hover {
 	  margin: 10px 100px;
 	  height: 1px;
 	  background: grey;
+	}
+
+	.interest-container {
+		padding: 0 100px;
 	}
 }
