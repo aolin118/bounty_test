@@ -29,6 +29,8 @@
                                 <p><b>Tokens Earned</b><br/><h4 class="text-success">{{ $awarded }} BCT</h4></p>
                                 <p><b>Your Referral Link</b><br/><a href="{{ route('bounty-referral', $user->unique_link) }}" target="_blank">{{ route('bounty-referral', $user->unique_link) }}</a><br/><button type="button" class="btn btn-primary mt-2" id="copy-btn" data-clipboard-text="{{ route('bounty-referral', $user->unique_link) }}">Copy</button></p>
                                 <small class="text-danger">You will get 2 BCT for every referral that completes at least 1 task.</small>
+                                <input type="checkbox" id="interestCheckBox" name="interestCheckBox" onclick="registerInterest();"/>
+                                <img src="{{ asset('images/diamond-card.png') }}" class="img-fluid diamond-card">
                             </div>
                         </div>
                     </div>
@@ -422,6 +424,14 @@
             clipboard.on('error', function(e) {
                 console.log(e);
             });
+
+            function registerInterest() {
+                if (document.getElementById('interestCheckBox').checked) {
+
+                } else {
+
+                }
+            }
         </script>
     </body>
 </html>
