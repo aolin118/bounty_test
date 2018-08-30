@@ -596,6 +596,26 @@ class BountyController extends Controller
         }
     }
 
+    public function interestChange() {
+        if(!Session::has('email')) {
+            return redirect('/');
+        } else {
+            $user = BountyUser::where("email", Session::get('email'))->first();
+
+            $currentInterest = $user->card_interest;
+
+            if ($currentInterest == 0) {
+                $user->card_interest = 1;
+                $user->save();
+            } else {
+                $user->card_interest = 0;
+                $user->save();
+            }
+
+            return redirect(route('bounty-submit-get'));
+        }
+    }
+
     public function airdropExport() {
 
         $airdropAll = TelegramUser::select("telegram_users.id", "telegram_users.email", "telegram_users.telegram_id", "telegram_users.referrer", DB::raw('IFNULL(t2.count,0) as refer_count'), "telegram_users.created_at", "telegram_users.updated_at")
