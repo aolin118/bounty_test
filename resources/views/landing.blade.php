@@ -29,7 +29,7 @@
                         </div>
                         <div class="col-10 col-lg-6 text-center mx-auto">
                             <input type="email" class="form-control text-center" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Invalid Email" id="email" name="email" placeholder="Email Address" required>
-                            <small class="form-text text-muted px-3 mt-2">Register with the same email address used to register for your BCoin's exchange trading account.<span style="color: #CE2D4F">Bounty tokens will be credited to your BCoin account with the same email address!</span></small>
+                            <small class="form-text text-muted px-3 mt-2">Kindly register the same email address used to register for your BCoin.sg Exchange trading account. <span style="color: #CE2D4F">Reminder: Bounty tokens will be credited to your BCoin.sg Exchange account with the same email address.</span></small>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -41,6 +41,22 @@
                             <input type="hidden" name="referrer" id="referrer" value="{{ $referrer }}">
                             @endif
                             <button type="submit" class="btn btn-success" id="submit-btn">Submit</button>
+                        </div>
+                    </div>
+                    <div class="row terms-container">
+                        <div class="col-10 mx-auto text-center">
+                            <div class="card border-0 mb-3 h-100">
+                                <div class="card-header bg-secondary text-white">Terms & Conditions</div>
+                                <div class="card-body text-left">
+                                    <ul class="my-0">
+                                        <li><small>Only the first 50,000 successful registrants who complete the tasks for each particular program would be entitled to receive the reward for that program.</small></li>
+                                        <li><small>Each person is only entitled to receive the full bounty reward by completing all the necessary tasks once.</small></li>
+                                        <li><small>Any users attempting to conduct malicious activity such as signing up with bots, using multiple accounts, using fake accounts, or using compromised accounts will be immediately banned from the program, and have their credentials blacklisted, barring them from taking part in any future online programs.</small></li>
+                                        <li><small>Tokens will only be distributed after the token sale has ended.</small></li>
+                                        <li><small>The management reserves the right to amend the terms and conditions and award its participants accordingly.</small></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form>

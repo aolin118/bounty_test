@@ -138,6 +138,10 @@ a:hover {
 	padding: 0px;
 }
 
+.terms-container {
+	margin-top: 50px;
+}
+
 @media (min-width: 991px) {
 	.steps {
 		text-align: center;
