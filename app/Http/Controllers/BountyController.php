@@ -78,7 +78,7 @@ class BountyController extends Controller
                                             ->orWhere('reddit_completed', 1)
                                             ->orWhere('youtube_completed', 1)
                                             ->orWhere('facebook_completed', 1)
-                                            ->orWhere('instagrm_completed', 1)
+                                            ->orWhere('instagram_completed', 1)
                                             ->orWhere('linkedin_completed', 1);
                                       })->count();
 
