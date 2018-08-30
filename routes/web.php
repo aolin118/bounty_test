@@ -33,6 +33,9 @@ Route::get('/twitter-verify', 'BountyController@twitterVerify')->name('bounty-tw
 Route::get('/youtube-verify', 'BountyController@youtubeVerify')->name('bounty-youtube-verify');
 Route::get('/reddit-verify', 'BountyController@redditVerify')->name('bounty-reddit-verify');
 Route::get('/medium-verify', 'BountyController@mediumVerify')->name('bounty-medium-verify');
+Route::get('/facebook-verify', 'BountyController@facebookVerify')->name('bounty-facebook-verify');
+Route::get('/instagram-verify', 'BountyController@instagramVerify')->name('bounty-instagram-verify');
+Route::get('/linkedin-verify', 'BountyController@linkedInVerify')->name('bounty-linkedin-verify');
 Route::get('/interest-change', 'BountyController@interestChange')->name('bounty-interest-change');
 
 Route::get('/r/{referral}', 'BountyController@bountyReferral')->name('bounty-referral');

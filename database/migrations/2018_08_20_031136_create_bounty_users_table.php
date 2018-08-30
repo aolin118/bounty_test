@@ -23,6 +23,9 @@ class CreateBountyUsersTable extends Migration
             $table->integer('youtube_completed')->default(0);
             $table->integer('reddit_completed')->default(0);
             $table->integer('medium_completed')->default(0);
+            $table->integer('facebook_completed')->default(0);
+            $table->integer('instagram_completed')->default(0);
+            $table->integer('linkedin_completed')->default(0);
             $table->integer('card_interest')->default(0);
             $table->timestamps();
         });

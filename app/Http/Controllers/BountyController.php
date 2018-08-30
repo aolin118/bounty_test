@@ -66,6 +66,9 @@ class BountyController extends Controller
             if ($user->youtube_completed == 1) $awarded += 2;
             if ($user->reddit_completed == 1) $awarded += 2;
             if ($user->medium_completed == 1) $awarded += 2;
+            if ($user->facebook_completed == 1) $awarded += 2;
+            if ($user->instagram_completed == 1) $awarded += 2;
+            if ($user->linkedin_completed == 1) $awarded += 2;
 
             $referral = BountyUser::where("referrer",$user->id)
                                     ->where(function($q) {
@@ -74,6 +77,9 @@ class BountyController extends Controller
                                             ->orWhere('youtube_completed', 1)
                                             ->orWhere('reddit_completed', 1)
                                             ->orWhere('youtube_completed', 1);
+                                            ->orWhere('facebook_completed', 1);
+                                            ->orWhere('instagrm_completed', 1);
+                                            ->orWhere('linkedin_completed', 1);
                                       })->count();
 
             $awarded += ($referral * 2);
@@ -593,6 +599,42 @@ class BountyController extends Controller
             } else {
                 return redirect('/');
             }
+        }
+    }
+
+    public function facebookVerify() {
+        if(!Session::has('email')) {
+            return redirect('/');
+        } else {
+            $user = BountyUser::where("email", Session::get('email'))->first();
+            $user->facebook_completed = 1;
+            $user->save();
+
+            return redirect('https://www.facebook.com/BCoinsg/');
+        }
+    }
+
+    public function instagramVerify() {
+        if(!Session::has('email')) {
+            return redirect('/');
+        } else {
+            $user = BountyUser::where("email", Session::get('email'))->first();
+            $user->instagram_completed = 1;
+            $user->save();
+
+            return redirect('https://www.instagram.com/bcoinsg');
+        }
+    }
+
+    public function linkedInVerify() {
+        if(!Session::has('email')) {
+            return redirect('/');
+        } else {
+            $user = BountyUser::where("email", Session::get('email'))->first();
+            $user->linkedin_completed = 1;
+            $user->save();
+
+            return redirect('https://www.linkedin.com/company/bcoinsg/');
         }
     }
 

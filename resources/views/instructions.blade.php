@@ -42,7 +42,7 @@
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">Telegram - 4 BCT</div>
                             <div class="card-body text-center">
-                                <img src="{{ asset('images/telegram.png') }}" class="img-fluid mb-3">
+                                <a href="http://t.me/BCoin_Bounty_Bot?start={{ $user->unique_link }}" target="_blank"><img src="{{ asset('images/telegram.png') }}" class="img-fluid mb-3"></a>
                                 <div>Join our Telegram Community</div>
                                 @if ($user->telegram_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#telegram-modal">More Info</a>
@@ -56,7 +56,7 @@
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">Twitter - 2 BCT</div>
                             <div class="card-body text-center">
-                                <img src="{{ asset('images/twitter.png') }}" class="img-fluid mb-3">
+                                <a href="https://twitter.com/BCoinsg" target="_blank"><img src="{{ asset('images/twitter.png') }}" class="img-fluid mb-3"></a>
                                 <div>Follow us and retweet our Tweet</div>
                                 @if ($user->twitter_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#twitter-modal">More Info</a>
@@ -70,7 +70,7 @@
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">YouTube - 2 BCT</div>
                             <div class="card-body text-center">
-                                <img src="{{ asset('images/youtube.png') }}" class="img-fluid mb-3">
+                                <a href="https://www.youtube.com/channel/UCfD4r29eHpn_XTtqrKh3Xig" target="_blank"><img src="{{ asset('images/youtube.png') }}" class="img-fluid mb-3"></a>
                                 <div>Like our video and subscribe to our channel</div>
                                 @if ($user->youtube_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#youtube-modal">More Info</a>
@@ -84,7 +84,7 @@
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">Reddit - 2 BCT</div>
                             <div class="card-body text-center">
-                                <img src="{{ asset('images/reddit.png') }}" class="img-fluid mb-3">
+                                <a href="https://www.reddit.com/r/BCoinsg/" target="_blank"><img src="{{ asset('images/reddit.png') }}" class="img-fluid mb-3"></a>
                                 <div>Be a part of our Reddit Community</div>
                                 @if ($user->reddit_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#reddit-modal">More Info</a>
@@ -100,7 +100,7 @@
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">Medium - 2 BCT</div>
                             <div class="card-body text-center">
-                                <img src="{{ asset('images/medium.png') }}" class="img-fluid mb-3">
+                                <a href="https://medium.com/@bcoinsg" target="_blank"><img src="{{ asset('images/medium.png') }}" class="img-fluid mb-3"></a>
                                 <div>Follow our Medium and clap for our article</div>
                                 @if ($user->medium_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#medium-modal">More Info</a>
@@ -112,31 +112,43 @@
                     </div>
                     <div class="col-12 col-lg-3 step-container">
                         <div class="card border-0 mb-3 h-100">
-                            <div class="card-header bg-secondary text-white">Facebook</div>
+                            <div class="card-header bg-secondary text-white">Facebook - 2 BCT</div>
                             <div class="card-body text-center">
-                                <img src="{{ asset('images/facebook.png') }}" class="img-fluid mb-3">
+                                <a href="https://www.facebook.com/BCoinsg/" target="_blank"><img src="{{ asset('images/facebook.png') }}" class="img-fluid mb-3"></a>
                                 <div>Like and follow us on Facebook</div>
-                                <a href="https://www.facebook.com/BCoinsg/" class="btn btn-outline-primary mt-4" target="_blank">Link</a>
+                                @if ($user->facebook_completed == 0)
+                                <a href="{{ route('bounty-facebook-verify') }}" class="btn btn-outline-primary mt-4" target="_blank">Link</a>
+                                @else
+                                <p class="text-success mt-4">BCT Awarded</p>
+                                @endif
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-3 step-container">
                         <div class="card border-0 mb-3 h-100">
-                            <div class="card-header bg-secondary text-white">Instagram</div>
+                            <div class="card-header bg-secondary text-white">Instagram - 2 BCT</div>
                             <div class="card-body text-center">
-                                <img src="{{ asset('images/instagram.png') }}" class="img-fluid mb-3">
+                                <a href="https://www.instagram.com/bcoinsg" target="_blank"><img src="{{ asset('images/instagram.png') }}" class="img-fluid mb-3"></a>
                                 <div>Follow us on Instagram</div>
-                                <a href="https://www.instagram.com/bcoinsg" class="btn btn-outline-primary mt-4" target="_blank">Link</a>
+                                @if ($user->instagram_completed == 0)
+                                <a href="{{ route('bounty-instagram-verify') }}" class="btn btn-outline-primary mt-4" target="_blank">Link</a>
+                                @else
+                                <p class="text-success mt-4">BCT Awarded</p>
+                                @endif
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-3 ml-auto step-container">
                         <div class="card border-0 mb-3 h-100">
-                            <div class="card-header bg-secondary text-white">LinkedIn</div>
+                            <div class="card-header bg-secondary text-white">LinkedIn - 2 BCT</div>
                             <div class="card-body text-center">
-                                <img src="{{ asset('images/linkedin.png') }}" class="img-fluid mb-3">
+                                <a href="https://www.linkedin.com/company/bcoinsg/" target="_blank"><img src="{{ asset('images/linkedin.png') }}" class="img-fluid mb-3"></a>
                                 <div>Follow our LinkedIn Page</div>
-                                <a href="https://www.linkedin.com/company/bcoinsg/" class="btn btn-outline-primary mt-4" target="_blank">Link</a>
+                                @if ($user->linkedin_completed == 0)
+                                <a href="{{ route('bounty-linkedin-verify') }}" class="btn btn-outline-primary mt-4" target="_blank">Link</a>
+                                @else
+                                <p class="text-success mt-4">BCT Awarded</p>
+                                @endif
                             </div>
                         </div>
                     </div>
