@@ -576,13 +576,11 @@ class BountyController extends Controller
 
                 $response = $mediumClient->fetch("https://api.medium.com/v1/me");
 
-                dd($response);
-
-                $medium_id = $response['data']['id'];
+                $medium_id = $response['result']['data']['id'];
 
                 $response = $mediumClient->fetch("https://api.medium.com/v1/users/" . $medium_id . "/publications");
 
-                foreach($response['data'] as $publication) {
+                foreach($response['result']['data'] as $publication) {
                     if ($publication['url'] == "https://medium.com/bcoinsg") {
                         $followed = true;
                         break;
