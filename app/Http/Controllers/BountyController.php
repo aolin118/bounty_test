@@ -574,11 +574,11 @@ class BountyController extends Controller
                 $mediumClient->setAccessToken($access_token["access_token"]);
                 $mediumClient->setAccessTokenType(\OAuth2\Client::ACCESS_TOKEN_BEARER);
 
-                $response = $client->fetch("https://api.medium.com/v1/me");
+                $response = $mediumClient->fetch("https://api.medium.com/v1/me");
 
                 $medium_id = $response['data']['id'];
 
-                $response = $client->fetch("https://api.medium.com/v1/users/" . $medium_id . "/publications");
+                $response = $mediumClient->fetch("https://api.medium.com/v1/users/" . $medium_id . "/publications");
 
                 foreach($response['data'] as $publication) {
                     if ($publication['url'] == "https://medium.com/bcoinsg") {
