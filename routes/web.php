@@ -40,4 +40,5 @@ Route::get('/airdrop-export', 'AirdropController@airdropExport')->name('airdrop-
 
 // Telegram Bot Routes
 Route::post('/657492216:AAHcY1vdwp7H33JtwzrYlVKu2qCznzCSJ2o/webhook', 'BotController@receiveCallback')->name('bot-webhook');
+Route::post('/657492216:AAHcY1vdwp7H33JtwzrYlVKu2qCznzCSJ2o/webhook2', 'BotController@receiveCallback2')->name('bot-webhook2');
 Route::get('/657492216:AAHcY1vdwp7H33JtwzrYlVKu2qCznzCSJ2o/set-webhook', 'BotController@setWebhook')->name('bot-set-webhook');

@@ -28,19 +28,27 @@ class BotController extends Controller
 
         $update = \Telegram::getWebhookUpdates();
         Log::info($update);
-        
-        if ($update['message']['chat']['type'] == "private") {
-            $message = $update->getMessage()->getText();
 
-            if(preg_match('/^(\/.+?)(\s.*)?$/', $message, $command) == 1) {
-                switch(strtolower($command[1])) {
-                    case "/start":
-                        $this->startCommand($update, $command);
-                        break;
+        if (isset($update['message'])) {
+            if ($update['message']['chat']['type'] == "private") {
+                $message = $update->getMessage()->getText();
+
+                if(preg_match('/^(\/.+?)(\s.*)?$/', $message, $command) == 1) {
+                    switch(strtolower($command[1])) {
+                        case "/start":
+                            $this->startCommand($update, $command);
+                            break;
+                    }
                 }
             }
         }
+        
+        
 
+        return response()->json(['success' => 'success'], 200);
+    }
+
+    public function receiveCallback2() {
         return response()->json(['success' => 'success'], 200);
     }
 
