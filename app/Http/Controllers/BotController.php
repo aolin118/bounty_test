@@ -65,7 +65,7 @@ class BotController extends Controller
             $user = BountyUser::where("unique_link",trim($command[2]))->first();
 
             if ($user) {
-                $telegramUserCheck = TelegramUser::where("telegram_id",$id)->first();
+                $telegramUserCheck = TelegramUser::where("telegram_id",$id)->orWhere("bounty_user",$user->id)->first();
 
                 if ($telegramUserCheck) {
                     \Telegram::sendMessage([
