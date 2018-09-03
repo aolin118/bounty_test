@@ -415,7 +415,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://www.linkedin.com/company/bcoinsg/" target="_blank">LinkedIn Page</a></li>
-                                <li>Like our <a href="https://www.linkedin.com/feed/update/urn:li:activity:6442281039997042688" target="_blank">post</a></li>
+                                <li>Like and share our <a href="https://www.linkedin.com/feed/update/urn:li:activity:6442281039997042688" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
