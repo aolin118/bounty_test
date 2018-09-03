@@ -100,7 +100,7 @@
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">Medium - 2 BCT</div>
                             <div class="card-body text-center">
-                                <a href="https://medium.com/@bcoinsg" target="_blank"><img src="{{ asset('images/medium.png') }}" class="img-fluid mb-3"></a>
+                                <a href="https://medium.com/bcoinsg" target="_blank"><img src="{{ asset('images/medium.png') }}" class="img-fluid mb-3"></a>
                                 <div>Follow our Medium and clap for our article</div>
                                 @if ($user->medium_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#medium-modal">More Info</a>
@@ -115,7 +115,7 @@
                             <div class="card-header bg-secondary text-white">Facebook - 2 BCT</div>
                             <div class="card-body text-center">
                                 <a href="https://www.facebook.com/BCoinsg/" target="_blank"><img src="{{ asset('images/facebook.png') }}" class="img-fluid mb-3"></a>
-                                <div>Like and follow us on Facebook</div>
+                                <div>Follow us on Facebook and share our post</div>
                                 @if ($user->facebook_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#facebook-modal">More Info</a>
                                 @else
@@ -212,7 +212,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://twitter.com/BCoinsg" target="_blank">Twitter</a></li>
-                                <li>Like and retweet our <a href="#" target="_blank">Tweet</a></li>
+                                <li>Like and retweet our <a href="https://twitter.com/BCoinsg/status/1036514995742289920" target="_blank">Tweet</a></li>
                             </ul>
                         </div>
                         @if ($user->twitter()->exists())
@@ -316,7 +316,7 @@
                         </div>
                         <div class="col-12 mt-4">
                             <ul>
-                                <li>Follow our <a href="https://medium.com/@bcoinsg" target="_blank">Medium</a></li>
+                                <li>Follow our <a href="https://medium.com/bcoinsg" target="_blank">Medium</a></li>
                                 <li>Clap only <b>once</b> for our <a href="#" target="_blank">article</a></li>
                             </ul>
                         </div>
@@ -349,6 +349,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://www.facebook.com/BCoinsg/" target="_blank">Facebook Page</a></li>
+                                <li>Share our <a href="https://www.facebook.com/BCoinsg/posts/243593243016014" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
@@ -381,6 +382,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow us on <a href="https://www.instagram.com/bcoinsg" target="_blank">Instagram</a></li>
+                                <li>Like our <a href="https://www.instagram.com/p/BnQVyaLAyPv/" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
@@ -413,6 +415,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://www.linkedin.com/company/bcoinsg/" target="_blank">LinkedIn Page</a></li>
+                                <li>Like our <a href="https://www.linkedin.com/feed/update/urn:li:activity:6442281039997042688" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
