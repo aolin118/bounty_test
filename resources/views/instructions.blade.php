@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <img src="{{ asset('images/logo.png') }}" class="img-fluid airdrop-logo mb-4">
+                        <a href="https://www.bcoinsg.io/" target="_blank"><img src="{{ asset('images/logo.png') }}" class="img-fluid airdrop-logo mb-4"></a>
                         <h1 class="text-accent">BCoin Bounty Program</h1>
                     </div>
                 </div>
