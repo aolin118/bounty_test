@@ -576,6 +576,8 @@ class BountyController extends Controller
 
                 $response = $mediumClient->fetch("https://api.medium.com/v1/me");
 
+                dd($response);
+
                 $medium_id = $response['data']['id'];
 
                 $response = $mediumClient->fetch("https://api.medium.com/v1/users/" . $medium_id . "/publications");
