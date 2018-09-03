@@ -534,7 +534,7 @@ class BountyController extends Controller
                     $subscribed = true;
                 }
 
-                $response = $client->fetch("https://oauth.reddit.com/api/info.json", ["id" => "t3_97g8sx"], "GET", [], 1);
+                $response = $client->fetch("https://oauth.reddit.com/api/info.json", ["id" => "t3_9cji2v"], "GET", [], 1);
 
                 if ($response['result']['data']['children'][0]['data']['likes'] == true) {
                     $upvote = true;

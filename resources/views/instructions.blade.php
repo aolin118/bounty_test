@@ -282,7 +282,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Subscribe to our <a href="https://www.reddit.com/r/BCoinsg/" target="_blank">Subreddit</a></li>
-                                <li>Upvote our <a href="#" target="_blank">Pinned Post</a></li>
+                                <li>Upvote our <a href="https://www.reddit.com/r/BCoinsg/comments/9cji2v/join_bcoins_bounty_program_trading_challenge/" target="_blank">Pinned Post</a></li>
                             </ul>
                         </div>
                         @if ($user->reddit()->exists())
