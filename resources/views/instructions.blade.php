@@ -129,7 +129,7 @@
                             <div class="card-header bg-secondary text-white">Instagram - 2 BCT</div>
                             <div class="card-body text-center">
                                 <a href="https://www.instagram.com/bcoinsg" target="_blank"><img src="{{ asset('images/instagram.png') }}" class="img-fluid mb-3"></a>
-                                <div>Follow us on Instagram</div>
+                                <div class="mb-4">Follow us on Instagram<br/></div>
                                 @if ($user->instagram_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#instagram-modal">More Info</a>
                                 @else
@@ -143,7 +143,7 @@
                             <div class="card-header bg-secondary text-white">LinkedIn - 2 BCT</div>
                             <div class="card-body text-center">
                                 <a href="https://www.linkedin.com/company/bcoinsg/" target="_blank"><img src="{{ asset('images/linkedin.png') }}" class="img-fluid mb-3"></a>
-                                <div>Follow our LinkedIn Page</div>
+                                <div class="mb-4">Follow our LinkedIn Page</div>
                                 @if ($user->linkedin_completed == 0)
                                 <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#linkedin-modal">More Info</a>
                                 @else
