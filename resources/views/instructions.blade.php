@@ -117,7 +117,7 @@
                                 <a href="https://www.facebook.com/BCoinsg/" target="_blank"><img src="{{ asset('images/facebook.png') }}" class="img-fluid mb-3"></a>
                                 <div>Like and follow us on Facebook</div>
                                 @if ($user->facebook_completed == 0)
-                                <a href="{{ route('bounty-facebook-verify') }}" class="btn btn-outline-primary mt-4" target="_blank">Link</a>
+                                <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#facebook-modal">More Info</a>
                                 @else
                                 <p class="text-success mt-4">BCT Awarded</p>
                                 @endif
@@ -131,7 +131,7 @@
                                 <a href="https://www.instagram.com/bcoinsg" target="_blank"><img src="{{ asset('images/instagram.png') }}" class="img-fluid mb-3"></a>
                                 <div>Follow us on Instagram</div>
                                 @if ($user->instagram_completed == 0)
-                                <a href="{{ route('bounty-instagram-verify') }}" class="btn btn-outline-primary mt-4" target="_blank">Link</a>
+                                <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#instagram-modal">More Info</a>
                                 @else
                                 <p class="text-success mt-4">BCT Awarded</p>
                                 @endif
@@ -145,7 +145,7 @@
                                 <a href="https://www.linkedin.com/company/bcoinsg/" target="_blank"><img src="{{ asset('images/linkedin.png') }}" class="img-fluid mb-3"></a>
                                 <div>Follow our LinkedIn Page</div>
                                 @if ($user->linkedin_completed == 0)
-                                <a href="{{ route('bounty-linkedin-verify') }}" class="btn btn-outline-primary mt-4" target="_blank">Link</a>
+                                <a href="#" class="btn btn-outline-primary mt-4" data-toggle="modal" data-target="#linkedin-modal">More Info</a>
                                 @else
                                 <p class="text-success mt-4">BCT Awarded</p>
                                 @endif
@@ -326,6 +326,102 @@
                             <p id="medium-error" class="text-danger my-2"></p>
                         </div>
                         @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+
+        @if ($user->facebook_completed == 0)
+        <div id="facebook-modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal" role="document">
+                <div class="modal-content">
+                    <div class="modal-body row">
+                        <div class="col-12 text-right">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="col-12 text-center">
+                            <img src="{{ asset('images/facebook.png') }}" class="img-fluid">
+                            <h3 class="text-center mt-4">Facebook Reward Structure</h3>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <ul>
+                                <li>Follow our <a href="https://www.facebook.com/BCoinsg/" target="_blank">Facebook Page</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-10 text-center mt-2 mb-2 mx-auto">
+                            <form method="POST" action="{{ route('bounty-facebook-verify') }}">
+                                @csrf
+                                <input type="email" class="form-control text-center mb-2" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Invalid Email" id="facebook-email" name="facebook-email" placeholder="Email Address" required>
+                                <button type="submit" class="btn btn-success">Verify Completion</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+
+        @if ($user->instagram_completed == 0)
+        <div id="instagram-modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal" role="document">
+                <div class="modal-content">
+                    <div class="modal-body row">
+                        <div class="col-12 text-right">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="col-12 text-center">
+                            <img src="{{ asset('images/instagram.png') }}" class="img-fluid">
+                            <h3 class="text-center mt-4">Instagram Reward Structure</h3>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <ul>
+                                <li>Follow us on <a href="https://www.instagram.com/bcoinsg" target="_blank">Instagram</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-10 text-center mt-2 mb-2 mx-auto">
+                            <form method="POST" action="{{ route('bounty-instagram-verify') }}">
+                                @csrf
+                                <input type="text" class="form-control text-center mb-2" id="instagram-id" name="instagram-id" placeholder="Instagram ID" required>
+                                <button type="submit" class="btn btn-success">Verify Completion</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+
+        @if ($user->linkedin_completed == 0)
+        <div id="linkedin-modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal" role="document">
+                <div class="modal-content">
+                    <div class="modal-body row">
+                        <div class="col-12 text-right">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="col-12 text-center">
+                            <img src="{{ asset('images/linkedin.png') }}" class="img-fluid">
+                            <h3 class="text-center mt-4">LinkedIn Reward Structure</h3>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <ul>
+                                <li>Follow our <a href="https://www.linkedin.com/company/bcoinsg/" target="_blank">LinkedIn Page</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-10 text-center mt-2 mb-2 mx-auto">
+                            <form method="POST" action="{{ route('bounty-linkedin-verify') }}">
+                                @csrf
+                                <input type="email" class="form-control text-center mb-2" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Invalid Email" id="linkedin-email" name="linkedin-email" placeholder="Email Address" required>
+                                <button type="submit" class="btn btn-success">Verify Completion</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
