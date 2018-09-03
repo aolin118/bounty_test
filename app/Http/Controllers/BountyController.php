@@ -384,7 +384,7 @@ class BountyController extends Controller
                 $access_token = json_decode($user->twitter->access_token,true);
 
                 $twitterPageID = "969390070372290560";
-                $twitterTweetID = "1036514995742289920";
+                $twitterTweetID = "1036520452720488448";
 
                 $connection = new TwitterOAuth(env("TWITTER_CLIENT_ID", ""), env("TWITTER_CLIENT_SECRET", ""), $access_token['oauth_token'], $access_token['oauth_token_secret']);
 

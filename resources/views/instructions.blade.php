@@ -212,7 +212,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://twitter.com/BCoinsg" target="_blank">Twitter</a></li>
-                                <li>Like and retweet our <a href="https://twitter.com/BCoinsg/status/1036514995742289920" target="_blank">Tweet</a></li>
+                                <li>Like and retweet our <a href="https://twitter.com/BCoinsg/status/1036520452720488448" target="_blank">Tweet</a></li>
                             </ul>
                         </div>
                         @if ($user->twitter()->exists())
@@ -349,7 +349,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://www.facebook.com/BCoinsg/" target="_blank">Facebook Page</a></li>
-                                <li>Share our <a href="https://www.facebook.com/BCoinsg/posts/243593243016014" target="_blank">post</a></li>
+                                <li>Share our <a href="https://www.facebook.com/BCoinsg/posts/243604416348230" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
