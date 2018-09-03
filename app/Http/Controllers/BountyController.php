@@ -610,7 +610,7 @@ class BountyController extends Controller
             $user->facebook_completed = 1;
             $user->save();
 
-            return redirect('https://www.facebook.com/BCoinsg/');
+            return redirect(route('bounty-submit-get'));
         }
     }
 
@@ -622,7 +622,7 @@ class BountyController extends Controller
             $user->instagram_completed = 1;
             $user->save();
 
-            return redirect('https://www.instagram.com/bcoinsg');
+            return redirect(route('bounty-submit-get'));
         }
     }
 
@@ -634,7 +634,7 @@ class BountyController extends Controller
             $user->linkedin_completed = 1;
             $user->save();
 
-            return redirect('https://www.linkedin.com/company/bcoinsg/');
+            return redirect(route('bounty-submit-get'));
         }
     }
 
