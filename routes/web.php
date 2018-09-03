@@ -39,5 +39,5 @@ Route::get('/r/{referral}', 'BountyController@bountyReferral')->name('bounty-ref
 Route::get('/airdrop-export', 'AirdropController@airdropExport')->name('airdrop-export');
 
 // Telegram Bot Routes
-Route::get('/657492216:AAHcY1vdwp7H33JtwzrYlVKu2qCznzCSJ2o/webhook', 'BotController@receiveCallback')->name('bot-webhook');
+Route::post('/657492216:AAHcY1vdwp7H33JtwzrYlVKu2qCznzCSJ2o/webhook', 'BotController@receiveCallback')->name('bot-webhook');
 Route::get('/657492216:AAHcY1vdwp7H33JtwzrYlVKu2qCznzCSJ2o/set-webhook', 'BotController@setWebhook')->name('bot-set-webhook');
