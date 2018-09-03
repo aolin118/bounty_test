@@ -349,13 +349,13 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://www.facebook.com/BCoinsg/" target="_blank">Facebook Page</a></li>
-                                <li>Share our <a href="https://www.facebook.com/BCoinsg/posts/243604416348230" target="_blank">post</a></li>
+                                <li>Like and share our <a href="https://www.facebook.com/BCoinsg/posts/243604416348230" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
                             <form method="POST" action="{{ route('bounty-facebook-verify') }}">
                                 @csrf
-                                <input type="email" class="form-control text-center mb-2" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Invalid Email" id="facebook-email" name="facebook-email" placeholder="Email Address" required>
+                                <input type="email" class="form-control text-center mb-2" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Invalid Email" id="facebook-email" name="facebook-email" placeholder="Facebook Email Address" required>
                                 <button type="submit" class="btn btn-success">Verify Completion</button>
                             </form>
                         </div>
@@ -421,7 +421,7 @@
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
                             <form method="POST" action="{{ route('bounty-linkedin-verify') }}">
                                 @csrf
-                                <input type="email" class="form-control text-center mb-2" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Invalid Email" id="linkedin-email" name="linkedin-email" placeholder="Email Address" required>
+                                <input type="email" class="form-control text-center mb-2" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Invalid Email" id="linkedin-email" name="linkedin-email" placeholder="LinkedIn Email Address" required>
                                 <button type="submit" class="btn btn-success">Verify Completion</button>
                             </form>
                         </div>
