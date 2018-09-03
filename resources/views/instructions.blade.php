@@ -317,7 +317,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://medium.com/bcoinsg" target="_blank">Medium</a></li>
-                                <li>Clap only <b>once</b> for our <a href="#" target="_blank">article</a></li>
+                                <li>Clap only <b>once</b> for our <a href="https://medium.com/bcoinsg/join-bcoin-bounty-program-trading-challenge-d7171c5b8b" target="_blank">article</a></li>
                             </ul>
                         </div>
                         @if ($user->medium()->exists())
