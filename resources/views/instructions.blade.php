@@ -96,7 +96,7 @@
                     </div>
                 </div>
                 <div class="row mb-1 mt-0">
-                    <div class="col-12 col-lg-3 ml-auto step-container">
+                    <div class="col-12 col-lg-3 ml-auto step-container d-none">
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">Medium - 2 BCT</div>
                             <div class="card-body text-center">
@@ -110,7 +110,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-3 step-container">
+                    <div class="col-12 col-lg-3 ml-auto step-container">
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">Facebook - 2 BCT</div>
                             <div class="card-body text-center">
