@@ -138,7 +138,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-3 ml-auto step-container">
+                    <div class="col-12 col-lg-3 mr-auto step-container">
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">LinkedIn - 2 BCT</div>
                             <div class="card-body text-center">
