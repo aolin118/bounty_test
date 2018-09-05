@@ -26,12 +26,13 @@
                             <div class="card-header bg-secondary text-white">User Information<a href="{{ route('bounty-logout') }}" class="float-right logout">Log Out</a></div>
                             <div class="card-body text-center">
                                 <p><b>Email</b><br/>{{ $user->email }}</p>
-                                <p><b>Tokens Earned</b><br/><h4 class="text-success">{{ $awarded }} BCT</h4></p>
+                                <h4 class="text-success mb-0">{{ $awarded }} BCT</h4>
+                                <p><small>Tokens will be distributed directly to your exchange wallet of the same registered email address. <a href="https://www.bcoin.sg" target="_blank">Sign up for your BCoin account here!</a></small></p>
                                 <p><b>Your Referral Link</b><br/><a href="{{ route('bounty-referral', $user->unique_link) }}" target="_blank">{{ route('bounty-referral', $user->unique_link) }}</a><br/><button type="button" class="btn btn-primary mt-2" id="copy-btn" data-clipboard-text="{{ route('bounty-referral', $user->unique_link) }}">Copy</button></p>
                                 <small class="text-danger">You will get 2 BCT for every referral that completes at least 1 task.</small>
 
                                 <p class="mt-4 interest-container"><input type="checkbox" id="interestCheckBox" name="interestCheckBox" onclick="registerInterest();"<?php  if ($user->card_interest == 1) echo "checked"; ?>>
-                                    <small class="ml-2">Yes, I am interested in getting early access to BCoin’s Prepaid Debit Card and have registered for an account at <a href="https://www.bcoin.sg/" target="_blank">BCoin.sg</a> Exchange.</small></p>
+                                    <small class="ml-2">Yes, I am interested in getting early access to BCoin’s Prepaid Debit Card.</small></p>
                                 <img src="{{ asset('images/diamond-card.png') }}" class="img-fluid diamond-card">
                             </div>
                         </div>
