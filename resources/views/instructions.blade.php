@@ -26,6 +26,7 @@
                             <div class="card-header bg-secondary text-white">User Information<a href="{{ route('bounty-logout') }}" class="float-right logout">Log Out</a></div>
                             <div class="card-body text-center">
                                 <p><b>Email</b><br/>{{ $user->email }}</p>
+                                <p class="mb-0"><b>Tokens Earned</b><br/></p>
                                 <h4 class="text-success mb-0">{{ $awarded }} BCT</h4>
                                 <p><small>Tokens will be distributed directly to your exchange wallet of the same registered email address. <a href="https://www.bcoin.sg" target="_blank">Sign up for your BCoin account here!</a></small></p>
                                 <p><b>Your Referral Link</b><br/><a href="{{ route('bounty-referral', $user->unique_link) }}" target="_blank">{{ route('bounty-referral', $user->unique_link) }}</a><br/><button type="button" class="btn btn-primary mt-2" id="copy-btn" data-clipboard-text="{{ route('bounty-referral', $user->unique_link) }}">Copy</button></p>
