@@ -40,6 +40,10 @@ class BountyController extends Controller
 
     public function bountyReferral($referral)
     {
+        if(Session::has('email')) {
+            return redirect(route('bounty-submit-get'));
+        }
+        
         $referrer = BountyUser::where('unique_link',$referral)->first();
 
         if ($referrer) {
