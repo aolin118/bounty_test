@@ -98,7 +98,7 @@
                     </div>
                 </div>
                 <div class="row mb-1 mt-0">
-                    <div class="col-12 col-lg-3 ml-auto step-container d-none">
+                    <div class="col-12 col-lg-3 ml-auto step-container">
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">Medium - 2 BCT</div>
                             <div class="card-body text-center">
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-3 ml-auto step-container">
+                    <div class="col-12 col-lg-3 step-container">
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">Facebook - 2 BCT</div>
                             <div class="card-body text-center">
@@ -319,7 +319,6 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://medium.com/bcoinsg" target="_blank">Medium</a></li>
-                                <li>Clap only <b>once</b> for our <a href="https://medium.com/bcoinsg/join-bcoin-bounty-program-trading-challenge-d7171c5b8b" target="_blank">article</a></li>
                             </ul>
                         </div>
                         @if ($user->medium()->exists())
