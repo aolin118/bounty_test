@@ -43,7 +43,7 @@ class BountyController extends Controller
         if(Session::has('email')) {
             return redirect(route('bounty-submit-get'));
         }
-        
+
         $referrer = BountyUser::where('unique_link',$referral)->first();
 
         if ($referrer) {
@@ -80,7 +80,7 @@ class BountyController extends Controller
                                             ->orWhere('twitter_completed', 1)
                                             ->orWhere('youtube_completed', 1)
                                             ->orWhere('reddit_completed', 1)
-                                            ->orWhere('youtube_completed', 1)
+                                            ->orWhere('medium_completed', 1)
                                             ->orWhere('facebook_completed', 1)
                                             ->orWhere('instagram_completed', 1)
                                             ->orWhere('linkedin_completed', 1);
