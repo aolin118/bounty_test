@@ -134,7 +134,7 @@ a:hover {
 	max-height: 150px;
 }
 
-.interest-container {
+.interest-container, .newsletter-container {
 	padding: 0px;
 }
 

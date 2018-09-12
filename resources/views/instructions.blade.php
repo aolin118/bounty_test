@@ -32,8 +32,15 @@
                                 <p><b>Your Referral Link</b><br/><a href="{{ route('bounty-referral', $user->unique_link) }}" target="_blank">{{ route('bounty-referral', $user->unique_link) }}</a><br/><button type="button" class="btn btn-primary mt-2" id="copy-btn" data-clipboard-text="{{ route('bounty-referral', $user->unique_link) }}">Copy</button></p>
                                 <small class="text-danger">You will get 2 BCT for every referral that completes at least 1 task.</small>
 
-                                <p class="mt-4 interest-container"><input type="checkbox" id="interestCheckBox" name="interestCheckBox" onclick="registerInterest();"<?php  if ($user->card_interest == 1) echo "checked"; ?>>
-                                    <small class="ml-2">Yes, I am interested in getting early access to BCoin’s Prepaid Debit Card.</small></p>
+                                <p class="mt-4 mb-1 newsletter-container">
+                                    <input type="checkbox" id="newsletterCheckBox" name="newsletterCheckBox" onclick="registerNewsletter();"<?php  if ($user->receive_newsletter == 1) echo "checked"; ?>>
+                                    <small class="ml-2">I agree to receive promotional newsletters and materials from BCoin.sg.</small>
+                                </p>
+
+                                <p class="interest-container">
+                                    <input type="checkbox" id="interestCheckBox" name="interestCheckBox" onclick="registerInterest();"<?php  if ($user->card_interest == 1) echo "checked"; ?>>
+                                    <small class="ml-2">Yes, I am interested in getting early access to BCoin’s Prepaid Debit Card.</small>
+                                </p>
                                 <img src="{{ asset('images/diamond-card.png') }}" class="img-fluid diamond-card">
                             </div>
                         </div>
@@ -538,6 +545,10 @@
             clipboard.on('error', function(e) {
                 console.log(e);
             });
+
+            function registerNewsletter() {
+                window.location.href = "{{ route('bounty-newsletter-change') }}";
+            }
 
             function registerInterest() {
                 window.location.href = "{{ route('bounty-interest-change') }}";

@@ -32,6 +32,7 @@ Route::post('/facebook-verify', 'BountyController@facebookVerify')->name('bounty
 Route::post('/instagram-verify', 'BountyController@instagramVerify')->name('bounty-instagram-verify');
 Route::post('/linkedin-verify', 'BountyController@linkedInVerify')->name('bounty-linkedin-verify');
 Route::get('/interest-change', 'BountyController@interestChange')->name('bounty-interest-change');
+Route::get('/newsletter-change', 'BountyController@newsletterChange')->name('bounty-newsletter-change');
 
 Route::get('/r/{referral}', 'BountyController@bountyReferral')->name('bounty-referral');
 
