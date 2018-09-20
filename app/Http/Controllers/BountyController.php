@@ -174,6 +174,7 @@ class BountyController extends Controller
                 $client->addScope(Google_Service_YouTube::YOUTUBE);
                 $client->addScope(Google_Service_YouTube::YOUTUBE_FORCE_SSL);
                 $client->setAccessType('offline');
+                $client->setApprovalPrompt('force');
 
                 $authURL['youtube'] = $client->createAuthUrl();
             }
