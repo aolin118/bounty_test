@@ -311,7 +311,7 @@
                                         <li>Once completed with the program, you’ll need to submit the completion form. The approval for the completion of the program would be made by the bounty manager only after the submission of all required deliverables.</li>
                                     </ol>
                                     Once done with your content, please fill up all necessary details in the submission form:<br/>
-                                    <a href="https://goo.gl/forms/1P49iDWDvgfl6AeZ2" class="btn btn-outline-primary mt-4" target="_blank">Link to Form</a>
+                                    <a href="https://goo.gl/forms/1P49iDWDvgfl6AeZ2" class="btn btn-outline-primary mt-4" target="_blank">Submission Form</a>
                                 </div>
                             </div>
                         </div>
