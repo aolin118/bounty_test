@@ -162,6 +162,161 @@
                         </div>
                     </div>
                 </div>
+                <div class="row mb-1 mt-0">
+                    <div class="col-12 col-lg-12 step-container">
+                        <div class="card border-0 mb-3 h-100">
+                            <div class="card-header bg-secondary text-white">BCoin Creative Campaign</div>
+                            <div class="card-body">
+                                <img src="{{ asset('images/creative.jpeg') }}" class="img-fluid mb-3">
+                                <div>
+                                    <strong>Promotional Bounty Program</strong><br/>
+                                    <strong>USD100,000 worth of BCT</strong><br/>
+                                    <ul>
+                                        <li>Infographics and Graphic Collaterals</li>
+                                        <li>Reddit</li>
+                                        <li>Medium</li>
+                                        <li>YouTube</li>
+                                        <li>Blogs/Forum</li>
+                                    </ul>
+                                    <strong>General Conditions for All Campaigns</strong>
+                                    <ul>
+                                        <li>You must join and be a member of the <a href="https://t.me/bcoinsg_EN/" target="_blank">BCoin Telegram Group</a></li>
+                                        <li>We would be pushing updates about our platform on these channels and users must be updated on our project, to potentially include our updates and developments in their respective bounty programs.</li>
+                                        <li>Mentioning bounty or any part of this campaign is not allowed on any channel.</li>
+                                        <li>Using multiple accounts, spam bots, personal spamming are strictly prohibited, and users attempting to do so will be banned.</li>
+                                        <li>The management team reserve the rights to adjust the terms and conditions of the bounty campaign during the period of its holding. For all updates, keep an eye on this topic and the bounty telegram group.</li>
+                                        <li>Once the program has reached the required number of participants, we will stop registration for some campaigns.</li>
+                                        <li>The participant must write a creative, informative, and relevant post or review about our <a href="https://www.bcoin.sg/" target="_blank">Bcoin Exchange</a> or about our <a href="https://www.bcoinsg.io/" target="_blank">Token Economics/Features</a> using the compulsory tag: BCoin, BCoin.sg</li>
+                                        <li>
+                                            Articles must be genuine, relevant, informative and creative. You can use official images, logos, graphics posted on the following:
+                                            <ul>
+                                                <li><a href="https://www.bcoinsg.io/" target="_blank">Website</a></li>
+                                                <li><a href="https://www.reddit.com/r/BCoinsg/" target="_blank">Reddit</a></li>
+                                                <li><a href="https://medium.com/bcoinsg" target="_blank">Medium</a></li>
+                                                <li><a href="https://twitter.com/BCoinsg" target="_blank">Twitter</a></li>
+                                                <li><a href="https://www.youtube.com/c/BCoinsg" target="_blank">YouTube</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>Content should provide links to the official website: <a href="https://www.bcoin.sg/" target="_blank">https://www.bcoin.sg/</a> or <a href="https://www.bcoinsg.io/" target="_blank">https://www.bcoinsg.io/</a> or to the <a href="https://www.scribd.com/document/387793884/BCoinWP-1-1-5" target="_blank">whitepaper</a></li>
+                                        <li>Basic, careless, or plagiarised posts would not be accepted.</li>
+                                        <li>All materials must be of a professional standard, low-quality articles will not be accepted.</li>
+                                        <li>Once completed with the program, you’ll need to submit the completion form and inform the bounty manager of your participation. The approval for the completion of the bounty program would be made by the bounty manager only after submission of all the required deliverables.</li>
+                                        <li>Proof of ownership of your account is required and must be submitted to the bounty manager as and when requested.</li>
+                                        <li>Upon approval of the submissions, tokens would be transferred to the exchange wallet of the same registered email in phases after the end of the token sale.</li>
+                                        <li>Once done with your content, please fill up all necessary details in the <a href="https://goo.gl/forms/1P49iDWDvgfl6AeZ2" target="_blank">submission form</a>.</li>
+                                    </ul>
+                                    <strong>Clause on the Maximum Payout Limit</strong><br/>
+                                    Influencers with a substantial amount of followers and reach may request written contracts for an agreed sum from our bounty manager.<br/.>
+                                    The decision on the accrual of BCT that is above the specified tiers will be considered individually, based on the number of views, level of engagement with the community, the quality of the content created, and other substantiating factors.<br/>
+                                    <br/>
+                                    <strong>Competition Theme: Features of the BCoin Token</strong><br/>
+                                    Program Start Date: 01 October 2018<br/>
+                                    Submission Week: 7 to 13 October 2018<br/>
+                                    Competition and Voting Week: 14 to 20 October 2018<br/>
+                                    <br/>
+                                    The themes for each competition would be released to the community periodically. Participants are given 2 weeks to create their content and submit it <a href="https://goo.gl/forms/1P49iDWDvgfl6AeZ2" target="_blank">here</a>.<br/>
+                                    <br/>
+                                    To take part in the competition and have the chance to earn bonus tokens, users must submit their content via the form from the Bounty Website.<br/>
+                                    <br/>
+                                    After the submission week has ended, the best content submitted to the program would be shared on all of BCoin’s social media channels, and the community would be tasked to vote for the content that they think is best.<br/>
+                                    <br/>
+                                    During the competition week, the submissions would be collated into a poll that would be conducted across all social media platforms and on Telegram. Each vote, like, share and comment will count towards the scoring of the top submissions. Winners would be notified and announced on all BCoin channels.<br/>
+                                    <br/>
+                                    The top 3 winners for each category would earn additional BCT on top of their bounty payment.<br/>
+                                    <strong>Bonus BCT for each program:</strong><br/>
+                                    1st Prize Bonus: 500BCT (USD250)<br/>
+                                    2nd Prize Bonus: 300BCT (USD150)<br/>
+                                    3rd Prize Bonus: 200BCT (USD100)<br/>
+                                    <br/>
+                                    To qualify for the competition, your content must be based around the features of the BCoin token! So get your creative juices flowing and start creating content on any of the platforms featured below<br/>
+                                    <br/>
+                                    <strong>Medium Campaign</strong><br/>
+                                    <u>Rewards:</u><br/>
+                                    100-200 Claps: 10 BCT (USD5)<br/>
+                                    201-500 Claps: 20 BCT (USD10)<br/>
+                                    501-1000 Claps: 100 BCT (USD50)<br/>
+                                    1001-5000 Claps: 200 BCT (USD100)<br/>
+                                    >5001 Claps: 500 BCT (USD250)<br/>
+                                    <br/>
+                                    <u>Rules for Participation:</u><br/>
+                                    <ol>
+                                        <li>You must have a minimum of 50 followers to participate.</li>
+                                        <li>Follow our <a href="https://medium.com/bcoinsg" target="_blank">Medium page</a></li>
+                                        <li>Written articles would need to be least 400 words long, containing useful, relevant and edifying information.</li>
+                                        <li>The Medium account must be your own original account. Fake, dead, inactive, bot, suspended accounts or suspended articles will be disqualified.</li>
+                                        <li>The reward would be based on the total number of claps achieved by the end of the bounty program.</li>
+                                    </ol>
+                                    <strong>Reddit Campaign</strong><br/>
+                                    <u>Rewards:</u> 6 BCT/post (USD3)<br/>
+                                    <br/>
+                                    <u>To Participate:</u>
+                                    <ol>
+                                        <li>You must have a minimum of 50 Karma to participate</li>
+                                        <li>Follow our <a href="https://www.reddit.com/r/bcoinsg" target="_blank">Subreddit</a></li>
+                                        <li>Upvote all our existing posts and thread.</li>
+                                        <li>Comment on our existing thread with at least one of his or her own comment. The comment must be creative, informative, relevant and constructive with the narrative. Basic and careless comments like “good project” would not be accepted.</li>
+                                        <li>Do not start your own thread within our subreddit.</li>
+                                        <li>Post one creative, informative, and relevant post or review about BCoin.sg on a relevant subreddit twice a week, e.g. /r/crypto, /r/cryptocurrency, /r/cryptomarkets  and the include a link to our subreddit.</li>
+                                    </ol>
+                                    <strong>YouTube Video Campaign</strong><br/>
+                                    <u>This campaign includes:</u><br/>
+                                    YouTube Reviews and Video Blogs about BCoin<br/>
+                                    <br/>
+                                    <u>Rewards:</u><br/>
+                                    Low quality with minimal reach (400 views) to audience: 40 BCT (USD20)<br/>
+                                    Normal quality with substantial reach (1500 views) to audience: 150 BCT (USD75)<br/>
+                                    Good quality with large reach to audience: 300 BCT (USD150)<br/>
+                                    Excellent quality with extensive reach to audience: 600 BCT (USD300)<br/>
+                                    <br/>
+                                    <u>To Participate:</u><br/>
+                                    <ol>
+                                        <li>Channels should be Blockchain and Cryptocurrency thematic and have an audience with the same interests.</li>
+                                        <li>You’ll require a minimum of 300 subscribers on your channel.</li>
+                                        <li>Videos would need to be least 2 minutes long, containing useful, relevant, and edifying information.</li>
+                                        <li>Proof of ownership of your account is required and must be submitted to the bounty manager as and when requested. To show proof, your Bitcointalk profile must be added in the video description.</li>
+                                    </ol>
+                                    <strong>Blog/Forum Campaign</strong><br/>
+                                    <u>This campaign includes:</u><br/>
+                                    Blog articles, news reports, forum posts, platform/product/company/token/technology reviews<br/>
+                                    <br/>
+                                    <u>Rewards:</u><br/>
+                                    Excellent quality with extensive reach to audience: 500 BCT (USD250)<br/>
+                                    Good quality with large reach to audience: 200 BCT (USD100)<br/>
+                                    Normal quality with substantial reach to audience: 100 BCT (USD50)<br/>
+                                    Low quality with minimal reach to audience: 20 BCT (USD10)<br/>
+                                    <br/>
+                                    <u>To Participate:</u><br/>
+                                    <ol>
+                                        <li>Blogs, channels, forums and websites should be Blockchain and Cryptocurrency thematic and have an audience with the same interests.</li>
+                                        <li>For your Personal blogs you are required to prove that you have a of minimum of 200 subscribers.</li>
+                                        <li>Written articles would need to be least 400 words long, containing useful, relevant and edifying information.</li>
+                                    </ol>
+                                    <strong>Design and Creatives Program</strong><br/>
+                                    <u>This campaign includes:</u><br/>
+                                    Infographics, any illustrations, or designed content for use on Telegram (e.g. sticker packs), and other social media platforms.<br/>
+                                    <br/>
+                                    <u>Rewards:</u><br/>
+                                    Excellent and detailed quality of work: 500 BCT (USD250)<br/>
+                                    Good quality of work: 200 BCT (USD100)<br/>
+                                    Normal quality of work: 100 BCT (USD50)<br/>
+                                    Low quality of work: 20 BCT (USD10)<br/>
+                                    <br/>
+                                    <u>To Participate:</u><br/>
+                                    <ol>
+                                        <li>Materials created must be of a professional standard.</li>
+                                        <li>Participants must submit the editable files along with the final copy.</li>
+                                        <li>Participants must be the original creators of their pieces, plagiarising another person’s work is strictly prohibited.</li>
+                                        <li>The participants would be credited with the work that they submitted.</li>
+                                        <li>The rights to the use the submitted materials as promotional materials belong to BCoin.</li>
+                                        <li>Once completed with the program, you’ll need to submit the completion form. The approval for the completion of the program would be made by the bounty manager only after the submission of all required deliverables.</li>
+                                    </ol>
+                                    Once done with your content, please fill up all necessary details in the submission form:<br/>
+                                    <a href="https://goo.gl/forms/1P49iDWDvgfl6AeZ2" class="btn btn-outline-primary mt-4" target="_blank">Link to Form</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
