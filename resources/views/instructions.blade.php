@@ -205,6 +205,7 @@
                                     To qualify for the competition, your content must be based around the features of the BCoin token! So get your creative juices flowing and start creating content on any of the platforms featured below<br/>
                                     <br/>
 
+                                    <br/>
                                     <h3><strong>Activity #1: Infographics and Graphic Collaterals</strong></h3>
                                     <u>This campaign includes:</u><br/>
                                     Infographics, any illustrations, or designed content for use on Telegram (e.g. sticker packs), and other social media platforms.<br/>
@@ -225,6 +226,7 @@
                                         <li>Once completed with the program, you’ll need to submit the completion form. The approval for the completion of the program would be made by the bounty manager only after the submission of all required deliverables.</li>
                                     </ol>
 
+                                    <br/>
                                     <h3><strong>Activity #2: Reddit</strong></h3>
                                     <u>Rewards:</u> 6 BCT/post (USD3)<br/>
                                     <br/>
@@ -238,6 +240,7 @@
                                         <li>Post one creative, informative, and relevant post or review about BCoin.sg on a relevant subreddit twice a week, e.g. /r/crypto, /r/cryptocurrency, /r/cryptomarkets  and the include a link to our subreddit.</li>
                                     </ol>
 
+                                    <br/>
                                     <h3><strong>Activity #3: Medium</strong></h3>
                                     <u>Rewards:</u><br/>
                                     100-200 Claps: 10 BCT (USD5)<br/>
@@ -255,6 +258,7 @@
                                         <li>The reward would be based on the total number of claps achieved by the end of the bounty program.</li>
                                     </ol>
                                     
+                                    <br/>
                                     <h3><strong>Activity #4: YouTube</strong></h3>
                                     <u>This campaign includes:</u><br/>
                                     YouTube Reviews and Video Blogs about BCoin<br/>
@@ -273,6 +277,7 @@
                                         <li>Proof of ownership of your account is required and must be submitted to the bounty manager as and when requested. To show proof, your Bitcointalk profile must be added in the video description.</li>
                                     </ol>
 
+                                    <br/>
                                     <h3><strong>Activity #5: Blog/Forum</strong></h3>
                                     <u>This campaign includes:</u><br/>
                                     Blog articles, news reports, forum posts, platform/product/company/token/technology reviews<br/>
@@ -298,7 +303,7 @@
                                         <li>Using multiple accounts, spam bots, personal spamming are strictly prohibited, and users attempting to do so will be banned.</li>
                                         <li>The management team reserve the rights to adjust the terms and conditions of the bounty campaign during the period of its holding. For all updates, keep an eye on this topic and the bounty telegram group.</li>
                                         <li>Once the program has reached the required number of participants, we will stop registration for some campaigns.</li>
-                                        <li>The participant must write a creative, informative, and relevant post or review about our <a href="https://www.bcoin.sg/" target="_blank">Bcoin Exchange</a> or about our <a href="https://www.bcoinsg.io/" target="_blank">Token Economics/Features</a> using the compulsory tag: BCoin, BCoin.sg</li>
+                                        <li>The participant must write a creative, informative, and relevant post or review about our <a href="https://www.bcoin.sg/" target="_blank">BCoin Exchange</a> or about our <a href="https://www.bcoinsg.io/" target="_blank">Token Economics/Features</a> using the compulsory tag: BCoin, BCoin.sg</li>
                                         <li>
                                             Articles must be genuine, relevant, informative and creative. You can use official images, logos, graphics posted on the following:
                                             <ul>
@@ -323,6 +328,7 @@
                                     <br/>
                                     Once done with your content, please fill up all necessary details in the submission form<br/>
                                     <a href="https://goo.gl/forms/1P49iDWDvgfl6AeZ2" class="btn btn-outline-primary mt-4" target="_blank">Submission Form</a>
+                                    <a href="https://docs.google.com/spreadsheets/d/1b_kVTnWVt26ODdL19YsjDpMvfE6HwjDzCS61KXvZUCQ/edit?usp=sharing" class="btn btn-outline-primary mt-4" target="_blank">Submission Status</a>
                                 </div>
                             </div>
                         </div>
