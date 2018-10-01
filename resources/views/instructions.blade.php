@@ -393,7 +393,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://twitter.com/BCoinsg" target="_blank">Twitter</a></li>
-                                <li>Like and retweet our <a href="https://twitter.com/BCoinsg/status/1036520452720488448" target="_blank">Tweet</a></li>
+                                <li>Like and retweet our <a href="https://twitter.com/BCoinsg/status/1046700661901950976" target="_blank">Tweet</a></li>
                             </ul>
                         </div>
                         @if ($user->twitter()->exists())
@@ -529,7 +529,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://www.facebook.com/BCoinsg/" target="_blank">Facebook Page</a></li>
-                                <li>Like and share our <a href="https://www.facebook.com/BCoinsg/posts/243604416348230" target="_blank">post</a></li>
+                                <li>Like and share our <a href="https://www.facebook.com/BCoinsg/photos/a.166929147349091/251717228870282/?type=3&theater" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
@@ -562,7 +562,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow us on <a href="https://www.instagram.com/bcoinsg" target="_blank">Instagram</a></li>
-                                <li>Like our <a href="https://www.instagram.com/p/BnQVyaLAyPv/" target="_blank">post</a></li>
+                                <li>Like our <a href="https://www.instagram.com/p/BoYv7DVAGUe" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
@@ -595,7 +595,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://www.linkedin.com/company/bcoinsg/" target="_blank">LinkedIn Page</a></li>
-                                <li>Like and share our <a href="https://www.linkedin.com/feed/update/urn:li:activity:6442281039997042688" target="_blank">post</a></li>
+                                <li>Like and share our <a href="https://www.linkedin.com/feed/update/urn:li:activity:6452467269405634560" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
