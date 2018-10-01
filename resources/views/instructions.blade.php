@@ -169,15 +169,127 @@
                             <div class="card-body">
                                 <img src="{{ asset('images/creative.jpeg') }}" class="img-fluid mb-3">
                                 <div>
-                                    <strong>Promotional Bounty Program</strong><br/>
-                                    <strong>USD100,000 worth of BCT</strong><br/>
+                                    <h1><strong>Creative Bounty Competition:</strong></h1>
+                                    <h1><strong>Features of the BCoin Token</strong></h1>
+                                    <h1><strong>USD100,000 worth of BCT</strong></h1>
+                                    <h3><strong>Activity #1: Infographics and Graphic Collaterals</strong></h3>
+                                    <h3><strong>Activity #2: Reddit</strong></h3>
+                                    <h3><strong>Activity #3: Medium</strong></h3>
+                                    <h3><strong>Activity #4: YouTube</strong></h3>
+                                    <h3><strong>Activity #5: Blogs/Forum</strong></h3>
+                                    <br/>
+                                    <h3><strong>Competition Theme: Features of the BCoin Token</strong></h3>
+                                    Program Start Date: 01 October 2018<br/>
+                                    Submission Week: 7 to 13 October 2018<br/>
+                                    Competition and Voting Week: 14 to 20 October 2018<br/>
+                                    <br/>
+                                    <h3><strong>Features of the BCoin Token Competition</strong></h3>
                                     <ul>
-                                        <li>Infographics and Graphic Collaterals</li>
-                                        <li>Reddit</li>
-                                        <li>Medium</li>
-                                        <li>YouTube</li>
-                                        <li>Blogs/Forum</li>
+                                        <li>Discounted Trading Fees - A proven utility model, exchange-issued-tokens have proven their worth by reducing trade friction. Users can use BCT tokens in place of fees and receive up to 30% discount on all trading fees.</li>
+                                        <li>Membership Benefits - Owners of BCT tokens will receive additional  benefits – up to +30% off trading fees, as well as qualification of our Diamond/ Ruby/ Sapphire memberships (tiered according to the user’s personal usage and loyalty to the platform).</li>
+                                        <li>Community Activation - BCT tokens grants users exclusive access to BCoin.sg polling events and participation in the BCoin.sg Private Listings Clubs. Additionally, BCT is also used as a medium of payment for listing services.</li>
+                                        <li>Trade Mining - BCT tokens can be mined through trading fees at a rate of 120%, as a secondary distribution initiative and capped at 5% allocation of the total supply.</li>
                                     </ul>
+                                    To take part in the competition and have the chance to earn bonus tokens, users must submit their content via the form from the Bounty Website.<br/>
+                                    <br/>
+                                    After the submission week has ended, the best content submitted to the program would be shared on all of BCoin’s social media channels, and the community would be tasked to vote for the content that they think is best.<br/>
+                                    <br/>
+                                    During the competition week, the submissions would be collated into a poll that would be conducted across all social media platforms and on Telegram. Each vote, like, share and comment will count towards the scoring of the top submissions. Winners would be notified and announced on all BCoin channels.<br/>
+                                    <br/>
+                                    The top 3 winners for each category would earn additional BCT on top of their bounty payment.<br/>
+                                    <strong>Bonus BCT for each program:</strong><br/>
+                                    1st Prize Bonus: 500BCT (USD250)<br/>
+                                    2nd Prize Bonus: 300BCT (USD150)<br/>
+                                    3rd Prize Bonus: 200BCT (USD100)<br/>
+                                    <br/>
+                                    To qualify for the competition, your content must be based around the features of the BCoin token! So get your creative juices flowing and start creating content on any of the platforms featured below<br/>
+                                    <br/>
+
+                                    <h3><strong>Activity #1: Infographics and Graphic Collaterals</strong></h3>
+                                    <u>This campaign includes:</u><br/>
+                                    Infographics, any illustrations, or designed content for use on Telegram (e.g. sticker packs), and other social media platforms.<br/>
+                                    <br/>
+                                    <u>Rewards:</u><br/>
+                                    Excellent and detailed quality of work: 500 BCT (USD250)<br/>
+                                    Good quality of work: 200 BCT (USD100)<br/>
+                                    Normal quality of work: 100 BCT (USD50)<br/>
+                                    Low quality of work: 20 BCT (USD10)<br/>
+                                    <br/>
+                                    <u>To Participate:</u><br/>
+                                    <ol>
+                                        <li>Materials created must be of a professional standard.</li>
+                                        <li>Participants must submit the editable files along with the final copy.</li>
+                                        <li>Participants must be the original creators of their pieces, plagiarising another person’s work is strictly prohibited.</li>
+                                        <li>The participants would be credited with the work that they submitted.</li>
+                                        <li>The rights to the use the submitted materials as promotional materials belong to BCoin.</li>
+                                        <li>Once completed with the program, you’ll need to submit the completion form. The approval for the completion of the program would be made by the bounty manager only after the submission of all required deliverables.</li>
+                                    </ol>
+
+                                    <h3><strong>Activity #2: Reddit</strong></h3>
+                                    <u>Rewards:</u> 6 BCT/post (USD3)<br/>
+                                    <br/>
+                                    <u>To Participate:</u>
+                                    <ol>
+                                        <li>You must have a minimum of 50 Karma to participate</li>
+                                        <li>Follow our <a href="https://www.reddit.com/r/bcoinsg" target="_blank">Subreddit</a></li>
+                                        <li>Upvote all our existing posts and thread.</li>
+                                        <li>Comment on our existing thread with at least one of his or her own comment. The comment must be creative, informative, relevant and constructive with the narrative. Basic and careless comments like “good project” would not be accepted.</li>
+                                        <li>Do not start your own thread within our subreddit.</li>
+                                        <li>Post one creative, informative, and relevant post or review about BCoin.sg on a relevant subreddit twice a week, e.g. /r/crypto, /r/cryptocurrency, /r/cryptomarkets  and the include a link to our subreddit.</li>
+                                    </ol>
+
+                                    <h3><strong>Activity #3: Medium</strong></h3>
+                                    <u>Rewards:</u><br/>
+                                    100-200 Claps: 10 BCT (USD5)<br/>
+                                    201-500 Claps: 20 BCT (USD10)<br/>
+                                    501-1000 Claps: 100 BCT (USD50)<br/>
+                                    1001-5000 Claps: 200 BCT (USD100)<br/>
+                                    >5001 Claps: 500 BCT (USD250)<br/>
+                                    <br/>
+                                    <u>Rules for Participation:</u><br/>
+                                    <ol>
+                                        <li>You must have a minimum of 50 followers to participate.</li>
+                                        <li>Follow our <a href="https://medium.com/bcoinsg" target="_blank">Medium page</a></li>
+                                        <li>Written articles would need to be least 400 words long, containing useful, relevant and edifying information.</li>
+                                        <li>The Medium account must be your own original account. Fake, dead, inactive, bot, suspended accounts or suspended articles will be disqualified.</li>
+                                        <li>The reward would be based on the total number of claps achieved by the end of the bounty program.</li>
+                                    </ol>
+                                    
+                                    <h3><strong>Activity #4: YouTube</strong></h3>
+                                    <u>This campaign includes:</u><br/>
+                                    YouTube Reviews and Video Blogs about BCoin<br/>
+                                    <br/>
+                                    <u>Rewards:</u><br/>
+                                    Low quality with minimal reach (400 views) to audience: 40 BCT (USD20)<br/>
+                                    Normal quality with substantial reach (1500 views) to audience: 150 BCT (USD75)<br/>
+                                    Good quality with large reach to audience: 300 BCT (USD150)<br/>
+                                    Excellent quality with extensive reach to audience: 600 BCT (USD300)<br/>
+                                    <br/>
+                                    <u>To Participate:</u><br/>
+                                    <ol>
+                                        <li>Channels should be Blockchain and Cryptocurrency thematic and have an audience with the same interests.</li>
+                                        <li>You’ll require a minimum of 300 subscribers on your channel.</li>
+                                        <li>Videos would need to be least 2 minutes long, containing useful, relevant, and edifying information.</li>
+                                        <li>Proof of ownership of your account is required and must be submitted to the bounty manager as and when requested. To show proof, your Bitcointalk profile must be added in the video description.</li>
+                                    </ol>
+
+                                    <h3><strong>Activity #5: Blog/Forum</strong></h3>
+                                    <u>This campaign includes:</u><br/>
+                                    Blog articles, news reports, forum posts, platform/product/company/token/technology reviews<br/>
+                                    <br/>
+                                    <u>Rewards:</u><br/>
+                                    Excellent quality with extensive reach to audience: 500 BCT (USD250)<br/>
+                                    Good quality with large reach to audience: 200 BCT (USD100)<br/>
+                                    Normal quality with substantial reach to audience: 100 BCT (USD50)<br/>
+                                    Low quality with minimal reach to audience: 20 BCT (USD10)<br/>
+                                    <br/>
+                                    <u>To Participate:</u><br/>
+                                    <ol>
+                                        <li>Blogs, channels, forums and websites should be Blockchain and Cryptocurrency thematic and have an audience with the same interests.</li>
+                                        <li>For your Personal blogs you are required to prove that you have a of minimum of 200 subscribers.</li>
+                                        <li>Written articles would need to be least 400 words long, containing useful, relevant and edifying information.</li>
+                                    </ol>
+                                    <br/>
                                     <strong>General Conditions for All Campaigns</strong>
                                     <ul>
                                         <li>You must join and be a member of the <a href="https://t.me/bcoinsg_EN/" target="_blank">BCoin Telegram Group</a></li>
@@ -209,108 +321,7 @@
                                     Influencers with a substantial amount of followers and reach may request written contracts for an agreed sum from our bounty manager.<br/.>
                                     The decision on the accrual of BCT that is above the specified tiers will be considered individually, based on the number of views, level of engagement with the community, the quality of the content created, and other substantiating factors.<br/>
                                     <br/>
-                                    <strong>Competition Theme: Features of the BCoin Token</strong><br/>
-                                    Program Start Date: 01 October 2018<br/>
-                                    Submission Week: 7 to 13 October 2018<br/>
-                                    Competition and Voting Week: 14 to 20 October 2018<br/>
-                                    <br/>
-                                    The themes for each competition would be released to the community periodically. Participants are given 2 weeks to create their content and submit it <a href="https://goo.gl/forms/1P49iDWDvgfl6AeZ2" target="_blank">here</a>.<br/>
-                                    <br/>
-                                    To take part in the competition and have the chance to earn bonus tokens, users must submit their content via the form from the Bounty Website.<br/>
-                                    <br/>
-                                    After the submission week has ended, the best content submitted to the program would be shared on all of BCoin’s social media channels, and the community would be tasked to vote for the content that they think is best.<br/>
-                                    <br/>
-                                    During the competition week, the submissions would be collated into a poll that would be conducted across all social media platforms and on Telegram. Each vote, like, share and comment will count towards the scoring of the top submissions. Winners would be notified and announced on all BCoin channels.<br/>
-                                    <br/>
-                                    The top 3 winners for each category would earn additional BCT on top of their bounty payment.<br/>
-                                    <strong>Bonus BCT for each program:</strong><br/>
-                                    1st Prize Bonus: 500BCT (USD250)<br/>
-                                    2nd Prize Bonus: 300BCT (USD150)<br/>
-                                    3rd Prize Bonus: 200BCT (USD100)<br/>
-                                    <br/>
-                                    To qualify for the competition, your content must be based around the features of the BCoin token! So get your creative juices flowing and start creating content on any of the platforms featured below<br/>
-                                    <br/>
-                                    <strong>Medium Campaign</strong><br/>
-                                    <u>Rewards:</u><br/>
-                                    100-200 Claps: 10 BCT (USD5)<br/>
-                                    201-500 Claps: 20 BCT (USD10)<br/>
-                                    501-1000 Claps: 100 BCT (USD50)<br/>
-                                    1001-5000 Claps: 200 BCT (USD100)<br/>
-                                    >5001 Claps: 500 BCT (USD250)<br/>
-                                    <br/>
-                                    <u>Rules for Participation:</u><br/>
-                                    <ol>
-                                        <li>You must have a minimum of 50 followers to participate.</li>
-                                        <li>Follow our <a href="https://medium.com/bcoinsg" target="_blank">Medium page</a></li>
-                                        <li>Written articles would need to be least 400 words long, containing useful, relevant and edifying information.</li>
-                                        <li>The Medium account must be your own original account. Fake, dead, inactive, bot, suspended accounts or suspended articles will be disqualified.</li>
-                                        <li>The reward would be based on the total number of claps achieved by the end of the bounty program.</li>
-                                    </ol>
-                                    <strong>Reddit Campaign</strong><br/>
-                                    <u>Rewards:</u> 6 BCT/post (USD3)<br/>
-                                    <br/>
-                                    <u>To Participate:</u>
-                                    <ol>
-                                        <li>You must have a minimum of 50 Karma to participate</li>
-                                        <li>Follow our <a href="https://www.reddit.com/r/bcoinsg" target="_blank">Subreddit</a></li>
-                                        <li>Upvote all our existing posts and thread.</li>
-                                        <li>Comment on our existing thread with at least one of his or her own comment. The comment must be creative, informative, relevant and constructive with the narrative. Basic and careless comments like “good project” would not be accepted.</li>
-                                        <li>Do not start your own thread within our subreddit.</li>
-                                        <li>Post one creative, informative, and relevant post or review about BCoin.sg on a relevant subreddit twice a week, e.g. /r/crypto, /r/cryptocurrency, /r/cryptomarkets  and the include a link to our subreddit.</li>
-                                    </ol>
-                                    <strong>YouTube Video Campaign</strong><br/>
-                                    <u>This campaign includes:</u><br/>
-                                    YouTube Reviews and Video Blogs about BCoin<br/>
-                                    <br/>
-                                    <u>Rewards:</u><br/>
-                                    Low quality with minimal reach (400 views) to audience: 40 BCT (USD20)<br/>
-                                    Normal quality with substantial reach (1500 views) to audience: 150 BCT (USD75)<br/>
-                                    Good quality with large reach to audience: 300 BCT (USD150)<br/>
-                                    Excellent quality with extensive reach to audience: 600 BCT (USD300)<br/>
-                                    <br/>
-                                    <u>To Participate:</u><br/>
-                                    <ol>
-                                        <li>Channels should be Blockchain and Cryptocurrency thematic and have an audience with the same interests.</li>
-                                        <li>You’ll require a minimum of 300 subscribers on your channel.</li>
-                                        <li>Videos would need to be least 2 minutes long, containing useful, relevant, and edifying information.</li>
-                                        <li>Proof of ownership of your account is required and must be submitted to the bounty manager as and when requested. To show proof, your Bitcointalk profile must be added in the video description.</li>
-                                    </ol>
-                                    <strong>Blog/Forum Campaign</strong><br/>
-                                    <u>This campaign includes:</u><br/>
-                                    Blog articles, news reports, forum posts, platform/product/company/token/technology reviews<br/>
-                                    <br/>
-                                    <u>Rewards:</u><br/>
-                                    Excellent quality with extensive reach to audience: 500 BCT (USD250)<br/>
-                                    Good quality with large reach to audience: 200 BCT (USD100)<br/>
-                                    Normal quality with substantial reach to audience: 100 BCT (USD50)<br/>
-                                    Low quality with minimal reach to audience: 20 BCT (USD10)<br/>
-                                    <br/>
-                                    <u>To Participate:</u><br/>
-                                    <ol>
-                                        <li>Blogs, channels, forums and websites should be Blockchain and Cryptocurrency thematic and have an audience with the same interests.</li>
-                                        <li>For your Personal blogs you are required to prove that you have a of minimum of 200 subscribers.</li>
-                                        <li>Written articles would need to be least 400 words long, containing useful, relevant and edifying information.</li>
-                                    </ol>
-                                    <strong>Design and Creatives Program</strong><br/>
-                                    <u>This campaign includes:</u><br/>
-                                    Infographics, any illustrations, or designed content for use on Telegram (e.g. sticker packs), and other social media platforms.<br/>
-                                    <br/>
-                                    <u>Rewards:</u><br/>
-                                    Excellent and detailed quality of work: 500 BCT (USD250)<br/>
-                                    Good quality of work: 200 BCT (USD100)<br/>
-                                    Normal quality of work: 100 BCT (USD50)<br/>
-                                    Low quality of work: 20 BCT (USD10)<br/>
-                                    <br/>
-                                    <u>To Participate:</u><br/>
-                                    <ol>
-                                        <li>Materials created must be of a professional standard.</li>
-                                        <li>Participants must submit the editable files along with the final copy.</li>
-                                        <li>Participants must be the original creators of their pieces, plagiarising another person’s work is strictly prohibited.</li>
-                                        <li>The participants would be credited with the work that they submitted.</li>
-                                        <li>The rights to the use the submitted materials as promotional materials belong to BCoin.</li>
-                                        <li>Once completed with the program, you’ll need to submit the completion form. The approval for the completion of the program would be made by the bounty manager only after the submission of all required deliverables.</li>
-                                    </ol>
-                                    Once done with your content, please fill up all necessary details in the submission form:<br/>
+                                    Once done with your content, please fill up all necessary details in the submission form<br/>
                                     <a href="https://goo.gl/forms/1P49iDWDvgfl6AeZ2" class="btn btn-outline-primary mt-4" target="_blank">Submission Form</a>
                                 </div>
                             </div>
