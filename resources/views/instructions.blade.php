@@ -167,46 +167,38 @@
                         <div class="card border-0 mb-3 h-100">
                             <div class="card-header bg-secondary text-white">BCoin Creative Campaign</div>
                             <div class="card-body">
-                                <img src="{{ asset('images/creative.jpeg') }}" class="img-fluid mb-3">
-                                <div>
-                                    <h1><strong>Creative Bounty Competition:</strong></h1>
-                                    <h1><strong>Features of the BCoin Token</strong></h1>
-                                    <h1><strong>USD100,000 worth of BCT</strong></h1>
-                                    <h3><strong>Activity #1: Infographics and Graphic Collaterals</strong></h3>
-                                    <h3><strong>Activity #2: Reddit</strong></h3>
-                                    <h3><strong>Activity #3: Medium</strong></h3>
-                                    <h3><strong>Activity #4: YouTube</strong></h3>
-                                    <h3><strong>Activity #5: Blogs/Forum</strong></h3>
-                                    <br/>
-                                    <h3><strong>Competition Theme: Features of the BCoin Token</strong></h3>
+                                <img src="{{ asset('images/creative1.jpg') }}" class="img-fluid mb-3">
+                                <h1 class="text-center text-blue-accent my-4"><strong>Current Theme: BCoin Token Features</strong></h1>
+                                <img src="{{ asset('images/creative2.jpg') }}" class="img-fluid mt-4 mb-3">
+                                <div class="text-center my-4">
                                     Program Start Date: 01 October 2018<br/>
                                     Submission Week: 7 to 13 October 2018<br/>
                                     Competition and Voting Week: 14 to 20 October 2018<br/>
+                                </div>
+                                <div>
                                     <br/>
-                                    <h3><strong>Features of the BCoin Token Competition</strong></h3>
+                                    <h3 class="text-blue-accent"><strong>Campaign objective : To showcase features of the BCoin Token found below:</strong></h3>
                                     <ul>
-                                        <li>Discounted Trading Fees - A proven utility model, exchange-issued-tokens have proven their worth by reducing trade friction. Users can use BCT tokens in place of fees and receive up to 30% discount on all trading fees.</li>
-                                        <li>Membership Benefits - Owners of BCT tokens will receive additional  benefits – up to +30% off trading fees, as well as qualification of our Diamond/ Ruby/ Sapphire memberships (tiered according to the user’s personal usage and loyalty to the platform).</li>
-                                        <li>Community Activation - BCT tokens grants users exclusive access to BCoin.sg polling events and participation in the BCoin.sg Private Listings Clubs. Additionally, BCT is also used as a medium of payment for listing services.</li>
-                                        <li>Trade Mining - BCT tokens can be mined through trading fees at a rate of 120%, as a secondary distribution initiative and capped at 5% allocation of the total supply.</li>
+                                        <li><span class="text-blue-accent"><u>Discounted Trading Fees</u></span><br/>A proven utility model, exchange-issued-tokens have proven their worth by reducing trade friction. Users can use BCT tokens in place of fees and receive up to 30% discount on all trading fees.</li>
+                                        <li><span class="text-blue-accent"><u>Membership Benefits</u></span><br/>Owners of BCT tokens will receive additional  benefits – up to +30% off trading fees, as well as qualification of our Diamond/ Ruby/ Sapphire memberships (tiered according to the user’s personal usage and loyalty to the platform).</li>
+                                        <li><span class="text-blue-accent"><u>Community Activation</u></span><br/>BCT tokens grants users exclusive access to BCoin.sg polling events and participation in the BCoin.sg Private Listings Clubs. Additionally, BCT is also used as a medium of payment for listing services.</li>
+                                        <li><span class="text-blue-accent"><u>Trade Mining</u></span><br/>BCT tokens can be mined through trading fees at a rate of 120%, as a secondary distribution initiative and capped at 5% allocation of the total supply.</li>
                                     </ul>
-                                    To take part in the competition and have the chance to earn bonus tokens, users must submit their content via the form from the Bounty Website.<br/>
-                                    <br/>
-                                    After the submission week has ended, the best content submitted to the program would be shared on all of BCoin’s social media channels, and the community would be tasked to vote for the content that they think is best.<br/>
-                                    <br/>
-                                    During the competition week, the submissions would be collated into a poll that would be conducted across all social media platforms and on Telegram. Each vote, like, share and comment will count towards the scoring of the top submissions. Winners would be notified and announced on all BCoin channels.<br/>
-                                    <br/>
-                                    The top 3 winners for each category would earn additional BCT on top of their bounty payment.<br/>
-                                    <strong>Bonus BCT for each program:</strong><br/>
-                                    1st Prize Bonus: 500BCT (USD250)<br/>
-                                    2nd Prize Bonus: 300BCT (USD150)<br/>
-                                    3rd Prize Bonus: 200BCT (USD100)<br/>
-                                    <br/>
+                                </div>
+                                <div class="text-center text-blue-accent mb-4">
+                                    <strong>
+                                        Top 3 winners for each activity earns additional BCT on top of their bounty payment:<br/>
+                                        1st Prize Bonus: 500BCT (USD250)<br/>
+                                        2nd Prize Bonus: 300BCT (USD150)<br/>
+                                        3rd Prize Bonus: 200BCT (USD100)<br/>
+                                    </strong>
+                                </div>
+                                <div>
                                     To qualify for the competition, your content must be based around the features of the BCoin token! So get your creative juices flowing and start creating content on any of the platforms featured below<br/>
                                     <br/>
 
                                     <br/>
-                                    <h3><strong>Activity #1: Infographics and Graphic Collaterals</strong></h3>
+                                    <h3 class="text-blue-accent"><strong>Activity #1: Infographics and Graphic Collaterals</strong></h3>
                                     <u>This campaign includes:</u><br/>
                                     Infographics, any illustrations, or designed content for use on Telegram (e.g. sticker packs), and other social media platforms.<br/>
                                     <br/>
@@ -227,7 +219,7 @@
                                     </ol>
 
                                     <br/>
-                                    <h3><strong>Activity #2: Reddit</strong></h3>
+                                    <h3 class="text-blue-accent"><strong>Activity #2: Reddit</strong></h3>
                                     <u>Rewards:</u> 6 BCT/post (USD3)<br/>
                                     <br/>
                                     <u>To Participate:</u>
@@ -241,7 +233,7 @@
                                     </ol>
 
                                     <br/>
-                                    <h3><strong>Activity #3: Medium</strong></h3>
+                                    <h3 class="text-blue-accent"><strong>Activity #3: Medium</strong></h3>
                                     <u>Rewards:</u><br/>
                                     100-200 Claps: 10 BCT (USD5)<br/>
                                     201-500 Claps: 20 BCT (USD10)<br/>
@@ -259,7 +251,7 @@
                                     </ol>
                                     
                                     <br/>
-                                    <h3><strong>Activity #4: YouTube</strong></h3>
+                                    <h3 class="text-blue-accent"><strong>Activity #4: YouTube</strong></h3>
                                     <u>This campaign includes:</u><br/>
                                     YouTube Reviews and Video Blogs about BCoin<br/>
                                     <br/>
@@ -278,7 +270,7 @@
                                     </ol>
 
                                     <br/>
-                                    <h3><strong>Activity #5: Blog/Forum</strong></h3>
+                                    <h3 class="text-blue-accent"><strong>Activity #5: Blog/Forum</strong></h3>
                                     <u>This campaign includes:</u><br/>
                                     Blog articles, news reports, forum posts, platform/product/company/token/technology reviews<br/>
                                     <br/>
@@ -294,6 +286,12 @@
                                         <li>For your Personal blogs you are required to prove that you have a of minimum of 200 subscribers.</li>
                                         <li>Written articles would need to be least 400 words long, containing useful, relevant and edifying information.</li>
                                     </ol>
+                                    <br/>
+                                    To take part in the competition and have the chance to earn bonus tokens, users must submit their content via the form from the Bounty Website.<br/>
+                                    <br/>
+                                    After the submission week has ended, the best content submitted to the program would be shared on all of BCoin’s social media channels, and the community would be tasked to vote for the content that they think is best.<br/>
+                                    <br/>
+                                    During the competition week, the submissions would be collated into a poll that would be conducted across all social media platforms and on Telegram. <span class="text-blue-accent"><strong>Each vote, like, share and comment will count towards the scoring of the top submissions. Winners would be notified and announced on all BCoin channels.</strong></span><br/>
                                     <br/>
                                     <strong>General Conditions for All Campaigns</strong>
                                     <ul>
