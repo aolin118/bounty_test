@@ -293,37 +293,6 @@
                                     <br/>
                                     During the competition week, the submissions would be collated into a poll that would be conducted across all social media platforms and on Telegram. <span class="text-blue-accent"><strong>Each vote, like, share and comment will count towards the scoring of the top submissions. Winners would be notified and announced on all BCoin channels.</strong></span><br/>
                                     <br/>
-                                    <strong>General Conditions for All Campaigns</strong>
-                                    <ul>
-                                        <li>You must join and be a member of the <a href="https://t.me/bcoinsg_EN/" target="_blank">BCoin Telegram Group</a></li>
-                                        <li>We would be pushing updates about our platform on these channels and users must be updated on our project, to potentially include our updates and developments in their respective bounty programs.</li>
-                                        <li>Mentioning bounty or any part of this campaign is not allowed on any channel.</li>
-                                        <li>Using multiple accounts, spam bots, personal spamming are strictly prohibited, and users attempting to do so will be banned.</li>
-                                        <li>The management team reserve the rights to adjust the terms and conditions of the bounty campaign during the period of its holding. For all updates, keep an eye on this topic and the bounty telegram group.</li>
-                                        <li>Once the program has reached the required number of participants, we will stop registration for some campaigns.</li>
-                                        <li>The participant must write a creative, informative, and relevant post or review about our <a href="https://www.bcoin.sg/" target="_blank">BCoin Exchange</a> or about our <a href="https://www.bcoinsg.io/" target="_blank">Token Economics/Features</a> using the compulsory tag: BCoin, BCoin.sg</li>
-                                        <li>
-                                            Articles must be genuine, relevant, informative and creative. You can use official images, logos, graphics posted on the following:
-                                            <ul>
-                                                <li><a href="https://www.bcoinsg.io/" target="_blank">Website</a></li>
-                                                <li><a href="https://www.reddit.com/r/BCoinsg/" target="_blank">Reddit</a></li>
-                                                <li><a href="https://medium.com/bcoinsg" target="_blank">Medium</a></li>
-                                                <li><a href="https://twitter.com/BCoinsg" target="_blank">Twitter</a></li>
-                                                <li><a href="https://www.youtube.com/c/BCoinsg" target="_blank">YouTube</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>Content should provide links to the official website: <a href="https://www.bcoin.sg/" target="_blank">https://www.bcoin.sg/</a> or <a href="https://www.bcoinsg.io/" target="_blank">https://www.bcoinsg.io/</a> or to the <a href="https://www.scribd.com/document/387793884/BCoinWP-1-1-5" target="_blank">whitepaper</a></li>
-                                        <li>Basic, careless, or plagiarised posts would not be accepted.</li>
-                                        <li>All materials must be of a professional standard, low-quality articles will not be accepted.</li>
-                                        <li>Once completed with the program, you’ll need to submit the completion form and inform the bounty manager of your participation. The approval for the completion of the bounty program would be made by the bounty manager only after submission of all the required deliverables.</li>
-                                        <li>Proof of ownership of your account is required and must be submitted to the bounty manager as and when requested.</li>
-                                        <li>Upon approval of the submissions, tokens would be transferred to the exchange wallet of the same registered email in phases after the end of the token sale.</li>
-                                        <li>Once done with your content, please fill up all necessary details in the <a href="https://goo.gl/forms/1P49iDWDvgfl6AeZ2" target="_blank">submission form</a>.</li>
-                                    </ul>
-                                    <strong>Clause on the Maximum Payout Limit</strong><br/>
-                                    Influencers with a substantial amount of followers and reach may request written contracts for an agreed sum from our bounty manager.<br/.>
-                                    The decision on the accrual of BCT that is above the specified tiers will be considered individually, based on the number of views, level of engagement with the community, the quality of the content created, and other substantiating factors.<br/>
-                                    <br/>
                                     Once done with your content, please fill up all necessary details in the submission form<br/>
                                     <a href="https://goo.gl/forms/1P49iDWDvgfl6AeZ2" class="btn btn-outline-primary mt-4" target="_blank">Submission Form</a>
                                     <a href="https://docs.google.com/spreadsheets/d/1b_kVTnWVt26ODdL19YsjDpMvfE6HwjDzCS61KXvZUCQ/edit?usp=sharing" class="btn btn-outline-primary mt-4" target="_blank">Submission Status</a>
