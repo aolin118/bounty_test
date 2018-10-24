@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>BCoin Bounty Program</title>
+        <title>BCoin.sg Bounty Program</title>
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/fontawesome.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -360,7 +360,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://twitter.com/BCoinsg" target="_blank">Twitter</a></li>
-                                <li>Like and retweet our <a href="https://twitter.com/BCoinsg/status/1046700661901950976" target="_blank">Tweet</a></li>
+                                <li>Like and retweet our <a href="https://twitter.com/BCoinsg/status/1054572853729710080" target="_blank">Tweet</a></li>
                             </ul>
                         </div>
                         @if ($user->twitter()->exists())
@@ -430,7 +430,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Subscribe to our <a href="https://www.reddit.com/r/BCoinsg/" target="_blank">Subreddit</a></li>
-                                <li>Upvote our <a href="https://www.reddit.com/r/BCoinsg/comments/9cji2v/join_bcoins_bounty_program_trading_challenge/" target="_blank">Pinned Post</a></li>
+                                <li>Upvote our <a href="https://www.reddit.com/r/BCoinsg/comments/9qrqoa/join_bcoins_latest_bounty_program_today/" target="_blank">Pinned Post</a></li>
                             </ul>
                         </div>
                         @if ($user->reddit()->exists())
@@ -496,7 +496,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://www.facebook.com/BCoinsg/" target="_blank">Facebook Page</a></li>
-                                <li>Like and share our <a href="https://www.facebook.com/BCoinsg/photos/a.166929147349091/251717228870282/?type=3&theater" target="_blank">post</a></li>
+                                <li>Like and share our <a href="https://www.facebook.com/BCoinsg/posts/258241598217845?__xts__[0]=68.ARAaYL7S05mAEAgk2SHY4Uy_phkXci9_p8TZVu39Dyn_UbgvoJ0NShwuGcIm3KVfZiQnMUwrDmrb9FrM1qjG2uCxlXda8qDmYL-iAAbCG45s0ijWai-7PzgUW_oFxCmC4XamZ8X7KupXKKrmIfZJO6k0UjCZ1G6WAxPEqYRTab7oPxbb6wjpZF9BZDNBfVk9DA9RzGarQDXPiYpcklk2mh9lmmSTW5Ti&__tn__=-R" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
@@ -529,7 +529,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow us on <a href="https://www.instagram.com/bcoinsg" target="_blank">Instagram</a></li>
-                                <li>Like our <a href="https://www.instagram.com/p/BoYv7DVAGUe" target="_blank">post</a></li>
+                                <li>Like our <a href="https://www.instagram.com/p/BpQqrszAVfw/" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
@@ -562,7 +562,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://www.linkedin.com/company/bcoinsg/" target="_blank">LinkedIn Page</a></li>
-                                <li>Like and share our <a href="https://www.linkedin.com/feed/update/urn:li:activity:6452467269405634560" target="_blank">post</a></li>
+                                <li>Like and share our <a href="https://www.linkedin.com/feed/update/urn:li:activity:6460339280605732864" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">

@@ -389,7 +389,7 @@ class BountyController extends Controller
                 $access_token = json_decode($user->twitter->access_token,true);
 
                 $twitterPageID = "969390070372290560";
-                $twitterTweetID = "1046700661901950976";
+                $twitterTweetID = "1054572853729710080";
 
                 $connection = new TwitterOAuth(env("TWITTER_CLIENT_ID", ""), env("TWITTER_CLIENT_SECRET", ""), $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
@@ -533,13 +533,15 @@ class BountyController extends Controller
                 $client->setAccessTokenType(\OAuth2\Client::ACCESS_TOKEN_BEARER);
                 $client->setCurlOption(CURLOPT_USERAGENT,"BCoinClient/0.1 by Talenta");
 
+                // Subscribe
                 $response = $client->fetch("https://oauth.reddit.com/api/info.json", ["id" => "t5_mx0d3"], "GET", [], 1);
 
                 if ($response['result']['data']['children'][0]['data']['user_is_subscriber'] == true) {
                     $subscribed = true;
                 }
 
-                $response = $client->fetch("https://oauth.reddit.com/api/info.json", ["id" => "t3_9cji2v"], "GET", [], 1);
+                // Upvote
+                $response = $client->fetch("https://oauth.reddit.com/api/info.json", ["id" => "t3_9qrqoa"], "GET", [], 1);
 
                 if ($response['result']['data']['children'][0]['data']['likes'] == true) {
                     $upvote = true;
