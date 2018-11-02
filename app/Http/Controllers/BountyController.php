@@ -389,7 +389,7 @@ class BountyController extends Controller
                 $access_token = json_decode($user->twitter->access_token,true);
 
                 $twitterPageID = "969390070372290560";
-                $twitterTweetID = "1054572853729710080";
+                $twitterTweetID = "1057556179344211968";
 
                 $connection = new TwitterOAuth(env("TWITTER_CLIENT_ID", ""), env("TWITTER_CLIENT_SECRET", ""), $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
@@ -541,7 +541,7 @@ class BountyController extends Controller
                 }
 
                 // Upvote
-                $response = $client->fetch("https://oauth.reddit.com/api/info.json", ["id" => "t3_9qrqoa"], "GET", [], 1);
+                $response = $client->fetch("https://oauth.reddit.com/api/info.json", ["id" => "t3_9ti15i"], "GET", [], 1);
 
                 if ($response['result']['data']['children'][0]['data']['likes'] == true) {
                     $upvote = true;

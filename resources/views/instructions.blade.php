@@ -360,7 +360,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://twitter.com/BCoinsg" target="_blank">Twitter</a></li>
-                                <li>Like and retweet our <a href="https://twitter.com/BCoinsg/status/1054572853729710080" target="_blank">Tweet</a></li>
+                                <li>Like and retweet our <a href="https://twitter.com/BCoinsg/status/1057556179344211968" target="_blank">Tweet</a></li>
                             </ul>
                         </div>
                         @if ($user->twitter()->exists())
@@ -430,7 +430,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Subscribe to our <a href="https://www.reddit.com/r/BCoinsg/" target="_blank">Subreddit</a></li>
-                                <li>Upvote our <a href="https://www.reddit.com/r/BCoinsg/comments/9qrqoa/join_bcoins_latest_bounty_program_today/" target="_blank">Pinned Post</a></li>
+                                <li>Upvote our <a href="https://www.reddit.com/r/BCoinsg/comments/9ti15i/join_our_event_and_vote_which_coin_will/" target="_blank">Pinned Post</a></li>
                             </ul>
                         </div>
                         @if ($user->reddit()->exists())
@@ -496,7 +496,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://www.facebook.com/BCoinsg/" target="_blank">Facebook Page</a></li>
-                                <li>Like and share our <a href="https://www.facebook.com/BCoinsg/posts/258241598217845?__xts__[0]=68.ARAaYL7S05mAEAgk2SHY4Uy_phkXci9_p8TZVu39Dyn_UbgvoJ0NShwuGcIm3KVfZiQnMUwrDmrb9FrM1qjG2uCxlXda8qDmYL-iAAbCG45s0ijWai-7PzgUW_oFxCmC4XamZ8X7KupXKKrmIfZJO6k0UjCZ1G6WAxPEqYRTab7oPxbb6wjpZF9BZDNBfVk9DA9RzGarQDXPiYpcklk2mh9lmmSTW5Ti&__tn__=-R" target="_blank">post</a></li>
+                                <li>Like and share our <a href="https://www.facebook.com/BCoinsg/videos/814501442226853/?__xts__[0]=68.ARAHKkGnrROeQilWm4CaCQvhBSkA4DRHzPSB-IgyzqkEz1dHvx7AmQhwQONNqKJWaOaKwQgPdpbvB_CIzNsUd25e-kC4AaVYoCiLbqE4pZCL2ZRHYgTPFZE1z27LYKUaOAWjoz8p35nxRdvzkRPfryPqQSpEVfkYVF12Z8gSH3wc0_-j5V0xSOstV6knXWzFi2GpzbJ6qsf22pbHQ7Iu6BtLkD3_YPp0OrifBr3eA1mVh9pdEa3htyPe&__tn__=-R" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
@@ -529,7 +529,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow us on <a href="https://www.instagram.com/bcoinsg" target="_blank">Instagram</a></li>
-                                <li>Like our <a href="https://www.instagram.com/p/BpQqrszAVfw/" target="_blank">post</a></li>
+                                <li>Like our <a href="https://www.instagram.com/p/Bpl421YgUWK/" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
@@ -562,7 +562,7 @@
                         <div class="col-12 mt-4">
                             <ul>
                                 <li>Follow our <a href="https://www.linkedin.com/company/bcoinsg/" target="_blank">LinkedIn Page</a></li>
-                                <li>Like and share our <a href="https://www.linkedin.com/feed/update/urn:li:activity:6460339280605732864" target="_blank">post</a></li>
+                                <li>Like and share our <a href="https://www.linkedin.com/feed/update/urn:li:activity:6463325338368868352" target="_blank">post</a></li>
                             </ul>
                         </div>
                         <div class="col-10 text-center mt-2 mb-2 mx-auto">
