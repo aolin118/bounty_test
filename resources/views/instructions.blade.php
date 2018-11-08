@@ -168,21 +168,27 @@
                             <div class="card-header bg-secondary text-white">BCoin Creative Campaign</div>
                             <div class="card-body">
                                 <img src="{{ asset('images/creative1.jpg') }}" class="img-fluid mb-3">
-                                <h1 class="text-center text-blue-accent my-4"><strong>Current Theme: BCoin Token Features</strong></h1>
+                                <h1 class="text-center text-blue-accent my-4"><strong>Current Theme: Features of BCoin Exchange</strong></h1>
                                 <img src="{{ asset('images/creative2.jpg') }}" class="img-fluid mt-4 mb-3">
                                 <div class="text-center my-4">
-                                    Program Start Date: 01 October 2018<br/>
-                                    Submission Week: 7 to 20 October 2018<br/>
-                                    Competition and Voting Week: 21 to 27 October 2018<br/>
+                                    Program Start Date: 11 November 2018<br/>
+                                    Submission Week: 18 to 30 November 2018<br/>
+                                    Competition and Voting Week: 2 to 8 December 2018<br/>
                                 </div>
                                 <div>
                                     <br/>
-                                    <h3 class="text-blue-accent"><strong>Campaign objective : To showcase features of the BCoin Token found below:</strong></h3>
+                                    <h3 class="text-blue-accent"><strong>Campaign objective : To showcase the Features of BCoin Exchange</strong></h3>
                                     <ul>
-                                        <li><span class="text-blue-accent"><u>Discounted Trading Fees</u></span><br/>A proven utility model, exchange-issued-tokens have proven their worth by reducing trade friction. Users can use BCT tokens in place of fees and receive up to 30% discount on all trading fees.</li>
-                                        <li><span class="text-blue-accent"><u>Membership Benefits</u></span><br/>Owners of BCT tokens will receive additional  benefits – up to +30% off trading fees, as well as qualification of our Diamond/ Ruby/ Sapphire memberships (tiered according to the user’s personal usage and loyalty to the platform).</li>
-                                        <li><span class="text-blue-accent"><u>Community Activation</u></span><br/>BCT tokens grants users exclusive access to BCoin.sg polling events and participation in the BCoin.sg Private Listings Clubs. Additionally, BCT is also used as a medium of payment for listing services.</li>
-                                        <li><span class="text-blue-accent"><u>Trade Mining</u></span><br/>BCT tokens can be mined through trading fees at a rate of 120%, as a secondary distribution initiative and capped at 5% allocation of the total supply.</li>
+                                        <li><span class="text-blue-accent">Fiat & Crypto Gateway</span></li>
+                                        <li><span class="text-blue-accent">Trade Bitcoin & Altcoins</span></li>
+                                        <li><span class="text-blue-accent">Low Trading Fees of 0.2%</span></li>
+                                        <li><span class="text-blue-accent">Multi-Language Support</span><br/></li>
+                                        <li><span class="text-blue-accent">Excellent Customer Service</span><br/></li>
+                                        <li><span class="text-blue-accent">Highly Robust Security</span><br/></li>
+                                        <li><span class="text-blue-accent">Advanced Technology</span><br/></li>
+                                        <li><span class="text-blue-accent">Simple KYC Process</span><br/></li>
+                                        <li><span class="text-blue-accent">Friendly User Interface</span><br/></li>
+                                        <li><span class="text-blue-accent">OTC Trading Services</span><br/></li> 
                                     </ul>
                                 </div>
                                 <div class="text-center text-blue-accent mb-4">
