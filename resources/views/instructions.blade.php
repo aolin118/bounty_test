@@ -172,8 +172,8 @@
                                 <img src="{{ asset('images/creative2.jpg') }}" class="img-fluid mt-4 mb-3">
                                 <div class="text-center my-4">
                                     Program Start Date: 11 November 2018<br/>
-                                    Submission Week: 18 to 30 November 2018<br/>
-                                    Competition and Voting Week: 2 to 8 December 2018<br/>
+                                    Submission Week: 18 to 25 November 2018<br/>
+                                    Competition and Voting Week: 26 to 28 November 2018<br/>
                                 </div>
                                 <div>
                                     <br/>
