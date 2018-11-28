@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', 'BountyController@index')->name('bounty-home');
+Route::get('/', 'BountyController@end')->name('bounty-home');
 
-Route::get('/main', 'BountyController@main')->name('bounty-submit-get');
-Route::post('/main', 'BountyController@addressSubmit')->name('bounty-submit-post');
+Route::get('/main', 'BountyController@end')->name('bounty-submit-get');
+Route::post('/main', 'BountyController@end')->name('bounty-submit-post');
 
 Route::get('/logout', 'BountyController@logOut')->name('bounty-logout');
 
@@ -34,7 +34,7 @@ Route::post('/linkedin-verify', 'BountyController@linkedInVerify')->name('bounty
 Route::get('/interest-change', 'BountyController@interestChange')->name('bounty-interest-change');
 Route::get('/newsletter-change', 'BountyController@newsletterChange')->name('bounty-newsletter-change');
 
-Route::get('/r/{referral}', 'BountyController@bountyReferral')->name('bounty-referral');
+Route::get('/r/{referral}', 'BountyController@end')->name('bounty-referral');
 
 
 Route::get('/airdrop-export', 'AirdropController@airdropExport')->name('airdrop-export');

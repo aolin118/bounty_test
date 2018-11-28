@@ -38,6 +38,11 @@ class BountyController extends Controller
         return view('landing');
     }
 
+    public function end() 
+    {
+        return view('complete');
+    }
+
     public function bountyReferral($referral)
     {
         if(Session::has('email')) {
