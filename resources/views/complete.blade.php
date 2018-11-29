@@ -23,7 +23,7 @@
                     <div class="divider"></div>
                     <div class="row mt-4">
                         <div class="col-12 text-center mb-2">
-                            <h4 class="text-white">The bounty program has completed. Thank you for participating!</h4>
+                            <h4 class="text-white">The bounty program has completed.<br/>Thank you for participating!</h4>
                         </div>
                     </div>
             </div>
